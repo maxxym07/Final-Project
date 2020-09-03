@@ -1,29 +1,29 @@
 <div class="container">
-    <div class="header-block">
+    <div class="header-block"  [class.active]="navbar">
         <div class="left-box">
            <div class="blockSony">SONY</div>
         </div>
-
-        <div class="logo"><p id="mySony">Playstation Store</p> <i class="fab fa-playstation"></i></div>
+       
+        <div class="logo" [routerLink]="[ '/home' ]"><p id="mySony">Playstation Store</p> <i class="fab fa-playstation"></i></div>
         <div class="right-box">
             <p id="myPlaystation">My playStation support</p>
-            <a href="https://www.playstation.com/ru-ru/get-help/?smcid=other%3Aru-ru%3Ablank%3Aprimary%2520nav%3Amsg-help%3A#!/" class="support">Поддержка</a>
+            <a href="/assets/images/logo.png" class="support">Поддержка</a>
             <p id="tel">Телефон гарячої лінії: 0 800 307 66 90</p>
         </div>
     </div>
 
     <div class="menu-header">
-        <div class="left-logo"> <img src="https://psmedia.playstation.com/is/image/psmedia/ps-store-logo-two-column-01-en-29oct18_1541071091305?$Icon$" alt=""
+        <div class="left-logo" [routerLink]="[ '/home' ]"> <img src="/assets/images/logo.png" alt=""
             class="logoIMG">
         </div>
 
         <div class="center-menu">
-            <div class="category">Ігри</div>
-            <div class="category">Акції</div>
-            <div class="category">Консолі</div>
-            <div class="category psPlus">PS Plus</div>
-            <div class="category">Гаджети</div>
-            <div class="category">Про нас</div>
+            <div class="category" [routerLink]="[ '/games' ]">Ігри</div>
+            <div class="category" [routerLink]="[ '/blog' ]">Акції</div>
+            <div class="category" [routerLink]="[ '/game-consoles' ]">Консолі</div>
+            <div class="category psPlus" [routerLink]="[ '/ps-plus' ]">PS Plus</div>
+            <div class="category" [routerLink]="[ '/gadgets' ]">Гаджети</div>
+            <div class="category" [routerLink]="[ '/about' ]">Про нас</div>
         </div>
 
         <div class="right-menu">
@@ -32,9 +32,9 @@
         </div>
 
         <div class="menu-basket">
-            <div class="basket">
+            <div class="basket" [routerLink]="[ '/basket' ]">
                 <i class="fas fa-shopping-cart"></i>
-                <p>тут тоталпрайс</p>
+                <p [ngStyle]="{'color': 'yellow','cursor':'pointer'}">тут тоталпрайс</p>
             </div>
         </div>
     </div>

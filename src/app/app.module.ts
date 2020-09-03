@@ -17,6 +17,7 @@ import { GameConsolesComponent } from './pages/game-consoles/game-consoles.compo
 import { GadgetsComponent } from './pages/gadgets/gadgets.component';
 import { PsPlusComponent } from './pages/ps-plus/ps-plus.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { GamesComponent } from './pages/games/games.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AdminComponent } from './pages/admin/admin.component';
     GameConsolesComponent,
     GadgetsComponent,
     PsPlusComponent,
-    AdminComponent
+    AdminComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,

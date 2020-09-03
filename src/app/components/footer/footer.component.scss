@@ -1,0 +1,197 @@
+.container{
+    background-color: black;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: flex;
+
+
+    .social-networks{
+        width: 300px;
+        height: 150px;
+        
+
+        #be-with-us{
+            color: white;
+           width: 100%;
+           height: 60px;
+           display: flex;
+           justify-content: center;
+           align-items: flex-end;
+           font-family: 'Roboto','Courier New', Courier, monospace;
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            position: relative;
+            top: 20%;
+            left: 40%;
+            transform: translate(-30%,-30%);
+        }
+        
+        ul li{
+            list-style: none;
+            margin: 0 10px;
+        }
+        ul li a{
+            position: relative;
+            display: block;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 60px;
+            background: black;
+            border-radius: 50%;
+            font-size: 30px;
+            color: #666;
+            transition: 0.5s;
+        }
+        
+        .fa-facebook{
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+        .fa-youtube{
+            position: absolute;
+            top: 5px;
+            left: 3px;
+        }
+        .fa-instagram{
+            position: absolute;
+            top: 5px;
+            left: 7px;
+        }
+        .fa-playstation{
+            position: absolute;
+            top: 5px;
+            left: 3px;
+        }
+        
+        ul li a::before{
+            content: '';
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background:#003dc2;
+            transition: 0.5s;
+            transform: scale(0.9);
+            z-index: -1;
+        }
+        
+        ul li a:hover:before{
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #003dc2;
+        }
+        
+        ul li a:hover{
+            color: #003dc2;
+            box-shadow: 0 0 15px #003dc2;
+        }
+    }
+
+    .categories{
+        width: 500px;
+        height: 150px;
+        margin-left: 50px;
+        display: flex;
+       
+
+        .left-part{
+            width: 270px;
+            height: 150px;
+             padding: 5px;
+        }
+        .right-part{
+            width: 230px;
+            height: 150px;
+            padding: 5px;
+        }
+        .categor{
+            color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: 'Montserrat',monospace;
+    cursor: pointer;
+    width: 60%;
+
+            &:hover{
+                color: rgb(0, 126, 243);
+               
+            }
+            &:focus{
+                outline: none;
+            }
+    }
+    .categor.active{
+        color: rgb(0, 126, 243);
+    }
+    .psPlus:hover{
+        cursor: pointer;
+        color: gold;
+    }
+    .categor.activePlus{
+        color: gold;
+    }
+}
+
+.logo{
+    width: 300px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #footIMG{
+        width: 50%;
+        height: 110px;
+    }
+}
+
+.contacts{
+    width: 300px;
+    height: 150px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.goHome{
+    width: 138px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .footHome{
+        color: white;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-left: 10px;
+        font-family: 'Montserrat',monospace;
+        cursor: pointer;
+        width: 60%;
+    
+                &:hover{
+                    color: rgb(0, 126, 243);
+                   
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+            .footHome.active{
+                color: rgb(0, 126, 243);
+            }
+}
+}

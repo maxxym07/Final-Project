@@ -9,6 +9,7 @@
         height: 100px;
         display: flex;
         justify-content: space-between;
+        top: 0;
 
        .left-box{
            width: 440px;
@@ -36,6 +37,9 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+            &:focus{
+            outline: none;
+            }
 
         .fa-playstation{
             color: white;
@@ -77,11 +81,16 @@
         #tel{
             margin-top: 10px;
             color: white;
-            font-family: "Open Sans", monospace;
+            font-family: "Roboto", monospace;
         }
     }
-
+    
     }
+
+    .active{
+        display: none;        
+    }
+
 
 //////////те що пропадає//////////
 
@@ -97,6 +106,10 @@
         width: 300px;
         display: flex;
         justify-content: flex-start;
+        cursor: pointer;
+        &:focus{
+            outline: none;
+            }
 
         .logoIMG{
             margin-left: 35px;
@@ -114,20 +127,30 @@
             width: 159px;
             height: 50px;
             font-size: 30px;
-            font-family: "Open Sans",'Courier New', Courier, monospace;
+            font-family: "Roboto",'Courier New', Courier, monospace;
             color: white;
             line-height: 50px;
             text-align: center;
+            transition: all 500ms ease; 
 
             &:hover{
                 cursor: pointer;
                 background-color: rgb(228, 228, 228);
                 color: rgb(1, 28, 92);
+                box-shadow: inset 0 0 0 3px #3a7999;
+                border-radius: 5px;
+            }
+            &:focus{
+                outline: none;
             }
         }
         .psPlus:hover{
             background-color: rgb(255, 251, 0);
-                color: rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+
+            &:focus{
+                outline: none;
+            }
         }
     }
 
@@ -146,10 +169,10 @@
                 background-color: rgb(40, 135, 212);
                 border: none;
                 color: white;
-                font-family: 'Open Sans','Courier New', Courier, monospace;
+                font-family: 'Roboto','Courier New', Courier, monospace;
                 font-size: 20px;
+                transition: all 300ms ease; 
                 
-
                 &:focus{
                     border-radius: 5px;
                     outline: none;
@@ -159,6 +182,7 @@
                 &:hover{
                     cursor: pointer;
                     background-color: rgb(34, 102, 158);
+                    border-radius: 5px;
                 }
             }
 
@@ -176,12 +200,22 @@
             height: 50px;
             display: flex;
             align-items: center;
+            
+            &:focus{
+                outline: none;
+            }
 
             .fa-shopping-cart{
                 color: white;
                 font-size: 25px;
-                cursor: pointer;
+                transition: all 500ms ease ;
+
+                &:hover{
+                    cursor: pointer;
+                    color: silver;
+                }
             }
+
            
         }
         

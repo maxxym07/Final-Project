@@ -1,1 +1,51 @@
-<p>footer works!</p>
+<div class="container">
+   
+    <div class="social-networks">
+        <div id="be-with-us">Залишайся з нами</div>
+        <ul>
+            <li>
+                <a href="https://www.facebook.com/Sony/"><i class="fab fa-facebook"></i></a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/user/Sony?hl=ru"><i class="fab fa-youtube"></i> </a>
+    
+            </li>
+            <li>
+                <a href="https://www.instagram.com/playstation/?hl=ru"><i class="fab fa-instagram"></i> </a>
+    
+            </li>
+            <li>
+                <a href="https://www.playstation.com/uk-ua/"> <i class="fab fa-playstation"></i> </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="categories">
+        
+        <div class="left-part">
+            <p class="categor" routerLinkActive="active" [routerLink]="[ '/games' ]">Ігри</p>
+            <p class="categor" routerLinkActive="active" [routerLink]="[ '/blog' ]">Акції</p>
+            <p class="categor" routerLinkActive="active" [routerLink]="[ '/game-consoles' ]">Консолі</p>
+            <p class="categor" routerLinkActive="active" [routerLink]="[ '/gadgets' ]">Гаджети</p>
+            <p class="categor" routerLinkActive="active" [routerLink]="[ '/about' ]">Про нас</p>
+        </div>
+
+       <div class="right-part">
+        <p class="categor psPlus" routerLinkActive="activePlus" [routerLink]="['/ps-plus']">PS Plus</p>
+       
+       </div>
+    </div>
+
+    <div class="logo"><img src="/assets/images/logo1footer.png" alt="" id="footIMG"></div>
+
+    <div class="contacts">
+      <p>Тут контакти</p>  
+      <p>І тут</p>  
+      <p>І ще тут</p>  
+      <p>І вот тут</p>  
+      <p>Багато номерів</p>  
+    </div>
+
+    <div class="goHome"> <p class="footHome" routerLinkActive="active" [routerLink]="[ '/home' ]">Головна</p></div>
+
+</div>
