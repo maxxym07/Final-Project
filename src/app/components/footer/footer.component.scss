@@ -116,12 +116,12 @@
         }
         .categor{
             color: white;
-    font-size: 16px;
-    margin-top: 10px;
-    margin-left: 10px;
-    font-family: 'Montserrat',monospace;
-    cursor: pointer;
-    width: 60%;
+            font-size: 20px;
+            margin-top: 15px;
+            margin-left: 10px;
+            font-family: 'Montserrat',monospace;
+            cursor: pointer;
+            width: 60%;
 
             &:hover{
                 color: rgb(0, 126, 243);
@@ -164,6 +164,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .support{
+        color: white;
+        text-decoration: underline;
+        margin-top: 5px;
+        font-family: "Poppins", monospace;
+    }
+    #tel{
+        margin-top: 10px;
+        color: white;
+        font-family: "Roboto", monospace;
+
+        .fa-mobile-alt{
+            margin-right: 5px;
+        }
+    }
 }
 
 .goHome{

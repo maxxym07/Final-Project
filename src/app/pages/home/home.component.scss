@@ -5,21 +5,163 @@
 
     .container{
         width: 98%;
-        min-height: 450px;
-        border: 1px solid white;
+        min-height: 500px;
         margin:10px auto;
 
-        .carousel{
-            width: 50%;
-            height: 380px;
-            margin: auto;
+        #mainName, #mainName1{
+            width: 100%;
+            font-size: 50px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+        }
 
+        #mainName1{
+            animation: neone .5s ease-in-out infinite alternate;
+        }
+        
 
-            .mySlides{
-                width: 100%;
-                height: 380px;
-                display:none;
+        @keyframes neone {
+            from {
+              text-shadow:
+              0 0 6px rgba(202,228,225,0.92),
+              0 0 30px rgba(202,228,225,0.34),
+              0 0 12px rgba(30,132,242,0.52),
+              0 0 21px rgba(30,132,242,0.92),
+              0 0 34px rgba(30,132,242,0.78),
+              0 0 54px rgba(30,132,242,0.92);
+            }
+            to {
+              text-shadow:
+              0 0 6px rgba(202,228,225,0.98),
+              0 0 30px rgba(202,228,225,0.42),
+              0 0 12px rgba(30,132,242,0.58),
+              0 0 22px rgba(30,132,242,0.84),
+              0 0 38px rgba(30,132,242,0.88),
+              0 0 60px rgba(30,132,242,1);
+            }
+          }
+
+        .top-box{
+            display: flex;
+            width: 100%;
+
+            .forCarousel{
+                width: 83%;
+                
+                .carousel{
+                    width: 65%;
+                    height: 430px;
+                    margin: auto;
+        
+                    .mySlides{
+                        width: 100%;
+                        height: 430px;
+                        display:none;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            
+    
+            .psPlusBlock{
+                width: 135px;
+                height: 505px;
                 cursor: pointer;
+    
+                .imagePlus{
+                    width: 100%;
+                    height: 500px;
+                    background-image: url('https://homer.dl.playstation.net/pr/bam-art/107/670/34222414-a538-4b7f-a6e8-42aa604d3634.jpg');
+                    display: block;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+
+        .gamesBlock{
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+
+            .card{
+                width: 315px;
+                height: 500px;
+                background-color: #0a0135;
+                transition: all 500ms ease;
+                cursor: pointer;
+                margin-right: 30px;
+                margin-left: 15px;
+                margin-bottom: 30px;
+
+                &:hover{
+                    outline: 1px solid whitesmoke;
+                    box-shadow: 1px 1px 15px 3px rgb(0, 79, 124);
+                    border-radius: 3px;
+
+                    .priceGame{
+                        background-color: rgb(50, 93, 136);
+                    }
+                }
+
+                .imageBlock{
+                    width: 100%;
+                    height: 390px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .imageGame{
+                        width: 285px;
+                        height: 380px;
+                      margin-top: 10px;
+                    }
+                }
+                
+                .nameGame{
+                    width: 95%;
+                    max-height: 50px;
+                    color: white;
+                    font-size: 23px;
+                    margin: 5px auto;
+                    text-align: center;
+                    font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                    margin-top: 5px;
+                    min-height:40px;
+                }
+            .priceGame{
+                width: 95%;
+                    height:40px;
+                    margin: 6px auto;
+                    text-align: center;
+                    line-height: 40px;
+                    display: flex;
+                    background-color: rgb(94, 94, 94);
+                    border-radius: 2px;
+
+                    .oldPrice{
+                        text-decoration: line-through;
+                        color: white;
+                        font-family: 'Montserrat-Oldprice','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                        font-size: 15px;
+                        min-width: 90px;
+                        line-height: normal;
+                    }
+
+                    .mainPrice{
+                        font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                        font-size: 23px;
+                        color: rgb(231, 231, 231);
+                        min-width: 130px;
+                    }
+            }
+
             }
         }
     }

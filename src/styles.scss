@@ -15,6 +15,31 @@
     src: url(assets/fonts/Montserrat/Montserrat-Medium.ttf);
 }
 
+@font-face{
+  font-family: 'Roboto-Bold';
+  src: url(assets/fonts/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face{
+  font-family: 'OpenSans-SemiBold';
+  src: url(assets/fonts/Open_Sans/OpenSans-SemiBold.ttf);
+}
+
+@font-face{
+  font-family: 'Montserrat-nameGame';
+  src: url(assets/fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face{
+  font-family: 'Montserrat-Oldprice';
+  src: url(assets/fonts/IBM_Plex_Serif/IBMPlexSerif-Light.ttf);
+}
+
+@font-face{
+  font-family: 'psPLus';
+  src: url(assets/fonts/Kanit/Kanit-Medium.ttf);
+}
+
 body{
     // width: 98vw ;
     height: 100vh;

@@ -11,8 +11,6 @@ export class HeaderComponent implements OnInit {
   prevScrollpos = window.pageYOffset;
   navbar:boolean;
 
-  
-
   constructor() { }
   
   ngOnInit(): void {

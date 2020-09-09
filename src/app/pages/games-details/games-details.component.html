@@ -1,0 +1,79 @@
+<div class="home">
+    <ul class="breadcrumb">
+        <li>
+            <span id="mainF" [routerLink]="[ '/home' ]">Головна</span><span id="slash">/</span>
+        </li>
+        <li>
+          <a><span id="mainF">Бойовоки</span><span id="slash">/</span></a>
+        </li>
+        <li>
+          <a><span id="mainF">Ведьмак 3. Дикая охота</span></a>
+        </li>
+      </ul>
+    <div class="container">
+
+        <div class="game">
+            <div class="imageBlock"><img src="/assets/images/The-Witcher-3-game" alt="" class="imageGame"></div>
+           
+            <div class="priceGame">
+                <p class="oldPrice">2000 UAH</p>
+               <p class="mainPrice"> 1500 UAH</p>
+            </div>
+
+            <div class="buyGame">
+                <button type="button" class="buttonBuy">Купити</button>
+                <!-- <button type="button" class="buttonBuy">В корзину</button> -->
+            </div>
+            
+            <div class="with">
+                <p id="withP">Сумісний зі системами</p>
+                <p id="ps4">PS4</p>
+            </div>
+            <p id="withPlus">Для сетевой многопользовательской игры требуется платная подписка на PlayStation Plus</p>
+            <p id="zhanrGame">Жанр: Бойовики</p>
+            <p id="weightGame">Розмір файлу: 44.1 GB</p>
+        </div>
+
+        <div class="About-game">
+            <div class="nameGame">Ведьмак 3. Дикая охота</div>
+
+              <div class="w3-content">
+                  <div class="big-slides">
+                    <img class="mySlides" src="/assets/images/forCaruselDetailsGame">
+                    <img class="mySlides" src="/assets/images/forCaruselDetailsGame1" [ngStyle]="{'display': 'none'}">
+                    <img class="mySlides" src="/assets/images/forCaruselDetailsGame2" [ngStyle]="{'display': 'none'}">    
+                    <img class="mySlides" src="/assets/images/forCaruselDetailsGame3" [ngStyle]="{'display': 'none'}">    
+                  </div>
+
+               <div class="little-slides">
+
+                      <img class="imageCarousel" src="/assets/images/forCaruselDetailsGame" (click)="currentDiv(1)">
+
+
+                      <img class="imageCarousel" src="/assets/images/forCaruselDetailsGame1"  (click)="currentDiv(2)">
+
+ 
+                      <img class="imageCarousel" src="/assets/images/forCaruselDetailsGame2"  (click)="currentDiv(3)">
+
+                      <img class="imageCarousel" src="/assets/images/forCaruselDetailsGame3"  (click)="currentDiv(4)">
+
+               </div>
+               
+              </div>
+              <div class="forH1">Опис</div>
+              <hr id="hr1">
+              
+              <div class="box-text-about">
+               <p class="text-about">Автономная однопользовательская версия
+                Сетевая многопользовательская игра (2-4 игрока). Требуется оплаченная подписка на PlayStation Plus.
+                Для использования сетевых функций требуется учетная запись. Сетевые функции предоставляются в соответствии с нашими 
+                условиями обслуживания, нашей политикой конфиденциальности и политикой конфиденциальности издателя игры.
+                Используется функция вибрации DUALSHOCK 4
+                Расширенные игровые функции на консоли PS4 Pro
+                Дополнительные покупки в игре
+                Требуется игра в сети</p> 
+              </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,104 @@
+.home{
+    width: 100%;
+    min-height: 700px;
+    
+
+    .container{
+        width: 98%;
+        min-height: 600px;
+        margin:10px auto;
+
+        .nameComponent{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: 60px;
+            color: rgb(230, 230, 230);
+            font-family: 'Montserrat','Courier New', Courier, monospace;
+            margin-top: 10px;
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+            }
+       
+        
+        .gamesBlock{
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+
+            .card{
+                width: 315px;
+                height: 500px;
+                background-color: white;
+                transition: all 500ms ease;
+                cursor: pointer;
+                margin-right: 30px;
+                margin-left: 15px;
+                margin-bottom: 30px;
+
+                &:hover{
+                    box-shadow: 1px 1px 20px 5px rgb(0, 110, 173);
+                    border-radius: 3px;
+
+                    .priceGame{
+                        background-color: rgb(13, 160, 197);
+                    }
+                }
+
+                .imageBlock{
+                    width: 100%;
+                    height: 390px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .imageGame{
+                        width: 285px;
+                        height: 220px;
+                      margin-top: 10px;
+                    }
+                    
+                }
+                .nameGame{
+                    width: 95%;
+                    max-height: 47px;
+                    color: rgb(0, 36, 102);
+                    font-size: 23px;
+                    margin: 5px auto;
+                    text-align: center;
+                    font-family: 'Roboto-Bold','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    margin-top: 5px;
+                    min-height:40px;
+                    overflow: hidden;
+                }
+            .priceGame{
+                width: 95%;
+                    height:40px;
+                    margin: 6px auto;
+                    text-align: center;
+                    line-height: 40px;
+                    display: flex;
+                    background-color: rgb(52, 129, 148);
+                    border-radius: 2px;
+
+                    .oldPrice{
+                        text-decoration: line-through;
+                        font-family: 'Montserrat-Oldprice','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                        font-size: 15px;
+                        min-width: 75px;
+                        line-height: normal;
+                    }
+
+                    .mainPrice{
+                        font-family: 'Roboto-Bold','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                        font-size: 25px;
+                        min-width: 135px;
+                    }
+            }
+
+            }
+        }
+    }
+
+}

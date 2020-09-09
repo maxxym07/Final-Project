@@ -7,34 +7,30 @@
         <div class="logo" [routerLink]="[ '/home' ]"><p id="mySony">Playstation Store</p> <i class="fab fa-playstation"></i></div>
         <div class="right-box">
             <p id="myPlaystation">My playStation support</p>
-            <a href="/assets/images/logo.png" class="support">Поддержка</a>
-            <p id="tel">Телефон гарячої лінії: 0 800 307 66 90</p>
+            <a href="https://www.playstation.com/ru-ru/get-help/" class="support">Підтримка</a>
+            <p id="tel"><i class="fas fa-mobile-alt"></i>Телефон гарячої лінії: 0 800 307 66 90</p>
         </div>
     </div>
 
     <div class="menu-header">
-        <div class="left-logo" [routerLink]="[ '/home' ]"> <img src="/assets/images/logo.png" alt=""
-            class="logoIMG">
-        </div>
+        <div class="left-logo" [routerLink]="[ '/home' ]"> <img src="/assets/images/logo.png" alt=""class="logoIMG"></div>
 
         <div class="center-menu">
-            <div class="category" [routerLink]="[ '/games' ]">Ігри</div>
-            <div class="category" [routerLink]="[ '/blog' ]">Акції</div>
-            <div class="category" [routerLink]="[ '/game-consoles' ]">Консолі</div>
-            <div class="category psPlus" [routerLink]="[ '/ps-plus' ]">PS Plus</div>
-            <div class="category" [routerLink]="[ '/gadgets' ]">Гаджети</div>
-            <div class="category" [routerLink]="[ '/about' ]">Про нас</div>
+            <div class="category games" [routerLink]="[ '/games' ]">Ігри <div class="iconGames"></div></div>
+            <div class="category psPlus" [routerLink]="[ '/ps-plus' ]">PS Plus<div class="iconPlus"></div></div>
+            <div class="category consoles" [routerLink]="[ '/game-consoles' ]">Консолі <div class="iconConsoles"></div></div>
+            <div class="category gadgets" [routerLink]="[ '/gadgets' ]">Гаджети <div class="iconGadgets"></div></div>
         </div>
 
         <div class="right-menu">
-        <p></p>
-        <button class="butLogin">Увійти</button>
+        <button class="butLogin" [routerLink]="[ '/login' ]">Увійти</button>
+        <!-- <div class="userIcon"><i class="fas fa-user-circle"></i></div> -->
         </div>
 
         <div class="menu-basket">
             <div class="basket" [routerLink]="[ '/basket' ]">
                 <i class="fas fa-shopping-cart"></i>
-                <p [ngStyle]="{'color': 'yellow','cursor':'pointer'}">тут тоталпрайс</p>
+                <!-- <p id="total">1245</p> -->
             </div>
         </div>
     </div>

@@ -1,11 +1,45 @@
 <div class="home">
     <div class="container">
-        <div class="carousel">
-            <div class="w3-content w3-section">
-             <img class="mySlides" src="/assets/images/forCarusel1" >
-              <img class="mySlides" src="/assets/images/forCarusel2">  
-             <img class="mySlides" src="/assets/images/forCarusel3">    
+        <p id="mainName">Play with us</p>
+        
+        <div class="top-box">
+            <div class="psPlusBlock" [routerLink]="[ '/ps-plus' ]">
+                <a class="imagePlus"></a>
+            </div>
+
+            <div class="forCarousel">
+                <div class="carousel">
+                     <img class="mySlides" src="/assets/images/forCarusel1" >
+                      <img class="mySlides" src="/assets/images/forCarusel2">  
+                     <img class="mySlides" src="/assets/images/forCarusel3">    
+                </div>
+            </div>
+           
+            <div class="psPlusBlock" [routerLink]="[ '/ps-plus' ]">
+                <a class="imagePlus"></a>
             </div>
         </div>
+
+        <p id="mainName1">Знижки та акції</p>
+
+            <div class="gamesBlock">
+                <div class="card">
+                    <div class="imageBlock"><img src="/assets/images/The-Witcher-3-game" alt="" class="imageGame"></div>
+                    <div class="nameGame">Ведьмак 3. Дикая охота</div>
+                    <div class="priceGame">
+                        <p class="oldPrice">2000 UAH</p>
+                       <p class="mainPrice"> 1500 UAH</p>
+                    </div>
+                </div>
+    
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+
     </div>
 </div>
