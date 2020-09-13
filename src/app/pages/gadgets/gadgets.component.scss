@@ -273,7 +273,7 @@
                     width: 220px;
                     height: 400px;
                     margin: 5px;
-                    background-color: rgb(10, 1, 53);
+                    background-color: rgb(255, 255, 255);
                     transition: all 500ms ease; 
     
                     &:focus{
@@ -306,7 +306,7 @@
                     .nameGame{
                         width: 95%;
                         max-height: 50px;
-                        color: white;
+                        color: rgb(0, 36, 102);
                         font-size: 14px;
                         margin: 5px auto;
                         font-family: "Roboto-Bold", "Courier New", Courier, monospace;

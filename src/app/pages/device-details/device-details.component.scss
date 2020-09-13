@@ -35,7 +35,9 @@
             }
           }
           
-    
+          .containerMobile{
+            display:none;
+          }
         .container{
             width: 70%;
             min-height: 600px;
@@ -82,7 +84,7 @@
     
                         .mainPrice{
                             font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                            font-size: 50px;
+                            font-size: 44px;
                             color: white;
                             width: 100%;
                             text-align: center;
@@ -132,46 +134,45 @@
     
                 .nameGame{
                     width: 100%;
-                    height: 54px;
                     display: flex;
                     justify-content: center;
                     color: white;
                     font-size: 45px;
-                    max-height: 100px;
+                    min-height: 50px;
                     font-family:'Montserrat-nameGame', 'Courier New', Courier, monospace;
                     border-bottom: 3px solid rgb(165, 165, 165);
                     border-radius:0px 0px 0px 5px;
                     margin-bottom: 5px;
+                    text-align: center;
                 }
           
                 .w3-content{
-                    width: 75%;
+                    width: 100%;
                     height: 520px;
-                    margin-left: 120px;
-                    margin-top: 10px;
-                    margin-bottom: 20px;
+                    margin: auto;
     
                     .big-slides{
-                        width: 85%;
-                        height: 400px;
+                        width: 70%;
+                        height: 410px;
                         margin: auto;
     
                         .mySlides{
-                            width: 500px;
-                            height: 400px;
+                            width: 100%;
+                            height: 410px;
                             cursor:pointer;
                         }
                     }
                     .little-slides{
-                        width: 97%;
+                        width: 65%;
                         display: flex;
                         height: 101px;
                         justify-content: space-between;
                         align-items: center;
                         margin-top: 10px;
+                        margin: auto;
     
                         .imageCarousel{
-                            width: 140px;
+                            width:25%;
                             height: 90px;
                             cursor: pointer;
                         }
@@ -252,7 +253,9 @@
             }
           }
           
-    
+          .containerMobile{
+            display:none;
+          }
         .container{
             width: 95%;
             min-height: 600px;
@@ -299,7 +302,7 @@
     
                         .mainPrice{
                             font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                            font-size: 50px;
+                            font-size: 44px;
                             color: white;
                             width: 100%;
                             text-align: center;
@@ -349,16 +352,16 @@
     
                 .nameGame{
                     width: 100%;
-                    height: 54px;
                     display: flex;
                     justify-content: center;
                     color: white;
                     font-size: 45px;
-                    max-height: 100px;
+                    min-height: 50px;
                     font-family:'Montserrat-nameGame', 'Courier New', Courier, monospace;
                     border-bottom: 3px solid rgb(165, 165, 165);
                     border-radius:0px 0px 0px 5px;
                     margin-bottom: 5px;
+                    text-align: center;
                 }
           
                 .w3-content{
@@ -429,5 +432,203 @@
             }
         }
     
+    }
+}
+
+@media screen and (max-width: 767px){
+    .home{
+        width: 100%;
+        min-height: 600px;
+    
+        .breadcrumb {
+            background-color: transparent;
+            padding-left: 10px;
+            height: 27px;
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            font-size: 15px;
+            color: white;
+            font-family: "Montserrat", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    
+            #mainF{
+                text-decoration: none;
+                cursor: pointer;
+                color: lightseagreen;
+                
+               
+                &:focus{
+                outline: none;
+                }
+                &:hover{
+                    color: white;
+                }
+            }
+            
+            #slash{
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+          }
+          
+    
+        .container{
+            width: 99%;
+            min-height: 600px;
+            margin: 10px auto;
+            display: none;
+            background-color: #06011b;
+        }
+    
+        .containerMobile{
+            width: 99%;
+            min-height: 600px;
+            margin: 10px auto;
+            background-color: #06011b;
+            display:block;
+
+            .nameGameMobile{
+                width: 100%;
+                height: 54px;
+                color: white;
+                font-size: 35px;
+                min-height: 54px;
+                font-family:'Montserrat-nameGame', 'Courier New', Courier, monospace;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .imageBlockMobile{
+                width: 100%;
+                height: 350px;
+                display: flex;
+                justify-content: center;
+                
+                .imageGameMobile{
+                    width: 50%;
+                    height: 350px;
+                    background-image: url('/assets/images/for-consoles1');
+                    background-position: center;
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                }
+            }
+            .priceGameMobile{
+                width: 95%;
+                height: 90px;
+                margin: 0px auto;
+                text-align: center;
+                line-height: 40px;
+                display: flex;
+                border-radius: 2px;
+                flex-direction: column;
+                
+                .oldPriceMobile{
+                    text-decoration: line-through;
+                    color: white;
+                    font-family: "Montserrat-Oldprice", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    font-size: 16px;
+                    width: 100%;
+                    min-height: 1px;
+                }
+                
+                .mainPriceMobile{
+                   font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                   font-size: 50px;
+                   color: white;
+                   width: 100%;
+                   text-align: center;
+                   margin-top: 15px;
+                }
+                                       
+            }
+
+            .buyGameMobile{
+                width: 100%;
+                height: 50px;
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .buttonBuy{
+                    width: 97%;
+                    height: 50px;
+                    font-size: 30px;
+                    font-family: "Roboto-Bold", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    border-radius: 3px;
+                    border: none;
+                    color: rgb(53, 53, 53);
+                    transition: all 500ms ease; 
+
+                    &:focus{
+                        background-color: rgb(7, 36, 129);
+                        color: white;
+                        border-radius: 6px;
+                        font-size: 32px;
+                        outline: none;
+                    }
+                }
+                
+                
+            }
+
+            .images{
+                width: 100%;
+                min-height: 320px;
+                margin-top: 40px;
+                display: flex;
+                flex-flow: row wrap;
+            
+                .big-slidesMobile{
+                    width: 100%;
+                    display: flex;
+                    height: 100px;
+                    flex-flow: row wrap;
+                    justify-content: space-around;
+            
+                 .mySlides-Mobile{
+                    width: 40%;
+                    height: 150px;
+                    margin-bottom: 5px;
+                    }
+                }
+                            
+            }
+            .About-gameMobile{
+                width: 98%;
+                #hr1Mobile{
+                    width: 95%;
+                }
+                .forH1Mobile{
+                    width: 100%;
+                    height: 54px;
+                    display: flex;
+                    justify-content: center;
+                    color: white;
+                    font-size: 45px;
+                    max-height: 100px;
+                    font-family:'Montserrat-nameGame', 'Courier New', Courier, monospace;
+                }
+                
+                .box-text-aboutMobile{
+                    width: 99%;
+                    margin: auto;
+
+                    .text-aboutMobile{
+                        color: white;
+                        font-family: "Montserrat", "Courier New", Courier, monospace;
+                        line-height: 25px;
+                        width: 95%;
+                        min-height: 1px;
+                        font-size: 15px;
+                        display: flex;
+                        margin: auto;
+                    }
+                }
+            }
+            
+        }
+
     }
 }
