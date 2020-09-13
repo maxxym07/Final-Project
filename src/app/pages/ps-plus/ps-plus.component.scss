@@ -1,192 +1,398 @@
-.home{
-    width: 100%;
-    min-height: 700px;
-    
-
-    .container{
-        width: 98%;
-        min-height: 600px;
-        margin:10px auto;
-
-        .top-box{
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-
-            .forBigImage{
-                width:80%;
-    
-                .imagePlusMain{
-                    width: 100%;
-                    height: 280px;
-                    background-image: url('https://homer.dl.playstation.net/pr/bam-art/107/670/7363a8e4-75c0-4123-82b3-564c13cf3220.jpg');
-                    display: block;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                }
-                .nameComponent{
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    font-size: 60px;
-                    color: rgb(255, 238, 0);
-                    font-family: 'psPLus','Courier New', Courier, monospace;
-                    margin-top: 10px;
-                    letter-spacing: 10px;
-                    margin-bottom: 20px;
-                    animation: neon .08s ease-in-out infinite alternate;
-                }
-
-                @keyframes neon {
-                    from {
-                      text-shadow:
-                      0 0 6px rgba(202,228,225,0.92),
-                      0 0 30px rgba(202,228,225,0.34),
-                      0 0 12px rgba(30,132,242,0.52),
-                      0 0 21px rgba(30,132,242,0.92),
-                      0 0 34px rgba(30,132,242,0.78),
-                      0 0 54px rgba(30,132,242,0.92);
-                    }
-                    to {
-                      text-shadow:
-                      0 0 6px rgba(202,228,225,0.98),
-                      0 0 30px rgba(202,228,225,0.42),
-                      0 0 12px rgba(30,132,242,0.58),
-                      0 0 22px rgba(30,132,242,0.84),
-                      0 0 38px rgba(30,132,242,0.88),
-                      0 0 60px rgba(30,132,242,1);
-                    }
-                  }
-              
-            }
-            .psPlusBlock{
-                width: 135px;
-                height: 505px;
-    
-                .imagePlus{
-                    width: 100%;
-                    height: 500px;
-                    background-image: url('https://homer.dl.playstation.net/pr/bam-art/107/670/34222414-a538-4b7f-a6e8-42aa604d3634.jpg');
-                    display: block;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                }
-            }
-        }
-       
+@media screen and (min-width: 970px) {
+    .home{
+        width: 100%;
+        min-height: 700px;
         
-        .freeLOGO{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            font-size: 60px;
-            margin-bottom: 25px;
-            color: rgb(255, 238, 0);
-            font-family: 'Montserrat','Courier New', Courier, monospace;
-            animation: neon .5s ease-in-out infinite alternate;
-        }
-
-        @keyframes neon {
-            from {
-              text-shadow:
-              0 0 6px rgba(202,228,225,0.92),
-              0 0 30px rgba(202,228,225,0.34),
-              0 0 12px rgba(30,132,242,0.52),
-              0 0 21px rgba(30,132,242,0.92),
-              0 0 34px rgba(30,132,242,0.78),
-              0 0 54px rgba(30,132,242,0.92);
-            }
-            to {
-              text-shadow:
-              0 0 6px rgba(202,228,225,0.98),
-              0 0 30px rgba(202,228,225,0.42),
-              0 0 12px rgba(30,132,242,0.58),
-              0 0 22px rgba(30,132,242,0.84),
-              0 0 38px rgba(30,132,242,0.88),
-              0 0 60px rgba(30,132,242,1);
-            }
-          }
-        .gamesBlock{
-            width: 100%;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-
-            .card{
-                width: 315px;
-                height: 500px;
-                background-color: #0a0135;
-                transition: all 500ms ease;
-                cursor: pointer;
-                margin-right: 30px;
-                margin-left: 15px;
-                margin-bottom: 30px;
-
-                &:hover{
-                    box-shadow: 1px 1px 15px 3px rgb(217, 221, 0);
-                    border-radius: 3px;
-
-                    .priceGame{
-                        background-color: rgb(32, 102, 119);
+    
+        .container{
+            width: 98%;
+            min-height: 600px;
+            margin:10px auto;
+    
+            .top-box{
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+    
+                .forBigImage{
+                    width:80%;
+        
+                    .imagePlusMain{
+                        width: 100%;
+                        height: 280px;
+                        background-image: url('https://homer.dl.playstation.net/pr/bam-art/107/670/7363a8e4-75c0-4123-82b3-564c13cf3220.jpg');
+                        display: block;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                    }
+                    .nameComponent{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        font-size: 60px;
+                        color: rgb(255, 238, 0);
+                        font-family: 'psPLus','Courier New', Courier, monospace;
+                        margin-top: 10px;
+                        letter-spacing: 10px;
+                        margin-bottom: 20px;
+                        animation: neon .08s ease-in-out infinite alternate;
+                    }
+    
+                    @keyframes neon {
+                        from {
+                          text-shadow:
+                          0 0 6px rgba(202,228,225,0.92),
+                          0 0 30px rgba(202,228,225,0.34),
+                          0 0 12px rgba(30,132,242,0.52),
+                          0 0 21px rgba(30,132,242,0.92),
+                          0 0 34px rgba(30,132,242,0.78),
+                          0 0 54px rgba(30,132,242,0.92);
+                        }
+                        to {
+                          text-shadow:
+                          0 0 6px rgba(202,228,225,0.98),
+                          0 0 30px rgba(202,228,225,0.42),
+                          0 0 12px rgba(30,132,242,0.58),
+                          0 0 22px rgba(30,132,242,0.84),
+                          0 0 38px rgba(30,132,242,0.88),
+                          0 0 60px rgba(30,132,242,1);
+                        }
+                      }
+                  
+                }
+                .psPlusBlock{
+                    width: 135px;
+                    height: 505px;
+        
+                    .imagePlus{
+                        width: 100%;
+                        height: 500px;
+                        background-image: url('https://homer.dl.playstation.net/pr/bam-art/107/670/34222414-a538-4b7f-a6e8-42aa604d3634.jpg');
+                        display: block;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
                     }
                 }
-
-                .imageBlock{
-                    width: 100%;
-                    height: 390px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    .imageGame{
-                        width: 285px;
-                        height: 380px;
-                      margin-top: 10px;
+            }
+           
+            
+            .freeLOGO{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                font-size: 60px;
+                margin-bottom: 25px;
+                color: rgb(255, 238, 0);
+                font-family: 'Montserrat','Courier New', Courier, monospace;
+                animation: neon .5s ease-in-out infinite alternate;
+            }
+    
+            @keyframes neon {
+                from {
+                  text-shadow:
+                  0 0 6px rgba(202,228,225,0.92),
+                  0 0 30px rgba(202,228,225,0.34),
+                  0 0 12px rgba(30,132,242,0.52),
+                  0 0 21px rgba(30,132,242,0.92),
+                  0 0 34px rgba(30,132,242,0.78),
+                  0 0 54px rgba(30,132,242,0.92);
+                }
+                to {
+                  text-shadow:
+                  0 0 6px rgba(202,228,225,0.98),
+                  0 0 30px rgba(202,228,225,0.42),
+                  0 0 12px rgba(30,132,242,0.58),
+                  0 0 22px rgba(30,132,242,0.84),
+                  0 0 38px rgba(30,132,242,0.88),
+                  0 0 60px rgba(30,132,242,1);
+                }
+              }
+            .gamesBlock{
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+                padding-left: 50px;
+    
+                .card{
+                    width: 315px;
+                    height: 500px;
+                    background-color: #0a0135;
+                    transition: all 500ms ease;
+                    cursor: pointer;
+                    margin-right: 30px;
+                    margin-left: 15px;
+                    margin-bottom: 30px;
+    
+                    &:hover{
+                        box-shadow: 1px 1px 15px 3px rgb(217, 221, 0);
+                        border-radius: 3px;
+    
+                        .priceGame{
+                            background-color: rgb(32, 102, 119);
+                        }
                     }
-                    
-                }
-                .nameGame{
-                    width: 95%;
-                    max-height: 50px;
-                    color: white;
-                    font-size: 23px;
-                    margin: 5px auto;
-                    text-align: center;
-                    font-family: 'Roboto-Bold','Courier New', Courier, monospace;
-                    margin-top: 5px;
-                    min-height:40px;
-                }
-            .priceGame{
-                width: 95%;
-                    height:40px;
-                    margin: 6px auto;
-                    text-align: center;
-                    line-height: 40px;
-                    display: flex;
-                    background-color: rgb(94, 94, 94);
-                    border-radius: 2px;
-
-                    .oldPrice{
-                        text-decoration: line-through;
+    
+                    .imageBlock{
+                        width: 100%;
+                        height: 390px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+    
+                        .imageGame{
+                            width: 285px;
+                            height: 380px;
+                          margin-top: 10px;
+                          background-image: url('/assets/images/for-psPLusGAmes');
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: 95% 100%;
+                        }
+                        
+                    }
+                    .nameGame{
+                        width: 95%;
+                        max-height: 50px;
                         color: white;
-                        font-family: 'Montserrat-Oldprice','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                        font-size: 15px;
-                        min-width: 75px;
-                        line-height: normal;
+                        font-size: 23px;
+                        margin: 5px auto;
+                        text-align: center;
+                        font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                        margin-top: 5px;
+                        min-height:40px;
                     }
-
-                    .mainPrice{
-                        font-family: 'Roboto','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                        font-size: 25px;
-                        color: rgb(245, 241, 0);
-                        min-width: 135px;
-                    }
-            }
-
+                .priceGame{
+                    width: 95%;
+                        height:40px;
+                        margin: 6px auto;
+                        text-align: center;
+                        line-height: 40px;
+                        display: flex;
+                        background-color: rgb(94, 94, 94);
+                        border-radius: 2px;
+    
+                        .oldPrice{
+                            text-decoration: line-through;
+                            color: white;
+                            font-family: 'Montserrat-Oldprice','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            font-size: 15px;
+                            min-width: 75px;
+                            line-height: normal;
+                        }
+    
+                        .mainPrice{
+                            font-family: 'Roboto','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            font-size: 25px;
+                            color: rgb(245, 241, 0);
+                            min-width: 135px;
+                        }
+                }
+    
+                }
             }
         }
+    
     }
+}
 
+@media screen and (max-width: 969px){ 
+    .home{
+        width: 100%;
+        min-height: 700px;
+        
+    
+        .container{
+            width: 98%;
+            min-height: 600px;
+            margin:10px auto;
+    
+            .top-box{
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+    
+                .forBigImage{
+                    width:80%;
+        
+                    .imagePlusMain{
+                        width: 95%;
+                        height: 280px;
+                        background-image: url('https://homer.dl.playstation.net/pr/bam-art/107/670/7363a8e4-75c0-4123-82b3-564c13cf3220.jpg');
+                        display: block;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        margin: auto;
+                    }
+                    .nameComponent{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        font-size: 60px;
+                        color: rgb(255, 238, 0);
+                        font-family: 'psPLus','Courier New', Courier, monospace;
+                        margin-top: 10px;
+                        letter-spacing: 10px;
+                        margin-bottom: 20px;
+                        animation: neon .08s ease-in-out infinite alternate;
+                    }
+    
+                    @keyframes neon {
+                        from {
+                          text-shadow:
+                          0 0 6px rgba(202,228,225,0.92),
+                          0 0 30px rgba(202,228,225,0.34),
+                          0 0 12px rgba(30,132,242,0.52),
+                          0 0 21px rgba(30,132,242,0.92),
+                          0 0 34px rgba(30,132,242,0.78),
+                          0 0 54px rgba(30,132,242,0.92);
+                        }
+                        to {
+                          text-shadow:
+                          0 0 6px rgba(202,228,225,0.98),
+                          0 0 30px rgba(202,228,225,0.42),
+                          0 0 12px rgba(30,132,242,0.58),
+                          0 0 22px rgba(30,132,242,0.84),
+                          0 0 38px rgba(30,132,242,0.88),
+                          0 0 60px rgba(30,132,242,1);
+                        }
+                      }
+                  
+                }
+                .psPlusBlock{
+                    width: 135px;
+                    height: 450px;
+        
+                    .imagePlus{
+                        width: 100%;
+                        height: 450px;
+                        background-image: url('https://homer.dl.playstation.net/pr/bam-art/107/670/34222414-a538-4b7f-a6e8-42aa604d3634.jpg');
+                        display: block;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                    }
+                }
+            }
+           
+            
+            .freeLOGO{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                font-size: 60px;
+                margin-bottom: 25px;
+                color: rgb(255, 238, 0);
+                font-family: 'Montserrat','Courier New', Courier, monospace;
+                animation: neon .5s ease-in-out infinite alternate;
+            }
+    
+            @keyframes neon {
+                from {
+                  text-shadow:
+                  0 0 6px rgba(202,228,225,0.92),
+                  0 0 30px rgba(202,228,225,0.34),
+                  0 0 12px rgba(30,132,242,0.52),
+                  0 0 21px rgba(30,132,242,0.92),
+                  0 0 34px rgba(30,132,242,0.78),
+                  0 0 54px rgba(30,132,242,0.92);
+                }
+                to {
+                  text-shadow:
+                  0 0 6px rgba(202,228,225,0.98),
+                  0 0 30px rgba(202,228,225,0.42),
+                  0 0 12px rgba(30,132,242,0.58),
+                  0 0 22px rgba(30,132,242,0.84),
+                  0 0 38px rgba(30,132,242,0.88),
+                  0 0 60px rgba(30,132,242,1);
+                }
+              }
+            .gamesBlock{
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+                padding-left: 25px;
+    
+                .card{
+                    width: 270px;
+                    height: 420px;
+                    background-color: #0a0135;
+                    transition: all 500ms ease;
+                    margin-right: 30px;
+                    margin-bottom: 30px;
+    
+                    &:focus{
+                        box-shadow: 1px 1px 15px 3px rgb(217, 221, 0);
+                        border-radius: 3px;
+                        outline: none;
+    
+                        .priceGame{
+                            background-color: rgb(32, 102, 119);
+                        }
+                    }
+    
+                    .imageBlock{
+                        width: 100%;
+                        height: 300px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 15px;
+    
+                        .imageGame{
+                            width: 285px;
+                            height: 300px;
+                          margin-top: 10px;
+                          background-image: url('/assets/images/for-psPLusGAmes');
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: 95% 100%;
+                        }
+                        
+                    }
+                    .nameGame{
+                        width: 95%;
+                        max-height: 50px;
+                        color: white;
+                        font-size: 19px;
+                        margin: 5px auto;
+                        text-align: center;
+                        font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                        margin-top: 5px;
+                        min-height:40px;
+                    }
+                .priceGame{
+                    width: 95%;
+                        height:40px;
+                        margin: 6px auto;
+                        text-align: center;
+                        line-height: 40px;
+                        display: flex;
+                        background-color: rgb(23, 133, 177);
+                        border-radius: 2px;
+    
+                        .oldPrice{
+                            text-decoration: line-through;
+                            color: white;
+                            font-family: 'Montserrat-Oldprice','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            font-size: 13px;
+                            min-width: 50px;                        
+                            line-height: normal;
+                        }
+    
+                        .mainPrice{
+                            font-family: 'Roboto','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            font-size: 25px;
+                            color: rgb(245, 241, 0);
+                            min-width: 125px;
+                        }
+                }
+    
+                }
+            }
+        }
+    
+    }
 }

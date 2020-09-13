@@ -4,22 +4,22 @@
            <div class="blockSony">SONY</div>
         </div>
        
-        <div class="logo" [routerLink]="[ '/home' ]"><p id="mySony">Playstation Store</p> <i class="fab fa-playstation"></i></div>
+        <a class="logo" [routerLink]="[ '/home' ]"><p id="mySony">Playstation Store</p> <i class="fab fa-playstation"></i></a>
         <div class="right-box">
             <p id="myPlaystation">My playStation support</p>
-            <a href="https://www.playstation.com/ru-ru/get-help/" class="support">Підтримка</a>
-            <p id="tel"><i class="fas fa-mobile-alt"></i>Телефон гарячої лінії: 0 800 307 66 90</p>
+            <p id="tel"><i class="fas fa-mobile-alt"></i>Телефон гарячої лінії:</p>
+            <p id="tel">0 800 307 66 90</p>
         </div>
     </div>
 
     <div class="menu-header">
-        <div class="left-logo" [routerLink]="[ '/home' ]"> <img src="/assets/images/logo.png" alt=""class="logoIMG"></div>
+        <div class="left-logo" [routerLink]="[ '/home' ]"> <a class="logoIMG"></a></div>
 
         <div class="center-menu">
-            <div class="category games" [routerLink]="[ '/games' ]">Ігри <div class="iconGames"></div></div>
-            <div class="category psPlus" [routerLink]="[ '/ps-plus' ]">PS Plus<div class="iconPlus"></div></div>
-            <div class="category consoles" [routerLink]="[ '/game-consoles' ]">Консолі <div class="iconConsoles"></div></div>
-            <div class="category gadgets" [routerLink]="[ '/gadgets' ]">Гаджети <div class="iconGadgets"></div></div>
+            <a class="category games" [routerLink]="[ '/games' ]">Ігри<div class="iconGames"></div></a>
+            <a class="category psPlus" [routerLink]="[ '/ps-plus' ]">PS Plus<div class="iconPlus"></div></a>
+            <a class="category consoles" [routerLink]="[ '/game-consoles' ]">Консолі <div class="iconConsoles"></div></a>
+            <a class="category gadgets" [routerLink]="[ '/gadgets' ]">Гаджети <div class="iconGadgets"></div></a>
         </div>
 
         <div class="right-menu">
@@ -28,18 +28,37 @@
         </div>
 
         <div class="menu-basket">
-            <div class="basket" [routerLink]="[ '/basket' ]">
+            <a class="basket" [routerLink]="[ '/basket' ]">
                 <i class="fas fa-shopping-cart"></i>
-                <!-- <p id="total">1245</p> -->
-            </div>
+                <div id="total">1245</div>
+            </a>
         </div>
+
+
+<!-- burger -->
+
+<div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+
+    <ul class="menu__box">
+      <li><a class="menu__item" href="#" [routerLink]="[ '/home' ]">Головна</a></li>
+			<li><a class="menu__item" href="#" [routerLink]="[ '/games' ]">Ігри</a></li>
+			<li><a class="menu__item" href="#" [routerLink]="[ '/ps-plus' ]">PS Plus</a></li>
+			<li><a class="menu__item" href="#" [routerLink]="[ '/game-consoles' ]">Консолі</a></li>
+			<li><a class="menu__item" href="#" [routerLink]="[ '/gadgets' ]">Гаджети</a></li>
+    </ul>
+  </div>
+
+<!-- burger -->
+
     </div>
 
    
 
 
-<!-- burger -->
 
-<!-- burger -->
 
 </div>

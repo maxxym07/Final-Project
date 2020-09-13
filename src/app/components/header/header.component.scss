@@ -1,333 +1,1000 @@
-
-.container{
-    width: 100%;
-    height: 150px;
-    background-color: rgb(0, 20, 68);
-
-    .header-block{
+@media screen and (min-width: 970px) {
+    .container{
         width: 100%;
-        height: 100px;
-        display: flex;
-        justify-content: space-between;
-        top: 0;
-
-       .left-box{
-           width: 440px;
-           height: 100px;
-           display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-         
-          .blockSony{
-            width: 130px;
-            height: 50px;
-            background-color: #fff;
-            color: black;
-            font-size: 45px;
-            text-align: center;
-            line-height: 50px;
-            margin-top: 5px;
-          }
-       }
-
-       .logo{
-        width: 700px;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-            &:focus{
-            outline: none;
-            }
-
-        .fa-playstation{
-            color: white;
-            font-size:25px;
-            margin-top: 40px;
-           }
-
-           #mySony{
-        color: white;
-        font-family: "Poppins",'Courier New', Courier, monospace;
-        font-size: 76px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-         margin-left: 10px;
-         text-shadow:5px 3px rgb(12, 12, 12);
-         min-width: max-content;
-           }
-          
-    }
-
-    .right-box{
-        width: 440px;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        
-        #myPlaystation{
-            font-family: "Poppins", monospace;
-            color: gold;
-        }
-        .support{
-            color: white;
-            text-decoration: underline;
-            margin-top: 5px;
-            font-family: "Poppins", monospace;
-        }
-        #tel{
-            margin-top: 10px;
-            color: white;
-            font-family: "Roboto", monospace;
-
-            .fa-mobile-alt{
-                margin-right: 5px;
-            }
-        }
-    }
+        height: 150px;
+        background-color: rgb(0, 20, 68);
     
-    }
-
-    .active{
-        display: none;        
-    }
-
-
-//////////те що пропадає//////////
-
-//////////те що постійно//////////
-
-.menu-header{
-    width: 100%;
-    height: 50px;
-    display: flex;
-    background-color: rgb(1, 28, 92);
-    z-index: 999;
+        .header-block{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            top: 0;
     
-    .left-logo{
-        width: 300px;
-        display: flex;
-        justify-content: flex-start;
-        cursor: pointer;
-        margin-right: 40px;
-        &:focus{
-            outline: none;
-            }
-
-        .logoIMG{
-            margin-left: 35px;
-            width: 70%;
-            height: 50px;
-            }
-    }
-
-    .center-menu{
-        width: 60%;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-
-        .category{
-            width: 225px;
-            height: 50px;
-            font-size: 35px;
-            font-family: "Roboto",'Courier New', Courier, monospace;
-            color: white;
-            line-height: 50px;
+           .left-box{
+               width: 440px;
+               height: 100px;
+               display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+             
+              .blockSony{
+                width: 130px;
+                height: 50px;
+                background-color: #fff;
+                color: black;
+                font-size: 45px;
+                text-align: center;
+                line-height: 50px;
+                margin-top: 5px;
+              }
+           }
+    
+           .logo{
+            width: 700px;
+            height: 100px;
             display: flex;
             justify-content: center;
-            transition: all 750ms ease; 
-
-            &:hover{
-                cursor: pointer;
-                background-color: rgb(228, 228, 228);
-                color: rgb(1, 28, 92);
-                box-shadow: inset 0 0 0 3px #3a7999;
-                border-radius: 5px;
-                font-family: 'Roboto-Bold','Courier New', Courier, monospace;
-            }
-            &:focus{
-                outline: none;
-            }
-            
-            .iconGames{
-                width: 50px;
-                height: 50px;
-                background-image: url('/assets/images/logoGames');
-                background-size: 70% 70%;
-                background-position: center;
-                background-repeat: no-repeat;
-                display: none;
-                margin-right: -20px;
-            }
-
-            .iconPlus{
-                width: 50px;
-                height: 50px;
-                background-image: url('/assets/images/logoPsPlus');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                display: none;
-                margin-right: -10px;
-            }
-
-            .iconConsoles{
-                width: 50px;
-                height: 50px;
-                background-image: url('/assets/images/logoConsoles');
-                background-size: 70% 70%;
-                background-position: center;
-                background-repeat: no-repeat;
-                display: none;
-                margin-right: -10px;
-            }
-
-            .iconGadgets{
-                width: 50px;
-                height: 50px;
-                background-image: url('/assets/images/logoGadgets');
-                background-size: 70% 70%;
-                background-position: center;
-                background-repeat: no-repeat;
-                display: none;
-            }
-        }
-        .games:hover{
-            .iconGames{
-                display: block;
-            }
-        }
-
-        .consoles:hover{
-            .iconConsoles{
-                display: block;
-            }
-        }
-
-        .gadgets:hover{
-            .iconGadgets{
-                display: block;
-            }
-        }
-
-        .psPlus:hover{
-            background-color: rgb(255, 251, 0);
-            color: darkblue;
-            font-family: 'Roboto-Bold','Courier New', Courier, monospace;
-            .iconPlus{
-                display: block;
-            }
-
-            &:focus{
-                outline: none;
-            }
-        }
-    }
-
-   
-    .right-menu{
-        width: 200px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-       
-            .butLogin{
-                width: 150px;
-                height: 40px;
-                background-color: rgb(40, 135, 212);
-                border: none;
-                color: white;
-                font-family: 'Roboto','Courier New', Courier, monospace;
-                font-size: 20px;
-                transition: all 300ms ease; 
-                
-                &:focus{
-                    border-radius: 5px;
-                    outline: none;
-                    border: 3px solid rgb(150, 190, 223);
-                    box-shadow: 1px 0px 6px rgb(102, 173, 231) ;
-                }
-                &:hover{
-                    cursor: pointer;
-                    background-color: rgb(34, 102, 158);
-                    border-radius: 5px;
-                }
-            }
-
-            .userIcon{
-                width: 100px;
-                height: 50px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: white;
-                font-size: 40px;
-                cursor: pointer;
-
-                .fa-user-circle:hover{
-                    color: rgb(5, 174, 216);
-                }
-            }
-    }
-
-    .menu-basket{
-        width: 150px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .basket{
-            width: 100%;
-            height: 50px;
-            display: flex;
             align-items: center;
-            
-            &:focus{
+            text-decoration: none;
+            cursor: pointer;
+                &:focus{
                 outline: none;
-            }
-
-            .fa-shopping-cart{
-                width: 50px;
-                height: 50px;
+                }
+    
+            .fa-playstation{
                 color: white;
-                font-size: 31px;
-                transition: all 500ms ease;
-                margin-left: 15px;
-                line-height: 50px;
-                text-align: center;
-                cursor: pointer;
-
-                &:hover{
-                    color: rgb(12, 223, 238);
+                font-size:25px;
+                margin-top: 40px;
+               }
+    
+               #mySony{
+            color: white;
+            font-family: "Poppins",'Courier New', Courier, monospace;
+            font-size: 76px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+             margin-left: 10px;
+             text-shadow:5px 3px rgb(12, 12, 12);
+             min-width: max-content;
+               }
+              
+        }
+    
+        .right-box{
+            width: 440px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+            #myPlaystation{
+                font-family: "Poppins", monospace;
+                color: gold;
+            }
+            .support{
+                color: white;
+                text-decoration: underline;
+                margin-top: 5px;
+                font-family: "Poppins", monospace;
+            }
+            #tel{
+                margin-top: 10px;
+                color: white;
+                font-family: "Roboto", monospace;
+    
+                .fa-mobile-alt{
+                    margin-right: 5px;
                 }
             }
-            #total{
-                color: white;
-                font-size: 15px;
-                border-radius: 10px;
-                padding: 4px;
-                position: relative;
-                top: 10px;
-                right: 15px;
-                background-color: red;
-                max-width: 50px;
-            }
-               
-            }
-
-           
         }
         
+        }
+    
+        .active{
+            display: none;        
+        }
+    
+    
+    //////////те що пропадає//////////
+    
+    //////////те що постійно//////////
+    
+    .menu-header{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        background-color: rgb(1, 28, 92);
+        z-index: 999;
+        .hamburger-menu{
+            display: none;
+        }
+        .left-logo{
+            width: 300px;
+            display: flex;
+            justify-content: flex-start;
+            cursor: pointer;
+            margin-right: 40px;
+            &:focus{
+                outline: none;
+                }
+    
+            .logoIMG{
+                width: 100%;
+                height: 50px;
+                background-image: url('/assets/images/logo.png');
+                background-position: center;
+                background-size: 80% 100%;
+                background-repeat: no-repeat;
+                }
+        }
+    
+        .center-menu{
+            width: 60%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+    
+            .category{
+                width: 225px;
+                height: 50px;
+                font-size: 35px;
+                font-family: "Roboto",'Courier New', Courier, monospace;
+                color: white;
+                line-height: 50px;
+                display: flex;
+                justify-content: center;
+                transition: all 750ms ease; 
+                text-decoration: none;
+    
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgb(228, 228, 228);
+                    color: rgb(1, 28, 92);
+                    box-shadow: inset 0 0 0 3px #3a7999;
+                    border-radius: 5px;
+                    font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                }
+                &:focus{
+                    outline: none;
+                }
+                
+                .iconGames{
+                    width: 50px;
+                    height: 50px;
+                    background-image: url('/assets/images/logoGames');
+                    background-size: 70% 70%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    display: none;
+                    margin-right: -20px;
+                }
+    
+                .iconPlus{
+                    width: 50px;
+                    height: 50px;
+                    background-image: url('/assets/images/logoPsPlus');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    display: none;
+                    margin-right: -10px;
+                }
+    
+                .iconConsoles{
+                    width: 50px;
+                    height: 50px;
+                    background-image: url('/assets/images/logoConsoles');
+                    background-size: 70% 70%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    display: none;
+                    margin-right: -10px;
+                }
+    
+                .iconGadgets{
+                    width: 50px;
+                    height: 50px;
+                    background-image: url('/assets/images/logoGadgets');
+                    background-size: 70% 70%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    display: none;
+                }
+            }
+            .games:hover{
+                .iconGames{
+                    display: block;
+                }
+            }
+    
+            .consoles:hover{
+                .iconConsoles{
+                    display: block;
+                }
+            }
+    
+            .gadgets:hover{
+                .iconGadgets{
+                    display: block;
+                }
+            }
+    
+            .psPlus:hover{
+                background-color: rgb(255, 251, 0);
+                color: darkblue;
+                font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                .iconPlus{
+                    display: block;
+                }
+    
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    
+       
+        .right-menu{
+            width: 200px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+           
+                .butLogin{
+                    width: 150px;
+                    height: 40px;
+                    background-color: rgb(40, 135, 212);
+                    border: none;
+                    color: white;
+                    font-family: 'Roboto','Courier New', Courier, monospace;
+                    font-size: 20px;
+                    transition: all 300ms ease; 
+                    
+                    &:focus{
+                        border-radius: 5px;
+                        outline: none;
+                        border: 3px solid rgb(150, 190, 223);
+                        box-shadow: 1px 0px 6px rgb(102, 173, 231) ;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                        background-color: rgb(34, 102, 158);
+                        border-radius: 5px;
+                    }
+                }
+    
+                .userIcon{
+                    width: 100px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: 40px;
+                    cursor: pointer;
+    
+                    .fa-user-circle:hover{
+                        color: rgb(5, 174, 216);
+                    }
+                }
+        }
+    
+        .menu-basket{
+            width: 150px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+    
+            .basket{
+                width: 100%;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                
+                &:focus{
+                    outline: none;
+                }
+    
+                .fa-shopping-cart{
+                    width: 50px;
+                    height: 50px;
+                    color: white;
+                    font-size: 31px;
+                    transition: all 500ms ease;
+                    margin-left: 15px;
+                    line-height: 50px;
+                    text-align: center;
+                    cursor: pointer;
+    
+                    &:hover{
+                        color: rgb(12, 223, 238);
+                    }
+                }
+                #total{
+                    color: white;
+                    font-size: 15px;
+                    border-radius: 10px;
+                    padding: 4px;
+                    position: relative;
+                    top: 10px;
+                    right: 15px;
+                    background-color: red;
+                    max-width: 50px;
+                    font-family: 'Montserrat-nameGame','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                }
+                   
+                }
+    
+               
+            }
+            
+    
+        }
+    
+    
+    }
+    
+}
 
+@media screen and (max-width: 969px){
+    .container{
+        width: 100%;
+        height: 130px;
+        background-color: rgb(0, 20, 68);
+    
+        .header-block{
+            width: 100%;
+            height: 85px;
+            display: flex;
+            justify-content: space-between;
+            top: 0;
+    
+           .left-box{
+               width: 170px;
+               height: 85px;
+               display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+             
+              .blockSony{
+                width: 100px;
+                height: 50px;
+                background-color: #fff;
+                color: black;
+                font-size: 35px;
+                text-align: center;
+                line-height: 50px;
+                margin-top: 5px;
+              }
+           }
+    
+           .logo{
+            width: 700px;
+            height: 85px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+
+                &:focus{
+                outline: none;
+                }
+    
+            .fa-playstation{
+                color: white;
+                font-size:20px;
+                margin-top: 40px;
+               }
+    
+               #mySony{
+            color: white;
+            font-family: "Poppins",'Courier New', Courier, monospace;
+            font-size: 60px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+             text-shadow:5px 3px rgb(12, 12, 12);
+               }
+              
+        }
+    
+        .right-box{
+            width: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+            #myPlaystation{
+                font-family: "Poppins", monospace;
+                color: gold;
+                display: none;
+
+            }
+            .support{
+                color: white;
+                text-decoration: underline;
+                margin-top: 5px;
+                font-family: "Poppins", monospace;
+                display: none;
+            }
+            #tel{
+                margin-top: 10px;
+                color: white;
+                font-family: "Roboto", monospace;
+                display: none;
+
+                .fa-mobile-alt{
+                    margin-right: 5px;
+                    display: none;
+
+                }
+            }
+        }
+        
+        }
+    
+        .active{
+            display: none;        
+        }
+    
+    
+    //////////те що пропадає//////////
+    
+    //////////те що постійно//////////
+    
+    .menu-header{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        background-color: rgb(1, 28, 92);
+        z-index: 999;
+        
+        .hamburger-menu{
+            display: none;
+        }
+
+        .left-logo{
+            width: 300px;
+            display: flex;
+            justify-content: flex-start;
+
+            &:focus{
+                outline: none;
+                }
+    
+            .logoIMG{
+                width: 100%;
+                height: 50px;
+                background-image: url(/assets/images/logo.png);
+                background-position: center;
+                background-size: 90% 90%;
+                background-repeat: no-repeat;
+                }
+        }
+    
+        .center-menu{
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 10px;
+            margin-right: 10px;
+    
+            .category{
+                width: 140px;
+                height: 43px;
+                font-size: 26px;
+                font-family: "Roboto-Bold",'Courier New', Courier, monospace;
+                color: white;
+                line-height: 43px;
+                display: flex;
+                justify-content: center;
+                transition: all 750ms ease; 
+                text-decoration: none;
+                
+                &:focus{
+                    outline: none;
+                }
+            
+            }
+            .games:focus{
+                outline: none;
+                color: rgb(1, 9, 126);
+                background-color: white;
+                border: 2px solid rgb(31, 147, 241);
+                border-radius: 4px;
+            }
+            .psPlus:focus{
+                outline: none;
+                color: rgb(2, 10, 128);
+                background-color: rgb(228, 253, 1);
+                border-radius: 4px;
+            }
+            .consoles:focus{
+                outline: none;
+                color: rgb(1, 9, 126);
+                background-color: white;
+                border: 2px solid rgb(31, 147, 241);
+                border-radius: 4px;
+            }
+            .gadgets:focus{
+                outline: none;
+                color: rgb(1, 9, 126);
+                background-color: white;
+                border: 2px solid rgb(31, 147, 241);
+                border-radius: 4px;
+            }
+        }
+    
+       
+        .right-menu{
+            width: 110px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            margin-right: 5px;
+
+                .butLogin{
+                    width: 100px;
+                    height: 38px;
+                    background-color: rgb(40, 135, 212);
+                    border: none;
+                    color: white;
+                    font-family: 'Roboto','Courier New', Courier, monospace;
+                    font-size: 20px;
+                    transition: all 300ms ease; 
+                    
+                    &:focus{
+                        border-radius: 5px;
+                        outline: none;
+                        border: 3px solid rgb(150, 190, 223);
+                        box-shadow: 1px 0px 6px rgb(102, 173, 231) ;
+                    }
+                }
+    
+                .userIcon{
+                    width: 100px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: 35px;
+                    cursor: pointer;
+    
+                    .fa-user-circle:focus{
+                        color: rgb(5, 174, 216);
+                    }
+                }
+        }
+    
+        .menu-basket{
+            width: 100px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+    
+            .basket{
+                width:80px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                
+                &:focus{
+                    outline: none;
+                }
+    
+                .fa-shopping-cart{
+                    width: 50px;
+                    height: 50px;
+                    color: white;
+                    font-size: 30px;
+                    transition: all 500ms ease;
+                    line-height: 50px;
+                    text-align: center;
+                    cursor: pointer;
+                    margin-left: 5px;
+    
+                    &:focus{
+                        color: rgb(12, 223, 238);
+                    }
+                }
+                #total{
+                    color: white;
+                    font-size: 15px;
+                    border-radius: 10px;
+                    padding: 4px;
+                    position: relative;
+                    top: 10px;
+                    right: 15px;
+                    background-color: red;
+                    max-width: 50px;
+                    font-family: 'Montserrat-nameGame','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                }
+                   
+                }
+    
+               
+            }
+            
+    
+        }
+    
+    
     }
 
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@media screen and (max-width: 767px){
+    .container{
+        width: 100%;
+        height: 50px;
+        background-color: rgb(0, 20, 68);
+    
+        .header-block{
+            width: 100%;
+            height: 85px;
+            display: flex;
+            justify-content: space-between;
+            top: 0;
+            display: none;
+    
+           .left-box{
+               width: 170px;
+               height: 85px;
+               display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+             
+              .blockSony{
+                width: 100px;
+                height: 50px;
+                background-color: #fff;
+                color: black;
+                font-size: 35px;
+                text-align: center;
+                line-height: 50px;
+                margin-top: 5px;
+              }
+           }
+    
+           .logo{
+            width: 700px;
+            height: 85px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
+                &:focus{
+                outline: none;
+                }
+    
+            .fa-playstation{
+                color: white;
+                font-size:20px;
+                margin-top: 40px;
+               }
+    
+               #mySony{
+            color: white;
+            font-family: "Poppins",'Courier New', Courier, monospace;
+            font-size: 60px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+             text-shadow:5px 3px rgb(12, 12, 12);
+               }
+              
+        }
+    
+        .right-box{
+            width: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+            #myPlaystation{
+                font-family: "Poppins", monospace;
+                color: gold;
+                display: none;
+
+            }
+            .support{
+                color: white;
+                text-decoration: underline;
+                margin-top: 5px;
+                font-family: "Poppins", monospace;
+                display: none;
+            }
+            #tel{
+                margin-top: 10px;
+                color: white;
+                font-family: "Roboto", monospace;
+                display: none;
+
+                .fa-mobile-alt{
+                    margin-right: 5px;
+                    display: none;
+
+                }
+            }
+        }
+        
+        }
+    
+        .active{
+            display: none;        
+        }
+    
+    
+    //////////те що пропадає//////////
+    
+    //////////те що постійно//////////
+    
+    .menu-header{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        background-color: rgb(1, 28, 92);
+        z-index: 999;
+        
+        .left-logo{
+            width: 300px;
+            display: flex;
+            justify-content: flex-start;
+            display: none;
+
+            &:focus{
+                outline: none;
+                }
+    
+            .logoIMG{
+                width: 100%;
+                height: 50px;
+                background-image: url(/assets/images/logo.png);
+                background-position: center;
+                background-size: 90% 90%;
+                background-repeat: no-repeat;
+                }
+        }
+    
+        .center-menu{
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 10px;
+            margin-right: 10px;
+            display: none;
+    
+            .category{
+                width: 140px;
+                height: 43px;
+                font-size: 26px;
+                font-family: "Roboto-Bold",'Courier New', Courier, monospace;
+                color: white;
+                line-height: 43px;
+                display: flex;
+                justify-content: center;
+                transition: all 750ms ease; 
+                
+                &:focus{
+                    outline: none;
+                }
+            
+            }
+        }
+    
+       
+        .right-menu{
+            width: 110px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            margin-right: 5px;
+            display: none;
+
+                .butLogin{
+                    width: 100px;
+                    height: 38px;
+                    background-color: rgb(40, 135, 212);
+                    border: none;
+                    color: white;
+                    font-family: 'Roboto','Courier New', Courier, monospace;
+                    font-size: 20px;
+                    transition: all 300ms ease; 
+                    
+                    &:focus{
+                        border-radius: 5px;
+                        outline: none;
+                        border: 3px solid rgb(150, 190, 223);
+                        box-shadow: 1px 0px 6px rgb(102, 173, 231) ;
+                    }
+                }
+    
+                .userIcon{
+                    width: 100px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: 35px;
+                    cursor: pointer;
+    
+                    .fa-user-circle:focus{
+                        color: rgb(5, 174, 216);
+                    }
+                }
+        }
+    
+        .menu-basket{
+            width: 100px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            display: none;
+
+            .basket{
+                width:80px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                
+                &:focus{
+                    outline: none;
+                }
+    
+                .fa-shopping-cart{
+                    width: 50px;
+                    height: 50px;
+                    color: white;
+                    font-size: 30px;
+                    transition: all 500ms ease;
+                    line-height: 50px;
+                    text-align: center;
+                    cursor: pointer;
+                    margin-left: 5px;
+    
+                    &:focus{
+                        color: rgb(12, 223, 238);
+                    }
+                }
+                #total{
+                    color: white;
+                    font-size: 15px;
+                    border-radius: 10px;
+                    padding: 4px;
+                    position: relative;
+                    top: 10px;
+                    right: 15px;
+                    background-color: red;
+                    max-width: 50px;
+                    font-family: 'Montserrat-nameGame','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                }
+                   
+                }
+    
+               
+            }
+            
+            .hamburger-menu{
+                display: block;
+            }
+
+            
+
+            #menu__toggle {
+                opacity: 0;
+              }
+              
+              #menu__toggle:checked ~ .menu__btn > span {
+                transform: rotate(45deg);
+              }
+              #menu__toggle:checked ~ .menu__btn > span::before {
+                top: 0;
+                transform: rotate(0);
+              }
+              #menu__toggle:checked ~ .menu__btn > span::after {
+                top: 0;
+                transform: rotate(90deg);
+              }
+              #menu__toggle:checked ~ .menu__box {
+                visibility: visible;
+                left: 0;
+              }
+              
+              .menu__btn {
+                display: flex;
+                align-items: center;
+                position: relative;
+                left: 20px;
+                top: -7px;
+
+                width: 26px;
+                height: 30px;
+              
+                z-index: 999;
+              }
+              
+              .menu__btn > span,
+              .menu__btn > span::before,
+              .menu__btn > span::after {
+                display: block;
+                position: absolute;
+              
+                width: 100%;
+                height: 2px;
+              
+                background-color: #616161;
+              
+                transition-duration: .25s;
+              }
+              .menu__btn > span::before {
+                content: '';
+                top: -8px;
+              }
+              .menu__btn > span::after {
+                content: '';
+                top: 8px;
+              }
+              
+              .menu__box {
+                display: block;
+                position: fixed;
+                visibility: hidden;
+                top: 0;
+                left: -100%;
+              
+                width: 300px;
+                height: 100%;
+              
+                margin: 0;
+                padding: 80px 0;
+              
+                list-style: none;
+              
+                background-color: #ECEFF1;
+                box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+              
+                transition-duration: .25s;
+              }
+              
+              .menu__item {
+                display: block;
+                padding: 12px 24px;
+              
+                color: #333;
+              
+                font-family: 'Roboto', sans-serif;
+                font-size: 20px;
+                font-weight: 600;
+              
+                text-decoration: none;
+              
+                transition-duration: .25s;
+              }
+              .menu__item:hover {
+                background-color: #CFD8DC;
+              }
+    
+        }
+    
+
+    
+    }
 }

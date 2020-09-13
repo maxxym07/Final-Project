@@ -1,213 +1,433 @@
-.home{
-    width: 100%;
-    min-height: 600px;
-
-    .breadcrumb {
-        background-color: transparent;
-        padding-left: 10px;
-        height: 27px;
-        display: flex;
-        align-items: center;
-        margin-top: 5px;
-        font-size: 18px;
-        color: white;
-        font-family: "Montserrat", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-
-
-        #mainF{
-            text-decoration: none;
-            cursor: pointer;
-            color: lightseagreen;
-            
-           
-            &:focus{
-            outline: none;
-            }
-            &:hover{
-                color: white;
-            }
-        }
-        
-        #slash{
-            margin-right: 5px;
-            margin-left: 5px;
-        }
-      }
-      
-
-    .container{
-        width: 70%;
+@media screen and (min-width: 970px) {
+    .home{
+        width: 100%;
         min-height: 600px;
-        margin:10px auto;
-        display: flex;
-        background-color: rgb(6, 1, 27);
-
-        .game{
-            width: 300px;
+    
+        .breadcrumb {
+            background-color: transparent;
+            padding-left: 10px;
+            height: 27px;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            margin-top: 5px;
+            font-size: 18px;
             color: white;
-            background-color: rgb(44, 44, 44);
-
-            .imageBlock{
-                width: 100%;
-                height: 300px;
+            font-family: "Montserrat", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    
+    
+            #mainF{
+                text-decoration: none;
+                cursor: pointer;
+                color: lightseagreen;
+                
+               
+                &:focus{
+                outline: none;
+                }
+                &:hover{
+                    color: white;
+                }
+            }
+            
+            #slash{
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+          }
+          
+    
+        .container{
+            width: 70%;
+            min-height: 600px;
+            margin:10px auto;
+            display: flex;
+            background-color: rgb(6, 1, 27);
+    
+            .game{
+                width: 300px;
                 display: flex;
-                justify-content: center;
-
-                .imageGame{
+                flex-direction: column;
+                color: white;
+                background-color: rgb(44, 44, 44);
+    
+                .imageBlock{
                     width: 100%;
                     height: 300px;
+                    display: flex;
+                    justify-content: center;
+    
+                    .imageGame{
+                        width: 100%;
+                        height: 300px;
+                    }
+                }
+    
+                .priceGame{
+                    width: 95%;
+                    height: 90px;
+                    margin: 0px auto;
+                    text-align: center;
+                    line-height: 40px;
+                    display: flex;
+                    border-radius: 2px;
+                    flex-direction: column;
+    
+                        .oldPrice{
+                            text-decoration: line-through;
+                            color: white;
+                            font-family: "Montserrat-Oldprice", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            font-size: 16px;
+                            width: 100%;
+                        }
+    
+                        .mainPrice{
+                            font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            font-size: 50px;
+                            color: white;
+                            width: 100%;
+                            text-align: center;
+                        }
+                        
+                }
+                .buyGame{
+                    width: 100%;
+                    height: 50px;
+                    margin-top: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    .buttonBuy{
+                        width: 97%;
+                        height: 50px;
+                        cursor: pointer;
+                        font-size: 30px;
+                        font-family: "Roboto-Bold", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        border-radius: 3px;
+                        border: none;
+                        color: rgb(53, 53, 53);
+                        transition: all 500ms ease; 
+    
+                        &:hover{
+                            background-color: rgb(7, 36, 129);
+                            color: white;
+                            border-radius: 6px;
+                            font-size: 32px;
+                        }
+    
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+    
+    
                 }
             }
-
-            .priceGame{
-                width: 95%;
-                height: 90px;
-                margin: 0px auto;
-                text-align: center;
-                line-height: 40px;
-                display: flex;
-                border-radius: 2px;
-                flex-direction: column;
-
-                    .oldPrice{
-                        text-decoration: line-through;
-                        color: white;
-                        font-family: "Montserrat-Oldprice", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                        font-size: 16px;
-                        width: 100%;
+    
+            .About-game{
+                width: 88%;
+                min-height: 500px;
+                margin-left: 10px;
+                padding-left: 20px;
+    
+                .nameGame{
+                    width: 100%;
+                    height: 54px;
+                    display: flex;
+                    justify-content: center;
+                    color: white;
+                    font-size: 45px;
+                    max-height: 100px;
+                    font-family:'Montserrat-nameGame', 'Courier New', Courier, monospace;
+                    border-bottom: 3px solid rgb(165, 165, 165);
+                    border-radius:0px 0px 0px 5px;
+                    margin-bottom: 5px;
+                }
+          
+                .w3-content{
+                    width: 75%;
+                    height: 520px;
+                    margin-left: 120px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+    
+                    .big-slides{
+                        width: 85%;
+                        height: 400px;
+                        margin: auto;
+    
+                        .mySlides{
+                            width: 500px;
+                            height: 400px;
+                            cursor:pointer;
+                        }
                     }
-
-                    .mainPrice{
-                        font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                        font-size: 50px;
-                        color: white;
-                        width: 100%;
-                        text-align: center;
+                    .little-slides{
+                        width: 97%;
+                        display: flex;
+                        height: 101px;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-top: 10px;
+    
+                        .imageCarousel{
+                            width: 140px;
+                            height: 90px;
+                            cursor: pointer;
+                        }
                     }
                     
-            }
-            .buyGame{
-                width: 100%;
-                height: 50px;
-                margin-top: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .buttonBuy{
-                    width: 97%;
-                    height: 50px;
-                    cursor: pointer;
-                    font-size: 30px;
-                    font-family: "Roboto-Bold", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    border-radius: 3px;
-                    border: none;
-                    color: rgb(53, 53, 53);
-                    transition: all 500ms ease; 
-
-                    &:hover{
-                        background-color: rgb(7, 36, 129);
-                        color: white;
-                        border-radius: 6px;
-                        font-size: 32px;
-                    }
-
-                    &:focus{
-                        outline: none;
-                    }
                 }
-
-
-            }
-        }
-
-        .About-game{
-            width: 88%;
-            min-height: 500px;
-            margin-left: 10px;
-            padding-left: 20px;
-
-            .nameGame{
-                width: 100%;
-                height: 54px;
-                display: flex;
-                justify-content: center;
-                color: white;
-                font-size: 45px;
-                max-height: 100px;
-                font-family:'Montserrat-nameGame', 'Courier New', Courier, monospace;
-                border-bottom: 3px solid rgb(165, 165, 165);
-                border-radius:0px 0px 0px 5px;
-                margin-bottom: 5px;
-            }
-      
-            .w3-content{
-                width: 75%;
-                height: 520px;
-                margin-left: 120px;
-                margin-top: 10px;
-                margin-bottom: 20px;
-
-                .big-slides{
-                    width: 85%;
-                    height: 400px;
-                    margin: auto;
-
-                    .mySlides{
-                        width: 500px;
-                        height: 400px;
-                        cursor:pointer;
-                    }
+                #hr1{
+                    width: 95%;
                 }
-                .little-slides{
-                    width: 97%;
+    
+                .forH1{
+                    width: 100%;
+                    height: 54px;
                     display: flex;
-                    height: 101px;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-top: 10px;
-
-                    .imageCarousel{
-                        width: 140px;
-                        height: 90px;
-                        cursor: pointer;
-                    }
-                }
-                
-            }
-            #hr1{
-                width: 95%;
-            }
-
-            .forH1{
-                width: 100%;
-                height: 54px;
-                display: flex;
-                justify-content: center;
-                color: white;
-                font-size: 45px;
-                max-height: 100px;
-                font-family:'Montserrat-nameGame', 'Courier New', Courier, monospace;
-
-            }
-            .box-text-about{
-                width: 95%;
-                min-height: 250px;
-                margin-top: 30px;
-                padding-left: 80px;
-
-                .text-about{
+                    justify-content: center;
                     color: white;
-                    font-family: "Montserrat", "Courier New", Courier, monospace;
-                    line-height: 25px;
-                    width: 79%;
-                    min-height: 1px;
+                    font-size: 45px;
+                    max-height: 100px;
+                    font-family:'Montserrat-nameGame', 'Courier New', Courier, monospace;
+    
                 }
-
+                .box-text-about{
+                    width: 95%;
+                    min-height: 250px;
+                    margin-top: 30px;
+                    padding-left: 80px;
+    
+                    .text-about{
+                        color: white;
+                        font-family: "Montserrat", "Courier New", Courier, monospace;
+                        line-height: 25px;
+                        width: 79%;
+                        min-height: 1px;
+                    }
+    
+                }
             }
         }
+    
     }
+}
+//////////////////////////////////////////////////////////////////////////////////////
 
+@media screen and (max-width: 969px){
+    .home{
+        width: 100%;
+        min-height: 600px;
+    
+        .breadcrumb {
+            background-color: transparent;
+            padding-left: 10px;
+            height: 27px;
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            font-size: 18px;
+            color: white;
+            font-family: "Montserrat", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    
+    
+            #mainF{
+                text-decoration: none;
+                cursor: pointer;
+                color: lightseagreen;
+                
+               
+                &:focus{
+                outline: none;
+                }
+                &:hover{
+                    color: white;
+                }
+            }
+            
+            #slash{
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+          }
+          
+    
+        .container{
+            width: 95%;
+            min-height: 600px;
+            margin:10px auto;
+            display: flex;
+            background-color: rgb(6, 1, 27);
+    
+            .game{
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                color: white;
+                background-color: rgb(44, 44, 44);
+    
+                .imageBlock{
+                    width: 100%;
+                    height: 300px;
+                    display: flex;
+                    justify-content: center;
+    
+                    .imageGame{
+                        width: 100%;
+                        height: 300px;
+                    }
+                }
+    
+                .priceGame{
+                    width: 95%;
+                    height: 90px;
+                    margin: 0px auto;
+                    text-align: center;
+                    line-height: 40px;
+                    display: flex;
+                    border-radius: 2px;
+                    flex-direction: column;
+    
+                        .oldPrice{
+                            text-decoration: line-through;
+                            color: white;
+                            font-family: "Montserrat-Oldprice", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            font-size: 16px;
+                            width: 100%;
+                        }
+    
+                        .mainPrice{
+                            font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            font-size: 50px;
+                            color: white;
+                            width: 100%;
+                            text-align: center;
+                        }
+                        
+                }
+                .buyGame{
+                    width: 100%;
+                    height: 50px;
+                    margin-top: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    .buttonBuy{
+                        width: 97%;
+                        height: 50px;
+                        cursor: pointer;
+                        font-size: 30px;
+                        font-family: "Roboto-Bold", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        border-radius: 3px;
+                        border: none;
+                        color: rgb(53, 53, 53);
+                        transition: all 500ms ease; 
+    
+                        &:hover{
+                            background-color: rgb(7, 36, 129);
+                            color: white;
+                            border-radius: 6px;
+                            font-size: 32px;
+                        }
+    
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+    
+    
+                }
+            }
+    
+            .About-game{
+                width: 88%;
+                min-height: 500px;
+                margin-left: 10px;
+                padding-left: 20px;
+    
+                .nameGame{
+                    width: 100%;
+                    height: 54px;
+                    display: flex;
+                    justify-content: center;
+                    color: white;
+                    font-size: 45px;
+                    max-height: 100px;
+                    font-family:'Montserrat-nameGame', 'Courier New', Courier, monospace;
+                    border-bottom: 3px solid rgb(165, 165, 165);
+                    border-radius:0px 0px 0px 5px;
+                    margin-bottom: 5px;
+                }
+          
+                .w3-content{
+                    width: 95%;
+                    height: 520px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+    
+                    .big-slides{
+                        width: 100%;
+                        height: 400px;
+                        margin: auto;
+                        display: flex;
+                        justify-content: center;
+    
+                        .mySlides{
+                            width: 500px;
+                            height: 400px;
+                            cursor:pointer;
+                        }
+                    }
+                    .little-slides{
+                        width: 100%;
+                        display: flex;
+                        height: 101px;
+                        justify-content: space-around;
+                        align-items: center;
+                        margin-top: 10px;
+    
+                        .imageCarousel{
+                            width: 22%;
+                            height: 90px;
+                            cursor: pointer;
+                        }
+                    }
+                    
+                }
+                #hr1{
+                    width: 95%;
+                }
+    
+                .forH1{
+                    width: 100%;
+                    height: 54px;
+                    display: flex;
+                    justify-content: center;
+                    color: white;
+                    font-size: 45px;
+                    max-height: 100px;
+                    font-family:'Montserrat-nameGame', 'Courier New', Courier, monospace;
+    
+                }
+                .box-text-about{
+                    width: 95%;
+                    min-height: 250px;
+                    margin-top: 30px;
+                    padding-left: 50px;
+    
+                    .text-about{
+                        color: white;
+                        font-family: "Montserrat", "Courier New", Courier, monospace;
+                        line-height: 25px;
+                        width: 100%;
+                        min-height: 1px;
+                    }
+    
+                }
+            }
+        }
+    
+    }
 }
