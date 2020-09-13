@@ -252,6 +252,10 @@
                         align-items: center;
                         font-size: 25px;
                         font-family: 'Montserrat','Courier New', Courier, monospace;
+
+                        &:hover{
+                            border:  2px solid rgb(0, 89, 255);
+                        }
                     }
                     .order-number{
                         width: 10%;
