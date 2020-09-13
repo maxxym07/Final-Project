@@ -424,3 +424,218 @@
     }
     }
 }
+
+@media screen and (max-width: 767px){
+    .container{
+        background-color: black;
+        width: 100%;
+        min-height: 400px;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+    
+    
+        .social-networks{
+            width:100%;
+            height: 150px;
+            margin-bottom: 30px;
+            
+    
+            #be-with-us{
+                color: white;
+                width: 100%;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                font-family: "Roboto-Bold", "Courier New", Courier, monospace;
+                font-size: 20px;
+            }
+    
+            ul{
+                margin: 0;
+                padding: 0;
+                display: flex;
+                position: relative;
+                top: 20%;
+                left: 41%;
+                transform: translate(-30%, -30%);
+                width: 220px;
+            }
+            
+            ul li{
+                list-style: none;
+                margin: 0 10px;
+            }
+            ul li a{
+                position: relative;
+                display: block;
+                width: 35px;
+                height: 35px;
+                text-align: center;
+                line-height: 55px;
+                background: black;
+                border-radius: 50%;
+                font-size: 25px;
+                color: #666;
+                transition: 0.5s;
+            }
+            
+            .fa-facebook{
+                position: absolute;
+                top: 5px;
+                left: 5px;
+            }
+            .fa-youtube{
+                position: absolute;
+                top: 5px;
+                left: 3px;
+            }
+            .fa-instagram{
+                position: absolute;
+                top: 5px;
+                left: 7px;
+            }
+            .fa-playstation{
+                position: absolute;
+                top: 5px;
+                left: 3px;
+            }
+            
+            ul li a::before{
+                content: '';
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background:#003dc2;
+                transition: 0.5s;
+                transform: scale(0.9);
+                z-index: -1;
+            }
+            
+            ul li a:focus:before{
+                transform: scale(1.1);
+                box-shadow: 0 0 15px #003dc2;
+            }
+            
+            ul li a:focus{
+                color: #003dc2;
+                box-shadow: 0 0 15px #003dc2;
+            }
+        }
+    
+        .categories{
+            width: 95%;
+            height: 60px;
+            display: flex;
+            margin-bottom: 20px;
+    
+            .left-part{
+                height: 60px;
+                 padding: 5px;
+                 display: flex;
+                 width: 50%;
+            }
+            .right-part{
+                width: 50%;
+                height: 60px;
+                padding-left: 20px;
+                display: flex;
+                justify-content: flex-end;
+            }
+            .categor{
+                color: white;
+                font-size: 20px;
+                margin-left: 15px;
+                font-family: 'Montserrat',monospace;
+                width: 60%;
+    
+                &:focus{
+                    outline: none;
+                    color: rgb(0, 126, 243);
+                }
+        }
+        .categor.active{
+            color: rgb(0, 126, 243);
+        }
+        .psPlus:focus{
+            cursor: pointer;
+            color: gold;
+        }
+        .categor.activePlus{
+            color: gold;
+        }
+    }
+    
+    .logo{
+        width: 100%;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    
+        #footIMG{
+            width: 70px;
+            height: 55px;
+        }
+    }
+    
+    .contacts{
+        width: 100%;
+        height: 150px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    
+        .support{
+            color: white;
+            text-decoration: underline;
+            margin-top: 5px;
+            font-family: "Poppins", monospace;
+        }
+        #tel{
+            margin-top: 10px;
+            color: white;
+            font-family: "Roboto", monospace;
+            font-size: smaller;
+            font-size: 15px;
+    
+            .fa-mobile-alt{
+                margin-right: 5px;
+            }
+        }
+    }
+    
+    .goHome{
+        width: 100%;
+        height: 150px;
+
+    
+        .footHome{
+            color: white;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-left: 10px;
+            font-family: 'Montserrat',monospace;
+            width: 60%;
+            text-align: center;
+                    &:focus{
+                        outline: none;
+                        color: rgb(0, 126, 243);
+                    }
+                }
+                .footHome.active{
+                    color: rgb(0, 126, 243);
+                }
+    }
+    }
+}

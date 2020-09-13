@@ -27,6 +27,8 @@
         <!-- <div class="userIcon"><i class="fas fa-user-circle"></i></div> -->
         </div>
 
+       
+
         <div class="menu-basket">
             <a class="basket" [routerLink]="[ '/basket' ]">
                 <i class="fas fa-shopping-cart"></i>
@@ -36,6 +38,7 @@
 
 
 <!-- burger -->
+<p id="mySonyBurger">Playstation Store</p>
 
 <div class="hamburger-menu">
     <input id="menu__toggle" type="checkbox" />
@@ -46,15 +49,22 @@
     <ul class="menu__box">
       <li><a class="menu__item" href="#" [routerLink]="[ '/home' ]">Головна</a></li>
 			<li><a class="menu__item" href="#" [routerLink]="[ '/games' ]">Ігри</a></li>
-			<li><a class="menu__item" href="#" [routerLink]="[ '/ps-plus' ]">PS Plus</a></li>
+			<li><a class="menu__item psPlus" href="#" [routerLink]="[ '/ps-plus' ]">PS Plus</a></li>
 			<li><a class="menu__item" href="#" [routerLink]="[ '/game-consoles' ]">Консолі</a></li>
-			<li><a class="menu__item" href="#" [routerLink]="[ '/gadgets' ]">Гаджети</a></li>
+            <li><a class="menu__item" href="#" [routerLink]="[ '/gadgets' ]">Гаджети</a></li>
+            
+            <div class="menu__box-bottom">
+                    <div><a class="menu__item" href="#" [routerLink]="[ '/login' ]">Увійти</a></div>
+                    <div><a class="menu__item" href="#" [routerLink]="[ '/profile' ]">Профіль</a></div>
+            </div>
     </ul>
+
+    
   </div>
 
 <!-- burger -->
 
-    </div>
+</div>
 
    
 

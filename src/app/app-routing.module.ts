@@ -11,6 +11,8 @@ import { GamesDetailsComponent } from './pages/games-details/games-details.compo
 import { DeviceDetailsComponent } from './pages/device-details/device-details.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { ProfileComponent } from './profile/profile.component';
+
 
 
 const routes: Routes = [
@@ -24,6 +26,7 @@ const routes: Routes = [
   {path:'games-details',component:GamesDetailsComponent},
   {path:'device-details',component:DeviceDetailsComponent},
   {path:'login',component:LoginComponent},
+  {path:'profile',component:ProfileComponent},
 ];
 
 @NgModule({

@@ -8,7 +8,6 @@ import { fromEvent } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
 
-  prevScrollpos = window.pageYOffset;
   navbar:boolean;
 
   constructor() { }

@@ -829,3 +829,416 @@
 }
 }
 
+@media screen and (max-width: 767px){
+  .home{
+    width: 100%;
+    min-height: 478px;
+    
+
+    .container{
+        width: 98%;
+        min-height: 460px;
+        margin:10px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .login, .registerBlock{
+            width: 80%;
+
+            .forLoginName, .forRegistrationName{
+                width: 100%;
+                height: 60px;
+                color: white;
+                font-size: 45px;
+                font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .without{
+                font-size: 17px;
+                color: white;
+                cursor: pointer;
+                font-family: 'Montserrat-nameGame','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+
+            .butLogin{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 15px;
+
+                .buttonLog{
+                    width: 100%;
+                    height: 40px;
+                    background-color: rgb(40, 135, 212);
+                    border: none;
+                    color: white;
+                    font-family: 'Roboto','Courier New', Courier, monospace;
+                    font-size: 20px;
+                    transition: all 300ms ease; 
+                    
+                    &:focus{
+                        border-radius: 5px;
+                        outline: none;
+                        border: 3px solid rgb(150, 190, 223);
+                        box-shadow: 1px 0px 6px rgb(102, 173, 231) ;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                        background-color: rgb(34, 102, 158);
+                        border-radius: 5px;
+                    }
+                }
+            }
+            
+/////////////////////inputs////////////////////////////////
+            label {
+                position: relative;
+                display: block;
+                /*Light inputs*/
+              }
+              
+              label:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1px;
+                height: 0;
+                background: #0e0e0e;
+                z-index: 2;
+                content: '';
+                -webkit-transition: height 300ms linear;
+                -o-transition: height 300ms linear;
+                transition: height 300ms linear;
+              }
+              
+              label:after {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 1px;
+                height: 0;
+                background: #0e0e0e;
+                -webkit-transition: height 300ms linear;
+                -o-transition: height 300ms linear;
+                transition: height 300ms linear;
+                z-index: 2;
+                content: '';
+              }
+              
+              label .firstBorderElement:before {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 0;
+                height: 1px;
+                background: #0e0e0e;
+                -webkit-transition: width 375ms linear;
+                -o-transition: width 375ms linear;
+                transition: width 375ms linear;
+                z-index: 2;
+                content: '';
+              }
+              
+              label .firstBorderElement:after {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 0;
+                height: 1px;
+                background: #0e0e0e;
+                -webkit-transition: width 375ms linear;
+                -o-transition: width 375ms linear;
+                transition: width 375ms linear;
+                z-index: 2;
+                content: '';
+              }
+              
+              label .secondBorderElement:before {
+                position: absolute;
+                top: 0;
+                right: 50%;
+                width: 0;
+                height: 1px;
+                background: #0e0e0e;
+                -webkit-transition: width 375ms linear;
+                -o-transition: width 375ms linear;
+                transition: width 375ms linear;
+                z-index: 2;
+                content: '';
+              }
+              
+              label .secondBorderElement:after {
+                position: absolute;
+                bottom: 0;
+                right: 50%;
+                width: 0;
+                height: 1px;
+                background: #0e0e0e;
+                -webkit-transition: width 375ms linear;
+                -o-transition: width 375ms linear;
+                transition: width 375ms linear;
+                z-index: 2;
+                content: '';
+              }
+              
+              label.active:before, label.active:after {
+                height: 100%;
+              }
+              
+              label.active .firstBorderElement:before, label.active .firstBorderElement:after,
+              label.active .secondBorderElement:before,
+              label.active .secondBorderElement:after {
+                width: 50%;
+              }
+              
+              label.light .simpleInput {
+                border-color: rgba(255, 255, 255, 0.5);
+                color: #fff;
+              }
+              
+              label.light:before, label.light:after {
+                background: #fff;
+              }
+              
+              label.light .firstBorderElement:before, label.light .firstBorderElement:after,
+              label.light .secondBorderElement:before,
+              label.light .secondBorderElement:after {
+                background: #fff;
+              }
+              
+              
+              input::-webkit-input-placeholder,
+              textarea::-webkit-input-placeholder {
+                color: rgba(0, 0, 0, 0.6);
+                opacity: 1;
+              }
+              
+              input:-moz-placeholder,
+              textarea:-moz-placeholder {
+                color: rgba(0, 0, 0, 0.6);
+                opacity: 1;
+              }
+              
+              input::-moz-placeholder,
+              textarea::-moz-placeholder {
+                color: rgba(0, 0, 0, 0.6);
+                opacity: 1;
+              }
+              
+              input:-ms-input-placeholder,
+              textarea:-ms-input-placeholder {
+                color: rgba(0, 0, 0, 0.6);
+                opacity: 1;
+              }
+              
+              input::-webkit-input-placeholder,
+              textarea::-webkit-input-placeholder {
+                color: #0e0e0e;
+                opacity: 1;
+              }
+              
+              input:-moz-placeholder,
+              textarea:-moz-placeholder {
+                color: #0e0e0e;
+                opacity: 1;
+              }
+              
+              input::-moz-placeholder,
+              textarea::-moz-placeholder {
+                color: #0e0e0e;
+                opacity: 1;
+              }
+              
+              input:-ms-input-placeholder,
+              textarea:-ms-input-placeholder {
+                color: #0e0e0e;
+                opacity: 1;
+              }
+              
+              label.light input::-webkit-input-placeholder,
+              label.light textarea::-webkit-input-placeholder {
+                color: rgba(255, 255, 255, 0.8);
+                opacity: 1;
+              }
+              
+              label.light input:-moz-placeholder,
+              label.light textarea:-moz-placeholder {
+                color: rgba(255, 255, 255, 0.8);
+                opacity: 1;
+              }
+              
+              label.light input::-moz-placeholder,
+              label.light textarea::-moz-placeholder {
+                color: rgba(255, 255, 255, 0.8);
+                opacity: 1;
+              }
+              
+              label.light input:-ms-input-placeholder,
+              label.light textarea:-ms-input-placeholder {
+                color: rgba(255, 255, 255, 0.8);
+                opacity: 1;
+              }
+              
+              /* inputs */
+              
+              
+              .inputElementWrapper {
+                width: 100%;
+                position: relative;
+                margin-bottom: 10px;
+                margin-top: 28px;
+              }
+              
+              .inputElementItem, .textareaElementItem {
+                border: 1px solid #ccc;
+                padding: 9px 14px;
+                transition: 0.4s;
+                background: transparent;
+                font: 15px/24px "Lato", Arial, sans-serif;
+                color: rgb(255, 255, 255);
+                width: 100%;
+                box-sizing: border-box;
+                letter-spacing: 1px;
+              }
+              
+              .inputElementItem ~ .focus-border:before,
+              .inputElementItem ~ .focus-border:after,
+              .textareaElementItem ~ .focus-border:before,
+              .textareaElementItem ~ .focus-border:after {
+                content: "";
+                position: absolute;
+                top: -1px;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                background-color: #00a2ff;
+                transition: 0.4s;
+              }
+              
+              .inputElementItem ~ .focus-border:after,
+              .textareaElementItem ~ .focus-border:after {
+                top: auto;
+                bottom: 0;
+              }
+              
+              .inputElementItem ~ .focus-border i:before,
+              .inputElementItem ~ .focus-border i:after,
+              .textareaElementItem ~ .focus-border i:before,
+              .textareaElementItem ~ .focus-border i:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 2px;
+                height: 0;
+                background-color: #00a2ff;
+                transition: 0.6s;
+              
+              }
+              
+              .inputElementItem ~ .focus-border i:after,
+              .textareaElementItem ~ .focus-border i:after {
+                left: auto;
+                right: 0;
+                
+              }
+              
+              .inputElementItem:focus ~ .focus-border:before,
+              .inputElementItem:focus ~ .focus-border:after,
+              .textareaElementItem:focus ~ .focus-border:before,
+              .textareaElementItem:focus ~ .focus-border:after {
+                left: 0;
+                width: 100%;
+                transition: 0.4s;
+              
+              
+              }
+              
+              .inputElementItem:focus ~ .focus-border i:before,
+              .inputElementItem:focus ~ .focus-border i:after,
+              .textareaElementItem:focus ~ .focus-border i:before,
+              .textareaElementItem:focus ~ .focus-border i:after{
+                top: -1px;
+                height: 100%;
+                transition: 0.6s;
+              
+              
+              }
+              
+              .inputElementItem ~ label,
+              .textareaElementItem ~ label {
+                position: absolute;
+                left: 14px;
+                top: 10px;
+                color: #ffffff;
+                transition: 0.3s;
+                letter-spacing: 0.5px;
+                font-family: 'Montserrat-nameGame','Courier New', Courier, monospace;
+              
+              }
+              
+              .inputElementItem::placeholder,
+              .textareaElementItem::placeholder {
+                color: transparent;
+              }
+              
+              .inputElementItem:focus ~ label,
+              .textareaElementItem:focus ~ label {
+                top: -13px;
+                left: 0;
+                font-size: 10px;
+                color: #ffffff;
+                transition: 0.3s;
+                font-family: 'Montserrat-nameGame','Courier New', Courier, monospace;
+              }
+              
+              .inputElementItem:not(:placeholder-shown):not([value=""]) ~ label,
+              .textareaElementItem:not(:placeholder-shown):not([value=""]) ~ label {
+                top: -13px;
+                left: 0;
+                font-size: 11px;
+                color: #ffffff;
+                transition: 0.3s;
+              }
+              
+              .changeB{
+                margin-top: 15px;
+              }
+              
+              input:focus,
+              select:focus,
+              textarea:focus,
+              button:focus {
+                outline: none;
+              }
+              
+              input,
+              textarea,
+              select {
+                font-weight: 400;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                -webkit-border-radius: 0;
+                border-radius: 0;
+                background: none;
+                border: none;
+                margin: 0;
+                width: 100%;
+                font-family: 'Arial';
+              }
+        }
+
+        
+    }
+
+}
+}

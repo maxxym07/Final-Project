@@ -21,6 +21,7 @@ import { GamesDetailsComponent } from './pages/games-details/games-details.compo
 import { DeviceDetailsComponent } from './pages/device-details/device-details.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { LoginComponent } from './login/login.component';
     GamesDetailsComponent,
     DeviceDetailsComponent,
     LoginComponent,
+    ProfileComponent,
     // JwPaginationComponent//////1
 
   ],
