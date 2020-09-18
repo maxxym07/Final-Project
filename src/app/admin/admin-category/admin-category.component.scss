@@ -1,0 +1,39 @@
+.butAdd{
+    width: 150px;
+    margin-right: 10px;
+}
+.pFirst{
+    margin-left: 10px;
+    font-size: 16px;
+}
+.card-header{
+    display: flex;
+    justify-content: space-between;
+}
+table{
+    border: 1px solid rgb(211, 211, 211);
+}
+th{
+    border: 1px solid rgb(211, 211, 211);
+}
+td{
+    border: 1px solid rgb(211, 211, 211);
+}
+.foot{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.butAdd1{
+    width: 200px;
+    margin-right: 10px;
+}
+
+.fa-caret-up, .fa-caret-down{
+    font-size:  25px;
+}
+
+tr:hover{
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+}

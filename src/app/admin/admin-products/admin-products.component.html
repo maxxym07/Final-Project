@@ -1,0 +1,216 @@
+<div class="card">
+    <div class="card-header">
+      <p class="card-text pFirst font-weight-bold">PRODUCTS</p>
+      <button type="button" class="btn btn-dark butAdd" (click)="openModal(modal1)">Add Product</button>
+    </div>
+
+    <div class="card-body">
+      <input type="text"  class="form-control" [(ngModel)]="inputS" name="inputS" placeholder="filter products..">
+      <hr>
+      <table class="table">
+        <thead class="table-active">
+          <tr>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}"  [ngStyle]="{'width': '60px'}">№</th>
+
+            <th scope="col" class="text-secondary">Категорія</th>
+            <th scope="col" class="text-secondary">Підкатегорія</th>
+            
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}">Name EN</th>
+
+            <th scope="col"  [ngStyle]="{'cursor': 'pointer'}">Name UA</th>
+            
+            <th scope="col">Description</th>
+
+            <th scope="col" class="mdl-data-table__cell--non-numeric" >Головна ціна</th>
+            <th scope="col" class="mdl-data-table__cell--non-numeric" >Стара ціна</th>
+
+            <th scope="col" class="mdl-data-table__cell--non-numeric">Розмір(для ігор)</th>
+            
+            
+            <th scope="col" class="text-secondary" [ngStyle]="{'width': '25px'}">Edit</th>
+            <th scope="col" class="text-secondary" [ngStyle]="{'width': '25px'}">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of adminProduct; let i=index">
+        <td class="font-weight-bold">{{ i+1}}</td>
+        <td>{{ p.category.nameUA }}</td>
+        <td>{{ p.underCategory.ukrName }}</td>
+        <td>{{ p.nameEN |titlecase}}</td>
+        <td>{{ p.nameUA |titlecase}}</td>
+        <td>{{ p.description }}</td>
+        <td>{{ p.mainPrice }}</td>
+        <td>{{ p.oldPrice }}</td>
+        <td>{{ p.size }}</td>
+             <td>
+            <input type="button" value="Edit" class="btn btn-dark" (click)="editModal(modal1,p)" >
+          </td>
+            <td>
+              <input type="button" value="delete" class="btn btn-dark" (click)="deleteModal(modalDelete,p)" >
+            </td>
+          </tr>
+        </tbody>
+      </table> 
+    </div>
+</div>
+
+
+<ng-template #modal1>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Product modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close"(click)="modalRef.hide()" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+              <div class="forSELECTS d-flex justify-content-around">
+                <div class="firstSel" [ngStyle]="{'width': '48%'}">
+                  <label for="categoryChoose" class="font-weight-bold">Choose category*</label>
+                  <select class="form-control" [(ngModel)]="categoryName" name="categoryName" (change)="setCategory()" id="categoryChoose">
+                    <option value="виберіть категорію.." disabled>виберіть категорію..</option>
+                    <option *ngFor="let category of categories">
+                        {{category.nameUA}}
+                    </option>
+                  </select>
+                </div>
+               
+    <div class="secondSel" [ngStyle]="{'width': '48%'}">
+      <label for="underCategoryChoose" class="font-weight-bold">Choose under category*</label>
+      <select class="form-control" [(ngModel)]="underCategoryName" name="underCategoryName" (change)="setUnderCategory()" id="underCategoryChoose">
+        <option value="виберіть підкатегорію.." disabled>виберіть підкатегорію..</option>
+        <option *ngFor="let undcategory of underCategories">
+            {{undcategory.ukrName}}
+        </option>
+      </select>
+    </div>
+                 
+</div>
+<div class="forSELECTS d-flex justify-content-around mt-2">
+  <div class="firstSel" [ngStyle]="{'width': '48%'}">
+    <div class="form-group">
+      <label for="productNameEN" class="font-weight-bold">Name EN*</label>
+      <input type="text" class="form-control" id="productNameEN" [(ngModel)]="productNameEN" name="productNameEN" placeholder="eng name here..">
+    </div>
+  </div>
+  <div class="secondSel" [ngStyle]="{'width': '48%'}">
+    <div class="form-group">
+      <label for="productNameUA"class="font-weight-bold">Name UA*</label>
+      <input type="text" class="form-control" id="productNameUA" [(ngModel)]="productNameUA" name="productNameUA" placeholder="urk name here..">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="productDescription" class="font-weight-bold">Опис</label>
+  <textarea [(ngModel)]="productDescription" name="productDescription" id="productDescription"  class="form-control" rows="3" placeholder="про продукт ..."></textarea>
+</div>
+
+<div class="forSELECTS d-flex justify-content-around mt-2">
+  <div class="firstSel" [ngStyle]="{'width': '33%'}">
+      <div class="form-group" >
+        <label for="productPrice" class="font-weight-bold">Головна ціна*</label>
+        <input type="number" [ngStyle]="{'width': '98%'}" class="form-control" id="productPrice" [(ngModel)]="productMainPrice" name="productMainPrice" placeholder="головна ціна..">
+      </div>
+  </div>
+  <div class="firstSel" [ngStyle]="{'width': '33%'}">
+    <div class="form-group">
+      <label for="productOldPrice" class="font-weight-bold">Стара ціна</label>
+      <input type="number" [ngStyle]="{'width': '98%'}" class="form-control" id="productOldPrice" [(ngModel)]="productOldPrice" name="productOldPrice" placeholder="стара ціна..(не обов`язково)">
+    </div>
+  </div>
+  <div class="firstSel" [ngStyle]="{'width': '33%'}">
+    <div class="form-group">
+      <label for="productWeight" class="font-weight-bold ">Розмір</label>
+      <input type="text" [ngStyle]="{'width': '98%'}" class="form-control" id="productWeight" [(ngModel)]="productSize" name="productSize" placeholder="розмір гри..(тільки для ігор)">
+      </div>
+  </div>
+     
+  </div>
+  
+            <div class="checkBoxes d-flex justify-content-around">
+              <div class="form-group">
+                <label for="productPrice">ТОП продаж</label>
+                <input type="checkbox" class="form-control" id="productTop"(click)="setAttr()">
+                
+              </div>
+              <div class="form-group">
+                <label for="productPrice">PS Plus</label>
+                <input type="checkbox" class="form-control" id="productPsPlus"(click)="setAttr1()">
+              </div>
+            </div>
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+            <div class="forSELECTS d-flex justify-content-around mt-2">
+              <div class="firstSel1" [ngStyle]="{'width': '25%','border':'1px solid grey'}" >
+                <p *ngIf="!editStatus">Картинка основна</p>
+                
+              <div class="image mb-3" *ngIf="editStatus" >
+                <p class="font-weight-bold">Основна картинка</p>
+                <img [src]="productImageMain" alt="" style="width: 85%; height: 90%;">
+              </div>
+
+              <div class="custom-file mb-3" style="overflow: hidden;" *ngIf="!editStatus">
+                <input (change)="uploadFile($event)" placeholder="Картинка основна" type="file" class="custom-file-input" id="productImage" required>
+                <label class="custom-file-label" for="productImageMain">Виберіть зображення...</label>
+              </div>
+
+              <div class="custom-file mb-3" style="overflow: hidden;" *ngIf="editStatus">
+                <input (change)="uploadFile($event)" placeholder="Картинка основна" type="file" class="custom-file-input" id="productImage1" required>
+                <label class="custom-file-label" for="productImageMain">Виберіть зображення...</label>
+              </div>
+              </div>
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+               <div class="firstSel1" [ngStyle]="{'width': '25%','border':'1px solid grey'}" *ngIf="editStatus">
+                <p>Картинка 2</p> 
+              <div class="image mb-3" *ngIf="editStatus">
+                <img [src]="productImage2" alt="" style="width: 85%; height: 90%;">
+              </div>
+              <div class="custom-file mb-3" style="overflow: hidden;" *ngIf="editStatus">
+                <input (change)="uploadFile2($event)" placeholder="Картинка основна" type="file" class="custom-file-input" id="productImage2" required>
+                <label class="custom-file-label" for="productImageMain">Виберіть зображення...</label>
+              </div>
+              </div>
+   <!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+
+              <div class="firstSel1" [ngStyle]="{'width': '25%','border':'1px solid grey'}" *ngIf="forThirdImages">
+                <p>Картинка 3</p>
+
+                <div class="image mb-3" style="width: 200px; height: 200px;">
+                  <img [src]="productImage3" alt="" style="width: 85%; height: 90%;">
+                </div>
+
+                <div class="custom-file mb-3" style="overflow: hidden;" *ngIf="forThirdImages">
+                  <input (change)="uploadFile3($event)" placeholder="Картинка основна" type="file" class="custom-file-input" id="productImage3" required>
+                  <label class="custom-file-label" for="productImageMain">Виберіть зображення...</label>
+                </div>
+              </div>
+
+              <div class="firstSel" [ngStyle]="{'width': '25%'}"  *ngIf="forFourthImages">
+                <p>Картинка 4</p>
+
+                <div class="image mb-3"style="width: 200px; height: 200px;">
+                  <img [src]="productImage4" alt="" style="width: 85%; height: 90%;">
+                </div>
+
+                <div class="custom-file mb-3" style="overflow: hidden;" *ngIf="forFourthImages">
+                  <input (change)="uploadFile4($event)" placeholder="Картинка основна" type="file" class="custom-file-input" id="productImage4" required>
+                  <label class="custom-file-label" for="productImageMain">Виберіть зображення...</label>
+                </div>
+    
+              </div>
+        
+            </div>
+
+            </div>
+          </form>
+      <hr>
+      <div class="foot">
+        <button type="button" class="btn btn-secondary mr-2" (click)="modalRef.hide()" (click)="closeModal()">Close</button>
+      <button type="button" class="btn btn-dark" (click)="addProduct()">Add</button>
+      </div>
+    </div>
+  </ng-template>
+
+
+  <!-- [textContent]="!editStatus ? 'Добавити' : 'Зберегти'"  for add button--> 

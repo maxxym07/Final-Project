@@ -1,5 +1,5 @@
 @media screen and (min-width: 970px) {
-    .container{
+    .containerFoot{
         background-color: black;
         width: 100%;
         height: 150px;
@@ -106,12 +106,12 @@
            
     
             .left-part{
-                width: 270px;
+                width: 50%;
                 height: 150px;
                  padding: 5px;
             }
             .right-part{
-                width: 230px;
+                width: 50%;
                 height: 150px;
                 padding: 5px;
             }
@@ -145,7 +145,7 @@
     }
     
     .logo{
-        width: 300px;
+        width: 220px;
         height: 150px;
         display: flex;
         justify-content: center;
@@ -153,7 +153,7 @@
     
         #footIMG{
             width: 50%;
-            height: 110px;
+            height: 50%;
         }
     }
     
@@ -218,7 +218,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 @media screen and (max-width: 969px){
-    .container{
+    .containerFoot{
         background-color: black;
         width: 100%;
         height: 150px;
@@ -426,7 +426,7 @@
 }
 
 @media screen and (max-width: 767px){
-    .container{
+    .containerFoot{
         background-color: black;
         width: 100%;
         min-height: 400px;
@@ -551,7 +551,6 @@
             .categor{
                 color: white;
                 font-size: 20px;
-                margin-left: 15px;
                 font-family: 'Montserrat',monospace;
                 width: 60%;
     

@@ -1,5 +1,5 @@
 @media screen and (min-width: 970px) {
-    .container{
+    .containerHead{
         width: 100%;
         height: 150px;
         background-color: rgb(0, 20, 68);
@@ -346,7 +346,7 @@
 }
 
 @media screen and (max-width: 969px){
-    .container{
+    .containerHead{
         width: 100%;
         height: 130px;
         background-color: rgb(0, 20, 68);
@@ -641,7 +641,7 @@
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @media screen and (max-width: 767px){
-    .container{
+    .containerHead{
         width: 100%;
         height: 50px;
         background-color: rgb(0, 20, 68);
@@ -914,6 +914,7 @@
               #menu__toggle:checked ~ .menu__btn > span::before {
                 top: 0;
                 transform: rotate(0);
+                
               }
               #menu__toggle:checked ~ .menu__btn > span::after {
                 top: 0;
@@ -922,6 +923,10 @@
               #menu__toggle:checked ~ .menu__box {
                 visibility: visible;
                 left: 0;
+                .menu__btn{
+                    position: fixed;
+                    top: 5px;
+                }
               }
               
               .menu__btn {
@@ -999,7 +1004,7 @@
     
               .menu__box-bottom{
                 position: absolute;
-                bottom: 40px;
+                bottom: 140px;
                 left: 0;
                 width: 100%;
               }

@@ -10,9 +10,12 @@ import { GamesComponent } from './pages/games/games.component';
 import { GamesDetailsComponent } from './pages/games-details/games-details.component';
 import { DeviceDetailsComponent } from './pages/device-details/device-details.component';
 import { LoginComponent } from './login/login.component';
-import { AdminComponent } from './pages/admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { AdminComponent } from './admin/admin.component';
+import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
+import { UnderCategoriesComponent } from './admin/under-categories/under-categories.component';
+import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 
 
 const routes: Routes = [
@@ -26,11 +29,19 @@ const routes: Routes = [
   {path:'games-details',component:GamesDetailsComponent},
   {path:'device-details',component:DeviceDetailsComponent},
   {path:'login',component:LoginComponent},
-  {path:'profile',component:ProfileComponent},
+  { path: 'profile', component: ProfileComponent },
+  {path: 'admin', component: AdminComponent, children: [
+      { path: '', redirectTo: 'category', pathMatch: 'full' },
+      { path: 'category', component: AdminCategoryComponent },
+      { path: 'under-category', component: UnderCategoriesComponent },
+      { path: 'products', component: AdminProductsComponent },
+      { path: 'orders', component: AdminOrdersComponent },
+  ] },
+  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{scrollPositionRestoration:'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

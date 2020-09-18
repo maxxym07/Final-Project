@@ -1,0 +1,74 @@
+<div class="card">
+    <div class="card-header">
+      <p class="card-text pFirst font-weight-bold">UNDER CATEGORIES</p>
+      <button type="button" class="btn btn-dark butAdd" (click)="openModal(modal1)">Add</button>
+    </div>
+
+    <div class="card-body">
+      <input type="text"  class="form-control" [(ngModel)]="inputS" name="inputS" placeholder="filter category..">
+      <hr>
+      <table class="table">
+        <thead class="table-active">
+          <tr>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}" [ngStyle]="{'width': '60px'}">№</th>
+            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}">Category
+            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}">Name EN
+            </th>
+            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}">Name UA
+            </th>
+            <th scope="col" class="text-secondary" [ngStyle]="{'width': '25px'}">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let uc of adminUnderCategories; let i=index">
+            <td class="font-weight-bold">{{i+1}}</td>
+            <td>{{ uc.category}}</td>
+            <td>{{ uc.engName }}</td>
+            <td>{{ uc.ukrName }}</td>
+            <td>
+              <input type="button" value="delete" class="btn btn-dark" (click)="deleteModal(modalDelete,uc)">
+            </td>
+          </tr>
+        </tbody>
+      </table> 
+    </div>
+</div>
+
+<ng-template #modal1>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Under category modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="resetForm()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="bodyModal">
+          <form>
+              <div class="form-group">
+                <select class="form-control" [(ngModel)]="underCategoryName" name="underCategoryName" (input)="checkInputs()" (change)="setCategory()">
+                <option *ngFor="let category of adminCategory">
+                  {{ category.nameUA }}
+                </option>
+              </select>
+
+              <div class="mt-2 d-flex justify-content-around">
+                <input type="text" class="form-control col-6 mr-2"  [(ngModel)]="engName" name="engName" (input)="checkInputs()"  placeholder="Підкатегорія EN here.." id="nameEN">
+                <input type="text" class="form-control  col-6 ml-2" [(ngModel)]="ukrName" name="ukrName" (input)="checkInputs()"   placeholder="Підкатегорія UA here.." id="nameUA">
+              </div>
+              </div>
+          </form>
+      </div>
+      <hr>
+      <div class="foot">
+        <button type="button" class="btn btn-secondary mr-2" (click)="resetForm()">Close</button>
+      <button type="button" class="btn btn-secondary" (click)="addCategory()" [disabled]="!categoryStatus">Add</button>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #modalDelete>
+    <div class="modal-body">
+      <button type="button" class="btn btn-dark mr-2 butAdd1" (click)="modalRef.hide()">Dismiss</button>
+      <button type="button" class="btn btn-danger butAdd1" (click)="deleteCategory()">Delete</button>
+    </div>
+  </ng-template>

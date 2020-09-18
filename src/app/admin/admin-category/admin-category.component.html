@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-header">
+      <p class="card-text pFirst font-weight-bold">CATEGORIES</p>
+      <button type="button" class="btn btn-dark butAdd" (click)="openModal(modal1)">Add</button>
+    </div>
+
+    <div class="card-body">
+      <input type="text"  class="form-control" [(ngModel)]="inputS" name="inputS" placeholder="filter category..">
+      <hr>
+      <table class="table">
+        <thead class="table-active">
+          <tr>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}" [ngStyle]="{'width': '60px'}">№</th>
+            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}">Name EN
+            </th>
+            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}">Name UA
+            </th>
+            <th scope="col" class="text-secondary" [ngStyle]="{'width': '25px'}">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of adminCategory; let i=index">
+            <td class="font-weight-bold">{{1+i}}</td>
+            <td>{{ c.nameEN }}</td>
+            <td>{{ c.nameUA }}</td>
+            <td>
+              <input type="button" value="delete" class="btn btn-dark" (click)="deleteModal(modalDelete,c)">
+            </td>
+          </tr>
+        </tbody>
+      </table> 
+    </div>
+</div>
+
+<ng-template #modal1>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Category modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="bodyModal d-flex">
+        <input type="text" class="form-control col-6"  [(ngModel)]="nameEN" name="nameEN" (input)="checkInputs()" placeholder="name EN here.." id="nameEN">
+        <input type="text" class="form-control  col-6 ml-2" [(ngModel)]="nameUA" name="nameUA" (input)="checkInputs()"  placeholder="name UA here.." id="nameUA">
+      </div>
+      <hr>
+      <div class="foot">
+        <button type="button" class="btn btn-secondary mr-2" (click)="modalRef.hide()">Close</button>
+      <button type="button" class="btn btn-secondary" (click)="addCategory()" [disabled]="!categoryStatus">Add</button>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #modalDelete>
+    <div class="modal-body">
+      <button type="button" class="btn btn-dark mr-2 butAdd1" (click)="modalRef.hide()">Dismiss</button>
+      <button type="button" class="btn btn-danger butAdd1" (click)="deleteCategory()">Delete</button>
+    </div>
+  </ng-template>
