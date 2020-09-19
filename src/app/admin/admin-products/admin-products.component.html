@@ -19,7 +19,6 @@
 
             <th scope="col"  [ngStyle]="{'cursor': 'pointer'}">Name UA</th>
             
-            <th scope="col">Description</th>
 
             <th scope="col" class="mdl-data-table__cell--non-numeric" >Головна ціна</th>
             <th scope="col" class="mdl-data-table__cell--non-numeric" >Стара ціна</th>
@@ -34,11 +33,10 @@
         <tbody>
           <tr *ngFor="let p of adminProduct; let i=index">
         <td class="font-weight-bold">{{i+1}}</td>
-        <td>{{ p.category.nameUA }}</td>
-        <td>{{ p.underCategory.ukrName }}</td>
+        <td>{{ p.category }}</td>
+        <td>{{ p.subCategory }}</td>
         <td>{{ p.nameEN |titlecase}}</td>
         <td>{{ p.nameUA |titlecase}}</td>
-        <td>{{ p.description }}</td>
         <td>{{ p.mainPrice }} UAH</td>
         <td>{{ p.oldPrice }} UAH</td>
         <td>{{ p.size }} GB</td>
@@ -80,8 +78,8 @@
       <label for="underCategoryChoose" class="font-weight-bold">Choose under category*</label>
       <select class="form-control" [(ngModel)]="underCategoryName" name="underCategoryName" (change)="setUnderCategory()" id="underCategoryChoose">
         <option value="виберіть підкатегорію.." disabled>виберіть підкатегорію..</option>
-        <option *ngFor="let undcategory of underCategories">
-            {{undcategory.ukrName}}
+        <option *ngFor="let subCategory of underCategories">
+            {{subCategory.ukrName}}
         </option>
       </select>
     </div>
@@ -237,8 +235,8 @@
     <div class="modal-body change">
       <form>
         <div class="d-flex justify-content-between">
-          <button type="button" class="btn btn-secondary mt-2 mr-2" (click)="closeModal()">Відміна</button>
-          <button type="button" class="btn btn-danger mt-2" (click)="deleteProduct()">Видалити</button>
+          <button type="button" class="btn btn-secondary mt-2 mr-2 but1" (click)="closeModal()">Відміна</button>
+          <button type="button" class="btn btn-danger mt-2 but1" (click)="deleteProduct()">Видалити</button>
         </div>
       </form>
     </div>

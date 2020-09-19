@@ -29,7 +29,7 @@ export class UnderCategoriesComponent implements OnInit {
   underCategoryName:string; //for select
   category: ICategory;
   underCategoryCategory='ігри';
-  underCategory: ICategory;
+  // underCategory: ICategory;
   categoryStatus = false;//for butDisable
 
   delete_id: any;

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { IProduct } from '../../shared/interfaces/product.interface';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
   selector: 'app-games',
@@ -9,10 +13,18 @@ export class GamesComponent implements OnInit {
   countZhanrs = 0
   menuzhanrs = document.getElementsByClassName('menu-zhanrs') as HTMLCollectionOf<HTMLElement>;
   openStatus: boolean;
+
+  userProducts:Array<IProduct>=[]
   
-  constructor() { }
+  constructor(
+    private actRoute: ActivatedRoute,
+    private router: Router,
+    private afStorage: AngularFirestore,
+    private productService:ProductService,
+  ) { }
 
   ngOnInit(): void {
+    this.getGames() 
   }
 
   openZhanrs(): void{
@@ -27,5 +39,21 @@ export class GamesComponent implements OnInit {
       
     }
   }
+
+getGames() {
+  this.afStorage.collection('products').ref.where('category','==','ігри').onSnapshot(
+    collection => {
+      this.userProducts = [];
+      collection.forEach(document => {
+        const data=document.data() as IProduct;
+        const id = document.id;
+        this.userProducts.push({ id, ...data })
+      })
+    }
+  )
+ 
+}
+  
+  
 
 }

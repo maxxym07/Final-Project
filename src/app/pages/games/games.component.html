@@ -37,19 +37,16 @@
         </div>
 
         <div class="gamesBlock">
-            <div class="card">
-                <div class="imageBlock"><div class="imageGame"></div></div>
-                <div class="nameGame">Ведьмак 3. Дикая охота</div>
-                <div class="priceGame">
-                    <p class="oldPrice">2000 UAH</p>
-                   <p class="mainPrice"> 1500 UAH</p>
+            <div class="card" *ngFor="let products of userProducts">
+                <div class="imageBlock" [routerLink]="['/games/'+products?.subCategory, products?.nameEN]">
+                    <img class="imageGame" [src]='products?.image1' alt="">
+                </div>
+                <div class="nameGame">{{products.nameUA}}</div>
+                <div class="priceGame" [routerLink]="['/games/'+products?.subCategory, products?.nameEN]">
+                    <p class="oldPrice">{{products.oldPrice}} UAH</p>
+                   <p class="mainPrice" >{{products.mainPrice}} UAH</p>
                 </div>
             </div>
-
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
         </div>
 
     </div>

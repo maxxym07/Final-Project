@@ -1,12 +1,10 @@
 import { IProduct } from '../interfaces/product.interface';
-import { ICategory } from '../interfaces/category.interface';
-import { IUndercategory } from '../interfaces/underCategory.interface';
 
 export class Product implements IProduct{
     constructor(
       public  id: number,
-      public category: ICategory,
-      public underCategory: IUndercategory,
+      public category: string,
+      public subCategory: string,
       public nameEN: string,
       public nameUA: string,
       public description: string,

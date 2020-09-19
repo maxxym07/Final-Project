@@ -17,17 +17,14 @@ import { AngularFireStorage } from '@angular/fire/storage';
 })
 export class AdminProductsComponent implements OnInit {
   modalRef: BsModalRef;
-  // config = {
-  //   ignoreBackdropClick: true
-  // }
   adminProduct: Array<IProduct> = [];
   categories: Array<ICategory> = [];
   underCategories: Array<IUndercategory> = [];
 
-  productCategory: ICategory;///то прості категорії
-  categoryName = "виберіть категорію..";
-  productUnderCategory: IUndercategory;/////тут треба передати в категорії щось
-  underCategoryName = "виберіть підкатегорію..";
+  productCategory:ICategory;///то прості категорії
+  categoryName:string;
+  productUnderCategory:IUndercategory;/////тут треба передати в категорії щось
+  underCategoryName:string;
 
   delete_id: number;
 
@@ -128,13 +125,15 @@ export class AdminProductsComponent implements OnInit {
 
   openModal(template: TemplateRef<any>): void {
     this.modalRef = this.modalService.show(template, { class: 'modal-dialog-centered modal-product' });
+    this.categoryName=this.categories[1].nameUA
+    this.underCategoryName = this.underCategories[0].ukrName
   }
 
   addProduct(): void {
     const product: IProduct = new Product(
       this.productID,
-      this.productCategory,
-      this.productUnderCategory,
+      this.categoryName,
+      this.underCategoryName,
       this.productNameEN,
       this.productNameUA,
       this.productDescription,
@@ -149,8 +148,7 @@ export class AdminProductsComponent implements OnInit {
       this.productImage4,
       this.productImage5
     );
-    if (this.categoryName != "виберіть категорію.." &&this.underCategoryName != "виберіть підкатегорію.." &&
-      this.productNameEN &&this.productNameUA &&
+    if (this.productNameEN &&this.productNameUA &&
       this.productMainPrice && this.productImageMain != '') {
       if (!this.editModalStatus) {
         delete product.id;
@@ -158,8 +156,7 @@ export class AdminProductsComponent implements OnInit {
         this.resetModal()
       }
       else {
-        if(this.categoryName != "виберіть категорію.." &&this.underCategoryName != "виберіть підкатегорію.." &&
-        this.productNameEN &&this.productNameUA &&
+        if(this.productNameEN &&this.productNameUA &&
           this.productMainPrice && this.productImageMain != '') {
             this.prodService.updateFirecloudProduct(Object.assign({}, product))
             this.editModalStatus = false
@@ -285,8 +282,8 @@ export class AdminProductsComponent implements OnInit {
     this.editModalStatus = true;
     this.modalRef = this.modalService.show(template,{class: 'modal-dialog-centered modal-product'});
     this.productID = product.id
-    this.categoryName ="виберіть категорію..";
-    this.underCategoryName = "виберіть підкатегорію..";
+    this.categoryName =product.category;
+    this.underCategoryName =product.subCategory;
     this.productNameEN = product.nameEN
     this.productNameUA = product.nameUA
     this.productDescription = product.description
@@ -295,11 +292,11 @@ export class AdminProductsComponent implements OnInit {
     this.productSize = product.size;
     this.productTop = product.top;
     this.productPsPlus = product.psPlus;
-    this.productImageMain=product.image1
-    this.productImage2=product.image2
-    this.productImage3=product.image3
-    this.productImage4=product.image4
-    this.productImage5 = product.image5
+    this.productImageMain = product.image1;
+    this.productImage2 = product.image2;
+    this.productImage3 = product.image3;
+    this.productImage4 = product.image4;
+    this.productImage5 = product.image5;
     this.editStatus = true;
     this.forThirdImages = true;
     this.forFourthImages = true;
@@ -312,7 +309,6 @@ export class AdminProductsComponent implements OnInit {
   }
 
   deleteProduct(): void {
-    console.log(this.delete_id)
     this.prodService.deleteFirecloudProduct(this.delete_id)
     this.modalService.hide(1);
   }
@@ -347,8 +343,8 @@ export class AdminProductsComponent implements OnInit {
     this.forThirdImages=false;
     this.forFourthImages=false;
     this.forFithImages = false;
-    this.categoryName ="виберіть категорію..";
-    this.underCategoryName = "виберіть підкатегорію..";
+    this.categoryName=this.categories[1].nameUA
+    this.underCategoryName = this.underCategories[0].ukrName
     this.modalService.hide(1);
   }
 

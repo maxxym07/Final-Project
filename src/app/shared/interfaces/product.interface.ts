@@ -1,9 +1,7 @@
-import { ICategory } from './category.interface';
-import { IUndercategory } from './underCategory.interface';
 export interface IProduct{
     id: number;
-    category: ICategory;
-    underCategory: IUndercategory;
+    category: string;
+    subCategory: string;
     nameEN: string;
     nameUA: string;
     description: string;
