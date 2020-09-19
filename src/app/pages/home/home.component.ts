@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { IProduct } from '../../shared/interfaces/product.interface';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   myIndex = 0;
-
-  constructor() { }
+  topProducts: Array<IProduct>=[]
+  constructor(private afStorage: AngularFirestore,) { }
 
   ngOnInit(): void {
     this.carousel();
+    this.getTopProducts()
   }
 
   carousel() {
@@ -27,5 +30,20 @@ export class HomeComponent implements OnInit {
     x[this.myIndex - 1].style.display = 'block'; 
     setTimeout(()=>{this.carousel()},4000);
   }
+
+
+  getTopProducts(){
+    this.afStorage.collection('products').ref.where('top', '==', true).onSnapshot(
+      collection => {
+        collection.forEach(document => {
+          const data = document.data() as IProduct;
+          const id = document.id;
+          this.topProducts.push({id, ...data})
+        })
+      }
+    )
+  }
+
+
 
 }

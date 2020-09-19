@@ -25,30 +25,36 @@ export class AdminProductsComponent implements OnInit {
   underCategories: Array<IUndercategory> = [];
 
   productCategory: ICategory;///то прості категорії
-  categoryName="виберіть категорію..";
+  categoryName = "виберіть категорію..";
   productUnderCategory: IUndercategory;/////тут треба передати в категорії щось
-  underCategoryName="виберіть підкатегорію..";
+  underCategoryName = "виберіть підкатегорію..";
+
+  delete_id: number;
 
   productID = 1;
   productNameEN: string;
   productNameUA: string;
   productDescription: string;
   productMainPrice: number;
-  productOldPrice: number;
-  productSize: string;
+  productOldPrice: number = null;
+  productSize: string = '';
   productTop = false;
   productPsPlus = false;
 
-  productImageMain : string='';
+  productImageMain: string = '';
   productImage2: string = '';
   productImage3: string = '';
   productImage4: string = '';
+  productImage5: string = '';
 
   uploadProgressMain: Observable<number>;
   uploadProgress2: Observable<number>;
   editStatus: boolean;
   forThirdImages: boolean;
   forFourthImages: boolean;
+  forFithImages: boolean;
+  
+  editModalStatus: boolean;
 
   inputS: string//for search in table
 
@@ -66,7 +72,7 @@ export class AdminProductsComponent implements OnInit {
   }
 
 
-/////////////////////////категорія////////////////////////////
+  /////////////////////////категорія////////////////////////////
   private adminFirebaseCategories(): void {
     this.catService.getFireCloudCategory().subscribe(
       collection => {
@@ -78,10 +84,10 @@ export class AdminProductsComponent implements OnInit {
       }
     )
   }
-/////////////////////////категорія////////////////////////////
+  /////////////////////////категорія////////////////////////////
 
 
-///////////////підкатегорія//////////////
+  ///////////////підкатегорія//////////////
   private adminFirebaseUnderCategories(): void {
     this.underCatService.getFirecloudUnderCategory().subscribe(
       collection => {
@@ -93,7 +99,7 @@ export class AdminProductsComponent implements OnInit {
       }
     )
   }
-///////////////підкатегорія//////////////
+  ///////////////підкатегорія//////////////
 
 
   ////////////////////////продукт////////////////////////////////////
@@ -138,38 +144,35 @@ export class AdminProductsComponent implements OnInit {
       this.productTop,
       this.productPsPlus,
       this.productImageMain,
-      this.productImage2
+      this.productImage2,
+      this.productImage3,
+      this.productImage4,
+      this.productImage5
     );
-    // if (!this.editStatus) {
-    //   if (this.productNameEN && this.productNameUA && this.productPrice && this.categoryName !== "choose category..") {
-    //     delete product.id
-    //     // this.prodService.postJSONProduct(product).subscribe(
-    //     //   () => {
-    //     //     this.getProducts()
-    //     //   }
-    //     // )
-        this.prodService.postFirecloudProduct(Object.assign({},product))
-        this.resetForm()
-    //   }
-    //   else {
-    //     alert('Головні поля НЕ ЗАПОВНЕНІ  (Category,Name EN, Name UA, Price)')
-    //   }
-    // }
-    // else {
-    //   // this.prodService.updateJSONProduct(product).subscribe(
-    //   //   () => {
-    //   //     this.adminFirebaseProducts();
-    //   //   }
-    //   // );
-    //   if (this.productNameEN && this.productNameUA && this.productPrice && this.categoryName !== "choose category..") {
-    //     this.prodService.updateFireCloudProduct(Object.assign({},product))
-    //     this.editStatus = false;
-    //     this.resetForm()
-    //   }
-    //   else {
-    //     alert('Головні поля НЕ ЗАПОВНЕНІ  (Category,Name EN, Name UA, Price)')
-    //   }
-    // }
+    if (this.categoryName != "виберіть категорію.." &&this.underCategoryName != "виберіть підкатегорію.." &&
+      this.productNameEN &&this.productNameUA &&
+      this.productMainPrice && this.productImageMain != '') {
+      if (!this.editModalStatus) {
+        delete product.id;
+        this.prodService.postFirecloudProduct(Object.assign({}, product))
+        this.resetModal()
+      }
+      else {
+        if(this.categoryName != "виберіть категорію.." &&this.underCategoryName != "виберіть підкатегорію.." &&
+        this.productNameEN &&this.productNameUA &&
+          this.productMainPrice && this.productImageMain != '') {
+            this.prodService.updateFirecloudProduct(Object.assign({}, product))
+            this.editModalStatus = false
+            this.resetModal()
+        }
+        else {
+          alert('Заповніть всі поля з зірочкою і добавте 1 картинку')
+        }
+        }
+    }
+    else {
+      alert('Заповніть всі поля з зірочкою і добавте 1 картинку')
+    }
   }
 
 
@@ -180,11 +183,11 @@ export class AdminProductsComponent implements OnInit {
     this.editStatus = false;
     const filePath = `images/${name}.${type}`;
     const task = this.afStorage.upload(filePath, file);
-       this.uploadProgressMain = task.percentageChanges()
+    this.uploadProgressMain = task.percentageChanges()
   
     task.then(image => {
-      this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => { 
-        this.productImageMain=url
+      this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => {
+        this.productImageMain = url
         this.editStatus = true;
       })
     })
@@ -198,8 +201,8 @@ export class AdminProductsComponent implements OnInit {
     const filePath = `images/${name}.${type}`;
     const task = this.afStorage.upload(filePath, file);
     task.then(image => {
-      this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => { 
-        this.productImage2=url
+      this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => {
+        this.productImage2 = url
         this.editStatus = true;
         this.forThirdImages = true;
       })
@@ -214,8 +217,8 @@ export class AdminProductsComponent implements OnInit {
     const filePath = `images/${name}.${type}`;
     const task = this.afStorage.upload(filePath, file);
     task.then(image => {
-      this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => { 
-        this.productImage3=url
+      this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => {
+        this.productImage3 = url
         this.forThirdImages = true;
         this.forFourthImages = true;
       })
@@ -230,9 +233,25 @@ export class AdminProductsComponent implements OnInit {
     const filePath = `images/${name}.${type}`;
     const task = this.afStorage.upload(filePath, file);
     task.then(image => {
-      this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => { 
-        this.productImage4=url
+      this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => {
+        this.productImage4 = url
         this.forFourthImages = true;
+        this.forFithImages = true;
+      })
+    })
+  }
+
+  uploadFile5(event): void {
+    const file = event.target.files[0];
+    const type = file.type.slice(file.type.indexOf('/') + 1);
+    const name = file.name.slice(0, file.name.lastIndexOf('.')).toLowerCase();
+    this.forFithImages = false;
+    const filePath = `images/${name}.${type}`;
+    const task = this.afStorage.upload(filePath, file);
+    task.then(image => {
+      this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => {
+        this.productImage5 = url
+        this.forFithImages = true;
       })
     })
   }
@@ -247,56 +266,55 @@ export class AdminProductsComponent implements OnInit {
   }
   setAttr1() {
     let psPlus = <HTMLInputElement>document.getElementById('productPsPlus');
-    if (psPlus.checked) {
-      this.productPsPlus = true;
+    psPlus.checked
+      ? this.productPsPlus = true
+      : this.productPsPlus = false;
+  }
+
+  setAttr2() {
+    let prodFree = <HTMLInputElement>document.getElementById('productFree');
+    if (prodFree.checked) {
       this.productMainPrice = 0;
-   }
+    }
     else {
-      this.productPsPlus = false;
       this.productMainPrice = null;
     }
   }
 
-
   editModal(template: TemplateRef<any>, product: IProduct): void {
-    // this.editStatus = true;
-    // this.modalRef = this.modalService.show(template, this.config);
-    // this.productID = product.id
-    // this.categoryName = "choose category..";
-    // this.productNameEN = product.nameEN
-    // this.productNameUA = product.nameUA
-    // this.productDescription = product.description
-    // this.productWeight = product.weight
-    // this.productPrice = product.price
-    // this.productImage = product.image
-    // this.imageStatus = true;
+    this.editModalStatus = true;
+    this.modalRef = this.modalService.show(template,{class: 'modal-dialog-centered modal-product'});
+    this.productID = product.id
+    this.categoryName ="виберіть категорію..";
+    this.underCategoryName = "виберіть підкатегорію..";
+    this.productNameEN = product.nameEN
+    this.productNameUA = product.nameUA
+    this.productDescription = product.description
+    this.productMainPrice = product.mainPrice;
+    this.productOldPrice = product.oldPrice;
+    this.productSize = product.size;
+    this.productTop = product.top;
+    this.productPsPlus = product.psPlus;
+    this.productImageMain=product.image1
+    this.productImage2=product.image2
+    this.productImage3=product.image3
+    this.productImage4=product.image4
+    this.productImage5 = product.image5
+    this.editStatus = true;
+    this.forThirdImages = true;
+    this.forFourthImages = true;
+    this.forFithImages = true;
   }
 
-  // uploadFile(event): void {
-  //   const file = event.target.files[0];
-  //   const type = file.type.slice(file.type.indexOf('/') + 1);
-  //   const name = file.name.slice(0, file.name.lastIndexOf('.')).toLowerCase();
-  //   this.imageStatus = false;
-  //   const filePath = `images/${name}.${type}`;
-  //   const task = this.afStorage.upload(filePath, file);
-  //   this.uploadProgress = task.percentageChanges();
-  //   task.then(image => {
-  //     this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => {
-  //       this.productImage = url;
-  //       this.imageStatus = true;
-  //     });
-  //   });
-  // }
-
-
-  deleteModal(template: TemplateRef<any>, product: IProduct): void {
-    // this.modalRef = this.modalService.show(template, this.config);
-    // this.delete_id = product.id
+  deleteModal(template: TemplateRef<any>,  product: IProduct): void {
+    this.modalRef = this.modalService.show(template,{ class: 'modal-dialog-centered'});
+    this.delete_id = product.id
   }
 
   deleteProduct(): void {
-    // this.prodService.deleteFireCloudProduct(this.delete_id)
-    // this.modalService.hide(1);
+    console.log(this.delete_id)
+    this.prodService.deleteFirecloudProduct(this.delete_id)
+    this.modalService.hide(1);
   }
 
   //sort pipe
@@ -308,30 +326,30 @@ export class AdminProductsComponent implements OnInit {
   }
   //sort pipe
 
-  closeModal(): void {
-    // this.modalService.hide(1);
-    // this.productNameEN = '';
-    // this.productNameUA = '';
-    // this.productDescription = '';
-    // this.productWeight = '';
-    // this.productImage = '';
-    // this.productPrice = null;
-    // this.imageStatus = false;
-    // this.categoryName = "choose category..";
-    // this.editStatus = false;
+  closeModal():void{
+    this.modalService.hide(1);
   }
 
   //clear form
-  private resetForm(): void {
-    // this.productNameEN = '';
-    // this.productNameUA = '';
-    // this.productDescription = '';
-    // this.productWeight = '';
-    // this.productImage = '';
-    // this.categoryName = "choose category..";
-    // this.productPrice = null;
-    // this.imageStatus = false;
-    // this.modalService.hide(1);
+  private resetModal(): void {
+    this.productNameEN = '';
+    this.productNameUA = '';
+    this.productDescription = '';
+    this.productMainPrice = null;
+    this.productOldPrice = null;
+    this.productSize = '';
+    this.productImageMain = '';
+    this.productImage2 ='';
+    this.productImage3= '';
+    this.productImage4 = '';
+    this.productImage5 = '';
+    this.editStatus = false;
+    this.forThirdImages=false;
+    this.forFourthImages=false;
+    this.forFithImages = false;
+    this.categoryName ="виберіть категорію..";
+    this.underCategoryName = "виберіть підкатегорію..";
+    this.modalService.hide(1);
   }
 
 

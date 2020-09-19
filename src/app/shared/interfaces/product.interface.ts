@@ -14,7 +14,8 @@ export interface IProduct{
     psPlus: boolean;
     image1: string;
     image2?: string;
-    // image3?: string;
-    // image4?: string;
+    image3?: string;
+    image4?: string;
+    image5?: string;
     count: number;
 }

@@ -23,22 +23,14 @@
         <p id="mainName1">Знижки та акції</p>
 
             <div class="gamesBlock">
-                <div class="card">
-                    <div class="imageBlock"><div class="imageGame"></div></div>
-                    <div class="nameGame">Ведьмак 3. Дикая охота</div>
+                <div class="card" *ngFor="let product of topProducts">
+                    <div class="imageBlock"><img class="imageGame" [src]='product?.image1' alt=""></div>
+                    <div class="nameGame">{{product.nameUA}}</div>
                     <div class="priceGame">
-                        <p class="oldPrice">2000 UAH</p>
-                       <p class="mainPrice"> 1500 UAH</p>
+                        <p class="oldPrice">{{product.oldPrice}} UAH</p>
+                       <p class="mainPrice">{{product.mainPrice}} UAH</p>
                     </div>
                 </div>
-    
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
             </div>
 
     </div>
