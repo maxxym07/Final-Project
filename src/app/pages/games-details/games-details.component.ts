@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { IProduct } from '../../shared/interfaces/product.interface';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { ProductService } from 'src/app/shared/services/product.service';
+import { ActivatedRoute } from '@angular/router';
+import { OrderService } from '../../shared/services/order.service';
 
 @Component({
   selector: 'app-games-details',
@@ -7,9 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GamesDetailsComponent implements OnInit {
   slideIndex = 0;
-  constructor() { }
+
+  userProduct: IProduct
+
+  constructor(private afStorage: AngularFirestore,
+    private productService: ProductService,
+    private actRoute: ActivatedRoute,
+    private orderService: OrderService,) { }
 
   ngOnInit(): void {
+    this.getMyProduct();
   }
 
   currentDiv(n) {
@@ -27,5 +39,23 @@ export class GamesDetailsComponent implements OnInit {
     x[this.slideIndex-1].style.display = "block";
   }
 
+  getMyProduct() {
+    const nameProduct=this.actRoute.snapshot.paramMap.get('name')
+    this.afStorage.collection('products').ref.where('nameEN','==',nameProduct).onSnapshot(
+      collection => {
+        collection.forEach(document => {
+          const data=document.data() as IProduct;
+          const id = document.id;
+          this.userProduct=({ id, ...data })
+        })
+      }
+    )
+   
+  }
+  
+
+  addBasket(product:IProduct): void{
+    this.orderService.addBasketService(product);
+  }
 
 }

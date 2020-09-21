@@ -10,6 +10,7 @@ export interface IProduct{
     size?: string;
     top: boolean;
     psPlus: boolean;
+    // freeProd?: boolean;
     image1: string;
     image2?: string;
     image3?: string;

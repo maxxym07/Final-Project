@@ -16,6 +16,8 @@ import { AdminCategoryComponent } from './admin/admin-category/admin-category.co
 import { UnderCategoriesComponent } from './admin/under-categories/under-categories.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { AdminCouponComponent } from './admin/admin-coupon/admin-coupon.component';
+
 
 
 const routes: Routes = [
@@ -27,13 +29,14 @@ const routes: Routes = [
   {path:'basket',component:BasketComponent},
   {path:'games',component:GamesComponent},
   {path:'games/:subcategory/:name',component:GamesDetailsComponent},
-  {path:'device-details',component:DeviceDetailsComponent},
+  {path:'device-details/:subcategory/:name',component:DeviceDetailsComponent},
   {path:'login',component:LoginComponent},
   { path: 'profile', component: ProfileComponent },
   {path: 'admin', component: AdminComponent, children: [
       { path: '', redirectTo: 'category', pathMatch: 'full' },
       { path: 'category', component: AdminCategoryComponent },
       { path: 'subcategory', component: UnderCategoriesComponent },
+      { path: 'coupon', component: AdminCouponComponent },
       { path: 'products', component: AdminProductsComponent },
       { path: 'orders', component: AdminOrdersComponent },
   ] },

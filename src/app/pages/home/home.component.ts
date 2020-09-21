@@ -9,7 +9,8 @@ import { IProduct } from '../../shared/interfaces/product.interface';
 })
 export class HomeComponent implements OnInit {
   myIndex = 0;
-  topProducts: Array<IProduct>=[]
+  topProducts: Array<IProduct> = []
+  
   constructor(private afStorage: AngularFirestore,) { }
 
   ngOnInit(): void {

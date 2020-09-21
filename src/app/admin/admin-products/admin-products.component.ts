@@ -37,6 +37,7 @@ export class AdminProductsComponent implements OnInit {
   productSize: string = '';
   productTop = false;
   productPsPlus = false;
+  freeProduct = false;
 
   productImageMain: string = '';
   productImage2: string = '';
@@ -142,22 +143,21 @@ export class AdminProductsComponent implements OnInit {
       this.productSize,
       this.productTop,
       this.productPsPlus,
+      // this.freeProduct,
       this.productImageMain,
       this.productImage2,
       this.productImage3,
       this.productImage4,
       this.productImage5
     );
-    if (this.productNameEN &&this.productNameUA &&
-      this.productMainPrice && this.productImageMain != '') {
+    if (this.productNameEN &&this.productNameUA && this.productImageMain != '') {
       if (!this.editModalStatus) {
         delete product.id;
         this.prodService.postFirecloudProduct(Object.assign({}, product))
         this.resetModal()
       }
       else {
-        if(this.productNameEN &&this.productNameUA &&
-          this.productMainPrice && this.productImageMain != '') {
+        if(this.productNameEN &&this.productNameUA && this.productImageMain != '') {
             this.prodService.updateFirecloudProduct(Object.assign({}, product))
             this.editModalStatus = false
             this.resetModal()
@@ -173,18 +173,17 @@ export class AdminProductsComponent implements OnInit {
   }
 
 
-  uploadFile(event): void {
+  uploadFile(event): void{
     const file = event.target.files[0];
     const type = file.type.slice(file.type.indexOf('/') + 1);
     const name = file.name.slice(0, file.name.lastIndexOf('.')).toLowerCase();
     this.editStatus = false;
     const filePath = `images/${name}.${type}`;
     const task = this.afStorage.upload(filePath, file);
-    this.uploadProgressMain = task.percentageChanges()
-  
+    
     task.then(image => {
       this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => {
-        this.productImageMain = url
+        this.productImageMain = url;
         this.editStatus = true;
       })
     })
@@ -271,9 +270,11 @@ export class AdminProductsComponent implements OnInit {
   setAttr2() {
     let prodFree = <HTMLInputElement>document.getElementById('productFree');
     if (prodFree.checked) {
+      // this.freeProduct=true
       this.productMainPrice = 0;
     }
     else {
+      // this.freeProduct=false
       this.productMainPrice = null;
     }
   }
@@ -292,6 +293,7 @@ export class AdminProductsComponent implements OnInit {
     this.productSize = product.size;
     this.productTop = product.top;
     this.productPsPlus = product.psPlus;
+    // this.freeProduct = product.freeProd;
     this.productImageMain = product.image1;
     this.productImage2 = product.image2;
     this.productImage3 = product.image3;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { IProduct } from '../../shared/interfaces/product.interface';
 
 @Component({
   selector: 'app-ps-plus',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PsPlusComponent implements OnInit {
 
-  constructor() { }
+  psPlusProducts: Array<IProduct> = []
+  freeProd='0'
+
+  constructor(private afStorage: AngularFirestore,) { }
 
   ngOnInit(): void {
+    this.getPsPlusProducts()
+  }
+
+  getPsPlusProducts(){
+    this.afStorage.collection('products').ref.where('psPlus', '==', true).onSnapshot(
+      collection => {
+        collection.forEach(document => {
+          const data = document.data() as IProduct;
+          const id = document.id;
+          this.psPlusProducts.push({id, ...data})
+        })
+      }
+    )
   }
 
 }

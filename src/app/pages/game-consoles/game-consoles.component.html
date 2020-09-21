@@ -2,22 +2,16 @@
     <div class="container">
        <div class="nameComponent">Ігрові консолі</div>
         <div class="gamesBlock">
-            <div class="card">
-                <div class="imageBlock"><div class="imageGame"></div></div>
-                <div class="nameGame">PS4 Pro 1TB + Fortnite Gift</div>
-                <div class="priceGame">
-                    <p class="oldPrice">11 500 UAH</p>
-                   <p class="mainPrice"> 10 000 UAH</p>
+            <div class="card" *ngFor="let console of userConsoles">
+                <div class="imageBlock" [routerLink]="['/device-details/'+console?.subCategory, console?.nameEN]">
+                    <img class="imageGame" [src]='console?.image1'></div>
+                <div class="nameGame">{{console?.nameEN}}</div>
+                <div class="priceGame"[routerLink]="['/device-details/'+console?.subCategory, console?.nameEN]">
+                    <p class="oldPrice">{{console?.oldPrice}} UAH</p>
+                   <p class="mainPrice">{{console?.mainPrice}} UAH</p>
                 </div>
             </div>
 
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
         </div>
 
     </div>

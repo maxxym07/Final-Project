@@ -2,22 +2,15 @@
     <div class="container">
        <div class="nameComponent">Ігрові гаджети та аксесуари</div>
         <div class="gamesBlock">
-            <div class="card">
-                <div class="imageBlock"><div class="imageGame"></div></div>
-                <div class="nameGame">Джойстик геймпад DualShock 4 PS4 wireless controller плейстейшн Красный RED</div>
-                <div class="priceGame">
-                    <p class="oldPrice">1000 UAH</p>
-                   <p class="mainPrice"> 899 UAH</p>
+            <div class="card" *ngFor="let gadget of userGadgets">
+                <div class="imageBlock" [routerLink]="['/device-details/'+gadget?.subCategory, gadget?.nameEN]">
+                    <img class="imageGame" [src]='gadget?.image1'></div>
+                <div class="nameGame">{{gadget?.nameEN}}</div>
+                <div class="priceGame" [routerLink]="['/device-details/'+gadget?.subCategory, gadget?.nameEN]">
+                    <p class="oldPrice">{{gadget?.oldPrice}} UAH</p>
+                   <p class="mainPrice">{{gadget?.mainprice}} UAH</p>
                 </div>
             </div>
-
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
         </div>
 
     </div>

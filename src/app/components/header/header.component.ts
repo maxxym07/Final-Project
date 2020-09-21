@@ -9,7 +9,8 @@ import { fromEvent } from 'rxjs';
 export class HeaderComponent implements OnInit {
 
   navbar:boolean;
-
+  totalPrice = 0;
+  
   constructor() { }
   
   ngOnInit(): void {

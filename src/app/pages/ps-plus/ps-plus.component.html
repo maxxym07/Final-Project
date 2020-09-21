@@ -18,22 +18,18 @@
         
        <div class="freeLOGO">Ігри місяця</div>
         <div class="gamesBlock">
-            <div class="card">
-                <div class="imageBlock"><div class="imageGame"></div></div>
-                <div class="nameGame">PLAYERUNKNOWN'S BATTLEGROUNDS</div>
-                <div class="priceGame">
-                    <p class="oldPrice">2000 UAH</p>
-                   <p class="mainPrice"> Безкоштовно</p>
+            <div class="card" *ngFor="let prod of psPlusProducts">
+                <div class="imageBlock" [routerLink]="['/games/'+prod?.subCategory, prod?.nameEN]">
+                    <img class="imageGame" [src]='prod?.image1' alt="">
+                </div>
+                <div class="nameGame">{{prod?.nameEN}}</div>
+                <div class="priceGame" [routerLink]="['/games/'+prod?.subCategory, prod?.nameEN]">
+                    <p class="oldPrice">{{prod?.oldPrice}} UAH</p>
+                    <p class="mainPrice">Безкоштовно</p>
                 </div>
             </div>
 
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+
         </div>
 
     </div>

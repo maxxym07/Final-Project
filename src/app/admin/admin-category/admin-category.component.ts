@@ -44,7 +44,7 @@ export class AdminCategoryComponent implements OnInit {
 
 
   openModal(template: TemplateRef<any>): void {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template, { class: 'modal-dialog-centered' });
   }
 
 
@@ -57,7 +57,7 @@ export class AdminCategoryComponent implements OnInit {
   }
 
   deleteModal(template: TemplateRef<any>,category:ICategory): void {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template, { class: 'modal-dialog-centered' });
     this.delete_id=category.id
   }
 

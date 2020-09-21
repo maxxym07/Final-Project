@@ -32,6 +32,7 @@ import { AdminCategoryComponent } from './admin/admin-category/admin-category.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { UnderCategoriesComponent } from './admin/under-categories/under-categories.component';
+import { AdminCouponComponent } from './admin/admin-coupon/admin-coupon.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { UnderCategoriesComponent } from './admin/under-categories/under-categor
     AdminOrdersComponent,
     AdminProductsComponent,
     UnderCategoriesComponent,
+    AdminCouponComponent,
     // JwPaginationComponent//////1
 
   ],

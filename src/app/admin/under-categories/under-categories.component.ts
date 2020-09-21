@@ -14,9 +14,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class UnderCategoriesComponent implements OnInit {
   modalRef: BsModalRef;
-  config = {
-    ignoreBackdropClick: true
-  }
+
 
   adminCategory: Array<ICategory> = [];
   adminUnderCategories: Array<IUndercategory>=[];
@@ -77,7 +75,7 @@ export class UnderCategoriesComponent implements OnInit {
   }
 
   openModal(template: TemplateRef<any>): void {
-    this.modalRef = this.modalService.show(template, this.config);
+    this.modalRef = this.modalService.show(template, { class: 'modal-dialog-centered' });
     this.underCategoryName=this.adminCategory[1].nameUA
   }
 
@@ -107,7 +105,7 @@ export class UnderCategoriesComponent implements OnInit {
   // }
 
   deleteModal(template: TemplateRef<any>,underCategory:IUndercategory): void {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template, { class: 'modal-dialog-centered' });
     this.delete_id=underCategory.id
   }
 

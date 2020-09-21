@@ -9,9 +9,9 @@
 
             <div class="forCarousel">
                 <div class="carousel">
-                     <img class="mySlides" src="/assets/images/forCarusel1" >
-                      <img class="mySlides" src="/assets/images/forCarusel2">  
-                     <img class="mySlides" src="/assets/images/forCarusel3">    
+                     <img class="mySlides" src="/assets/images/forCarusel1.jpeg" >
+                      <img class="mySlides" src="/assets/images/forCarusel2.jpeg">  
+                     <img class="mySlides" src="/assets/images/forCarusel3.jpg">    
                 </div>
             </div>
            
@@ -24,11 +24,13 @@
 
             <div class="gamesBlock">
                 <div class="card" *ngFor="let product of topProducts">
-                    <div class="imageBlock"><img class="imageGame" [src]='product?.image1' alt=""></div>
-                    <div class="nameGame">{{product.nameUA}}</div>
-                    <div class="priceGame">
-                        <p class="oldPrice">{{product.oldPrice}} UAH</p>
-                       <p class="mainPrice">{{product.mainPrice}} UAH</p>
+                    <div class="imageBlock" [routerLink]="['/games/'+product?.subCategory, product?.nameEN]">
+                        <img class="imageGame" [src]='product?.image1' alt="">
+                    </div>
+                    <div class="nameGame">{{product?.nameEN}}</div>
+                    <div class="priceGame" [routerLink]="['/games/'+product?.subCategory, product?.nameEN]">
+                        <p class="oldPrice">{{product?.oldPrice}} UAH</p>
+                            <p class="mainPrice">{{product?.mainPrice}} UAH</p>
                     </div>
                 </div>
             </div>

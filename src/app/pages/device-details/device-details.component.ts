@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { IProduct } from 'src/app/shared/interfaces/product.interface';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from 'src/app/shared/services/product.service';
+import { OrderService } from '../../shared/services/order.service';
 
 @Component({
   selector: 'app-device-details',
@@ -6,11 +11,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./device-details.component.scss']
 })
 export class DeviceDetailsComponent implements OnInit {
+  userProduct: IProduct;
 
   slideIndex = 0;
-  constructor() { }
+
+  constructor(private afStorage: AngularFirestore,
+    private productService: ProductService,
+    private actRoute: ActivatedRoute,
+    private orderService: OrderService,) { }
 
   ngOnInit(): void {
+    this.getMyProduct()
+  
   }
 
   currentDiv(n) {
@@ -26,6 +38,24 @@ export class DeviceDetailsComponent implements OnInit {
       x[i].style.display = "none";
     }
     x[this.slideIndex-1].style.display = "block";
+  }
+
+  getMyProduct() {
+    const nameProduct=this.actRoute.snapshot.paramMap.get('name')
+    this.afStorage.collection('products').ref.where('nameEN','==',nameProduct).onSnapshot(
+      collection => {
+        collection.forEach(document => {
+          const data=document.data() as IProduct;
+          const id = document.id;
+          this.userProduct=({ id, ...data })
+        })
+      }
+    )
+   
+  }
+
+  addBasket(product:IProduct): void{
+    this.orderService.addBasketService(product)
   }
 
 }

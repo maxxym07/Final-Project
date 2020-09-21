@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IProduct } from 'src/app/shared/interfaces/product.interface';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-gadgets',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GadgetsComponent implements OnInit {
 
-  constructor() { }
+  userGadgets: Array<IProduct> = [];
+
+  constructor(private afStorage: AngularFirestore,) { }
 
   ngOnInit(): void {
+    this.getMyGadgets()
   }
 
+  getMyGadgets(): void{
+    this.afStorage.collection('products').ref.where('category','==','гаджети').onSnapshot(
+      collection => {
+        this.userGadgets = [];
+        collection.forEach(document => {
+          const data=document.data() as IProduct;
+          const id = document.id;
+          this.userGadgets.push({ id, ...data })
+        })
+      }
+    )
+  }
+
+  
 }

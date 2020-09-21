@@ -14,7 +14,7 @@ export class GamesComponent implements OnInit {
   menuzhanrs = document.getElementsByClassName('menu-zhanrs') as HTMLCollectionOf<HTMLElement>;
   openStatus: boolean;
 
-  userProducts:Array<IProduct>=[]
+  userProducts: Array<IProduct> = []
   
   constructor(
     private actRoute: ActivatedRoute,

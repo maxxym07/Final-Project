@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-header">
+      <p class="card-text pFirst font-weight-bold">Coupon</p>
+      <button type="button" class="btn btn-dark butAdd" (click)="openModal(modal1)">Add</button>
+    </div>
+
+    <div class="card-body">
+      <input type="text"  class="form-control" [(ngModel)]="inputS" name="inputS" placeholder="filter category..">
+      <hr>
+      <table class="table">
+        <thead class="table-active">
+          <tr>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}" [ngStyle]="{'width': '60px'}">№</th>
+            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}">Code
+            </th>
+            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}">Percent
+            </th>
+            <th scope="col" class="text-secondary" [ngStyle]="{'width': '25px'}">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of adminCoupon; let i=index">
+            <td class="font-weight-bold">{{1+i}}</td>
+            <td>{{ c.code }}</td>
+            <td>{{ c.percent }}</td>
+            <td>
+              <input type="button" value="delete" class="btn btn-dark" (click)="deleteModal(modalDelete,c)">
+            </td>
+          </tr>
+        </tbody>
+      </table> 
+    </div>
+</div>
+
+<ng-template #modal1>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Coupon modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="bodyModal d-flex">
+        <input type="text" class="form-control col-6"  [(ngModel)]="code" name="code" (input)="checkInputs()" placeholder="code of coupon here.." id="nameEN">
+        <input type="number" class="form-control  col-6 ml-2" [(ngModel)]="percent" name="percent" (input)="checkInputs()"  placeholder="percent of coupon here.." id="nameUA">
+      </div>
+      <hr>
+      <div class="foot">
+        <button type="button" class="btn btn-secondary mr-2" (click)="modalRef.hide()">Close</button>
+      <button type="button" class="btn btn-secondary" (click)="addCoupon()" [disabled]="!couponStatus">Add</button>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #modalDelete>
+    <div class="modal-body">
+      <button type="button" class="btn btn-dark mr-2 butAdd1" (click)="modalRef.hide()">Dismiss</button>
+      <button type="button" class="btn btn-danger butAdd1" (click)="deleteCoupon()">Delete</button>
+    </div>
+  </ng-template>
