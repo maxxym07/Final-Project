@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule } from '@angular/forms';
 // import { NgxMaskModule, IConfig } from 'ngx-mask';
-// import { JwPaginationComponent } from 'jw-angular-pagination';/////1
-import {NgxPaginationModule} from 'ngx-pagination';
+import { ReactiveFormsModule } from '@angular/forms';
+// import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -56,14 +56,13 @@ import { AdminCouponComponent } from './admin/admin-coupon/admin-coupon.componen
     AdminProductsComponent,
     UnderCategoriesComponent,
     AdminCouponComponent,
-    // JwPaginationComponent//////1
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgxPaginationModule,
+    // NgxPaginationModule,
+    ReactiveFormsModule,
     // NgxMaskModule.forRoot(),
     ModalModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),

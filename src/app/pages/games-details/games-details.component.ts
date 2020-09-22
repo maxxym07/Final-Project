@@ -30,7 +30,7 @@ export class GamesDetailsComponent implements OnInit {
 
   showDivs(n) {
     let i;
-    let x = document.getElementsByClassName("mySlides")as HTMLCollectionOf<HTMLElement>;
+    let x = document.getElementsByClassName("mySlides1")as HTMLCollectionOf<HTMLElement>;
     if (n > x.length) { this.slideIndex = 1 }
     if (n < 1) {this.slideIndex = x.length}
     for (i = 0; i < x.length; i++) {

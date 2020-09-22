@@ -1,33 +1,40 @@
 <div class="home">
-    <div class="container">
+    <div class="emptyBasket" *ngIf="!orders.length">
+        <div class="backToHome">
+            <p class="emptyBasket-text">Корзина порожня</p>
+            <button type="button" class="butCoupon" [routerLink]="[ '/home']">На головну</button>
+        </div>
+    </div>
+
+    <div class="container" *ngIf="orders.length">
         <div class="orders">
             <div class="nameComponent">Корзина</div>
             
-            <div class="order-block">
+            <div class="order-block" *ngFor="let order of orders">
 
                 <div class="image-block">
-                    <a class="imgWrapper"></a>
+                    <img class="imgWrapper" [src]='order?.image1'>
                 </div>
 
                 <div class="name-block">
-                    <p class="nameGame">Ведьмак 3. Дикая охота</p>
+                    <p class="nameGame">{{order?.nameEN}}</p>
                 </div>
 
                 <div class="count-block">
                     <div class="counter-block">
-                        <span class="productCount lessProduct">-</span>
-                        <input class="product-qty" maxlength="3" type="number">
-                        <span class="productCount">+</span>
+                        <p class="productCount" (click)="productCount(order,false)"><i class="fas fa-minus"></i></p>
+                        <div class="product-qty" maxlength="3" type="number">{{order?.count}}</div>
+                        <p class="productCount" (click)="productCount(order,true)"><i class="fas fa-plus"></i></p>
                     </div>
-                      <div class="many">1 шт.</div>
+                      <div class="many">{{order?.count}} шт.</div>
                 </div>
 
                 <div class="price-block">
-                    <p class="mainPrice"> 1500 UAH</p>
+                    <p class="mainPrice">{{order?.mainPrice}} UAH</p>
                 </div>
 
                 <div class="delete-block">
-                    <span class="close"></span>
+                    <span class="close" (click)="deleteProductBasket(order)"></span>
                 </div>
 
             </div>
@@ -36,52 +43,44 @@
         
         <div class="right-block">
             <p id="datah">Дані одержувача</p>
-            
+            <form  id="orderFormCheck" #orderForm="ngForm" novalidate (submit)="addOrder(orderForm)">
             <div class="inputs">
-               
+              
                 <div class="inputElementWrapper">
-                    <input class="inputElementItem"  type="text" placeholder="Їм'я" >
+                    <input class="inputElementItem"  type="text" placeholder="Їм'я" ngModel name="userName" required #name="ngModel">
                     <label>Їм'я*</label>
                     <span class="focus-border"><i></i></span>
                   </div>
 
                   <div class="inputElementWrapper">
-                    <input class="inputElementItem"  type="text" placeholder="Прізвище" >
+                    <input class="inputElementItem"  type="text" placeholder="Прізвище" ngModel name="userLastName" required #name="ngModel">
                     <label>Прізвище*</label>
                     <span class="focus-border"><i></i></span>
                   </div>
 
                   <div class="inputElementWrapper">
-                    <input class="inputElementItem"  type="text" placeholder="телефон" >
+                    <input class="inputElementItem"  type="text" placeholder="телефон" ngModel name="userPhone" required #name="ngModel">
                     <label>Номер телефону*</label>
                     <span class="focus-border"><i></i></span>
                   </div>
 
-                <!-- <div class="select">
-                    <select name="slct" id="slct">
-                      <option selected disabled>Виберіть місто</option>
-                      <option value="Київ">Київ</option>
-                      <option value="Одеса">Одеса</option>
-                      <option value="Львів">Львів</option>
-                      <option value="Харків">Харків</option>
-                      <option value="Дніпропетровськ">Дніпропетровськ</option>
-                      <option value="Миколаїв">Миколаїв</option>
-                      <option value="Миколаїв">Миколаїв</option>
-                    </select>
-                  </div> -->
-
-                  
+                  <div class="inputElementWrapper">
+                    <input class="inputElementItem"  type="text" placeholder="Електронна пошта" ngModel name="userEmail" required #name="ngModel">
+                    <label>Електронна пошта*</label>
+                    <span class="focus-border"><i></i></span>
+                  </div>
             </div>
 
             <div class="cuopon">
-                <input type="text" placeholder="Маєш купон на знижку?" class="forCoupon" >
-                <button type="button" class="butCoupon">Використати</button>
+                <input type="text" placeholder="Маєш купон на знижку?" class="forCoupon" [(ngModel)]="saleCoupon" name="saleCoupon">
+                <button type="button" class="butCoupon" [disabled]="checkedCoupon" (click)="checkCoupon()" >Використати</button>
             </div>
 
             <div class="for-butBuy">
-               <p class="total">1500 UAH</p>
-                <button type="button" class="butBuy effect01">Купити</button>
+               <p class="total">{{totalPrice}} UAH</p>
+                <button type="submit" class="butBuy effect01" [disabled]="orderForm.invalid">Купити</button>
             </div>
+        </form>
         </div>
        
     </div>

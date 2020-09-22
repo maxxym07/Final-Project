@@ -30,7 +30,6 @@ export class OrderService {
     }
     localStorage.setItem('myOrder', JSON.stringify(localProducts));
     this.basket.next(localProducts);
-    // this.basket.next('toBasket')
   }
 
   getFirecloudCoupon(): Observable<DocumentChangeAction<unknown>[]>{
@@ -42,7 +41,7 @@ export class OrderService {
   deleteFirecloudCoupon(index:any): Promise<void>{
     return this.firestore.collection('coupons').doc(index).delete();
   }
-
+//////////////////////////for orders////////////////////////////////
   getFirecloudOrder(): Observable<DocumentChangeAction<unknown>[]>{
     return this.firestore.collection('orders').snapshotChanges()
   }

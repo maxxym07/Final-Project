@@ -3,6 +3,56 @@
     width: 100%;
     min-height: 600px;
 
+    .emptyBasket{
+      width: 85%;
+      min-height: 600px;
+      margin:10px auto;
+
+      .backToHome{
+        width: 100%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .emptyBasket-text{
+          width: 100%;
+          height: 80px;
+          color: #00a2ff;
+          font-size: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: 'Montserrat-nameGame','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .butCoupon{
+                width: 150px;
+                height: 40px;
+                background-color: rgb(40, 135, 212);
+                border: none;
+                color: white;
+                font-family: 'Roboto','Courier New', Courier, monospace;
+                font-size: 20px;
+                transition: all 300ms ease; 
+                margin-left: 10px;
+                
+                &:focus{
+                    border-radius: 5px;
+                    outline: none;
+                    border: 3px solid rgb(150, 190, 223);
+                    box-shadow: 1px 0px 6px rgb(102, 173, 231) ;
+                }
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgb(34, 102, 158);
+                    border-radius: 5px;
+                }
+            }
+      }
+    }
+
     .container{
         width: 85%;
         min-height: 600px;
@@ -41,16 +91,15 @@
                 }
 
                 .image-block{
-                    width: 15%;
+                    width: 19%;
                     height: 200px;
                    display: flex;
                    justify-content: center;
                    align-items: center;
 
                     .imgWrapper{
-                        width: 145px;
+                        width: 95%;
                         height: 195px;
-                        background-image: url(/assets/images/The-Witcher-3-game);
                         background-size: cover;
                         background-position: center;
                         background-repeat: no-repeat;
@@ -58,7 +107,7 @@
                 }
 
                 .name-block{
-                    width: 30%;
+                    width: 27%;
                     height: 200px;
                     display: flex;
                     justify-content: center;
@@ -93,8 +142,12 @@
                             width: 70px;
                             height: 40px;
                             font-size: 20px;
-                            text-align: center;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
                             font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                            background-color: white;
+                            border-radius: 3px;
     
                             &:focus{
                                 outline: none;
@@ -119,8 +172,8 @@
                                 outline: none;
                             }
                         }
-                        .lessProduct{
-                            padding-bottom: 10px;
+                        .fa-plus,.fa-minus{
+                          font-size: 25px;
                         }
                     }
                     
@@ -134,7 +187,7 @@
                 }
 
                 .price-block{
-                    width: 25%;
+                    width: 27%;
                     height: 200px;
                     display: flex;
                     justify-content: center;
@@ -150,7 +203,7 @@
                 }
 
                 .delete-block{
-                    width: 95px;
+                    width: 7%;
                     height: 50px;
                     display: flex;
                     justify-content: flex-end;
@@ -189,7 +242,7 @@
 
         .right-block{
             width: 35%;
-            height: 600px;
+            height: 560px;
             background-color: #011c5c;
             
             #datah{
@@ -205,7 +258,7 @@
 
             .inputs{
                 width: 95%;
-                height: 395px;
+                height: 350px;
                 margin: auto;
                 margin-top: 20px;
                 
@@ -404,7 +457,7 @@ label.light textarea:-ms-input-placeholder {
 .inputElementWrapper {
   width: 100%;
   position: relative;
-  margin-bottom: 17px;
+  margin-bottom: 30px;
 }
 
 .inputElementItem, .textareaElementItem {
@@ -417,6 +470,7 @@ label.light textarea:-ms-input-placeholder {
   width: 100%;
   box-sizing: border-box;
   letter-spacing: 1px;
+  height: 50px;
 }
 
 .inputElementItem ~ .focus-border:before,
@@ -561,7 +615,7 @@ textarea {
               margin-bottom: 20px;
 
               .forCoupon{
-                width: 240px;
+                width: 57%;
                 height: 40px;
                 font-family: 'Roboto-Bold','Courier New', Courier, monospace;
                 font-size: 16px;
@@ -574,13 +628,13 @@ textarea {
               }
 
               .butCoupon{
-                width: 150px;
+                width: 35%;
                 height: 40px;
                 background-color: rgb(40, 135, 212);
                 border: none;
                 color: white;
                 font-family: 'Roboto','Courier New', Courier, monospace;
-                font-size: 20px;
+                font-size: medium;
                 transition: all 300ms ease; 
                 
                 &:focus{
@@ -702,6 +756,56 @@ input::-webkit-outer-spin-button,
     width: 100%;
     min-height: 600px;
 
+    .emptyBasket{
+      width: 85%;
+      min-height: 600px;
+      margin:10px auto;
+
+      .backToHome{
+        width: 100%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .emptyBasket-text{
+          width: 100%;
+          height: 80px;
+          color: #00a2ff;
+          font-size: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: 'Montserrat-nameGame','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .butCoupon{
+                width: 150px;
+                height: 40px;
+                background-color: rgb(40, 135, 212);
+                border: none;
+                color: white;
+                font-family: 'Roboto','Courier New', Courier, monospace;
+                font-size: 20px;
+                transition: all 300ms ease; 
+                margin-left: 10px;
+                
+                &:focus{
+                    border-radius: 5px;
+                    outline: none;
+                    border: 3px solid rgb(150, 190, 223);
+                    box-shadow: 1px 0px 6px rgb(102, 173, 231) ;
+                }
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgb(34, 102, 158);
+                    border-radius: 5px;
+                }
+            }
+      }
+    }
+
     .container{
         width: 90%;
         min-height: 600px;
@@ -741,7 +845,7 @@ input::-webkit-outer-spin-button,
                 }
 
                 .image-block{
-                    width: 15%;
+                    width: 20%;
                     height: 200px;
                    display: flex;
                    justify-content: center;
@@ -750,7 +854,6 @@ input::-webkit-outer-spin-button,
                     .imgWrapper{
                         width: 145px;
                         height: 195px;
-                        background-image: url(/assets/images/The-Witcher-3-game);
                         background-size: cover;
                         background-position: center;
                         background-repeat: no-repeat;
@@ -758,7 +861,7 @@ input::-webkit-outer-spin-button,
                 }
 
                 .name-block{
-                    width: 30%;
+                    width: 25%;
                     height: 200px;
                     display: flex;
                     justify-content: center;
@@ -793,8 +896,12 @@ input::-webkit-outer-spin-button,
                             width: 70px;
                             height: 40px;
                             font-size: 20px;
-                            text-align: center;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
                             font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                            background-color: white;
+                            border-radius: 3px;
     
                             &:focus{
                                 outline: none;
@@ -815,10 +922,11 @@ input::-webkit-outer-spin-button,
                                 outline: none;
                                 background-color: rgb(117, 117, 117);
                             }
+                            .fa-plus,.fa-minus{
+                              font-size: 20px;
+                            }
                         }
-                        .lessProduct{
-                            padding-bottom: 10px;
-                        }
+                        
                     }
                     
 
@@ -831,7 +939,7 @@ input::-webkit-outer-spin-button,
                 }
 
                 .price-block{
-                    width: 25%;
+                    width: 23%;
                     height: 200px;
                     display: flex;
                     justify-content: center;
@@ -885,7 +993,7 @@ input::-webkit-outer-spin-button,
 
         .right-block{
             width: 100%;
-            height: 600px;
+            height: 520px;
             background-color: #011c5c;
             
             #datah{
@@ -901,7 +1009,7 @@ input::-webkit-outer-spin-button,
 
             .inputs{
                 width: 95%;
-                height: 395px;
+                height: 300px;
                 margin: auto;
                 margin-top: 20px;
                 
@@ -1408,6 +1516,56 @@ input::-webkit-outer-spin-button,
     width: 100%;
     min-height: 600px;
 
+    .emptyBasket{
+      width: 85%;
+      min-height: 600px;
+      margin:10px auto;
+
+      .backToHome{
+        width: 100%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .emptyBasket-text{
+          width: 100%;
+          height: 80px;
+          color: #00a2ff;
+          font-size: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: 'Montserrat-nameGame','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .butCoupon{
+                width: 150px;
+                height: 40px;
+                background-color: rgb(40, 135, 212);
+                border: none;
+                color: white;
+                font-family: 'Roboto','Courier New', Courier, monospace;
+                font-size: 20px;
+                transition: all 300ms ease; 
+                margin-left: 10px;
+                
+                &:focus{
+                    border-radius: 5px;
+                    outline: none;
+                    border: 3px solid rgb(150, 190, 223);
+                    box-shadow: 1px 0px 6px rgb(102, 173, 231) ;
+                }
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgb(34, 102, 158);
+                    border-radius: 5px;
+                }
+            }
+      }
+    }
+
     .container{
         width: 98%;
         min-height: 600px;
@@ -1476,9 +1634,8 @@ input::-webkit-outer-spin-button,
                    align-items: center;
 
                     .imgWrapper{
-                        width: 145px;
+                        width: 100%;
                         height: 150px;
-                        background-image: url(/assets/images/The-Witcher-3-game);
                         background-size: 100% 95%;
                         background-position: center;
                         background-repeat: no-repeat;
@@ -1486,7 +1643,7 @@ input::-webkit-outer-spin-button,
                 }
 
                 .name-block{
-                    width: 30%;
+                    width: 28%;
                     height: 185px;
                     display: flex;
                     justify-content: center;
@@ -1504,7 +1661,7 @@ input::-webkit-outer-spin-button,
                 }
 
                 .count-block{
-                    width: 17%;
+                    width: 20%;
                     height: 185px;
                     display: flex;
                     flex-direction: column;
@@ -1518,11 +1675,15 @@ input::-webkit-outer-spin-button,
                         margin-top: 50px;
 
                         .product-qty{
-                            width: 50px;
+                            width: 45px;
                             height: 35px;
                             font-size: 20px;
-                            text-align: center;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
                             font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                            background-color: white;
+                            border-radius: 3px;
     
                             &:focus{
                                 outline: none;
@@ -1530,14 +1691,11 @@ input::-webkit-outer-spin-button,
                         }
     
                         .productCount{
-                            width: 40px;
-                            height: 30px;
-                            font-size: 50px;
-                            color: white;
-                            display: none;
-                            justify-content: center;
-                            align-items: center;
+                            margin: 2px;
                           
+                            // .fa-plus,.fa-minus{
+                            //   font-size: 5px;
+                            // }
                             
                         }
                         
@@ -1608,7 +1766,7 @@ input::-webkit-outer-spin-button,
 
         .right-block{
             width: 100%;
-            height: 600px;
+            height: 540px;
             background-color: #011c5c;
             
             #datah{
@@ -1624,7 +1782,7 @@ input::-webkit-outer-spin-button,
 
             .inputs{
                 width: 95%;
-                height: 395px;
+                height: 310px;
                 margin: auto;
                 margin-top: 20px;
                 

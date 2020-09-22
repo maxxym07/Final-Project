@@ -32,7 +32,7 @@
         <div class="menu-basket">
             <a class="basket" [routerLink]="[ '/basket' ]">
                 <i class="fas fa-shopping-cart"></i>
-                <div id="total">{{totalPrice}}</div>
+                <div id="total" *ngIf="totalPrice!==0">{{totalPrice}} UAH</div>
             </a>
         </div>
 

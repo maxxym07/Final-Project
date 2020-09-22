@@ -42,7 +42,7 @@
             </div>
 
             <div class="buyGame">
-                <button type="button" class="buttonBuy" (click)="addBasket(userProduct)">Купити</button>
+                <button type="button" class="buttonBuy" [routerLink]="[ '/basket']" (click)="addBasket(userProduct)">Купити</button>
             </div>
             
             <div class="with"  *ngIf="userProduct?.category=='ігри'">
@@ -100,7 +100,7 @@
     </div>
 
     <div class="buyGameMobile">
-      <button type="button" class="buttonBuy" (click)="addBasket(userProduct)">Купити</button>
+      <button type="button" class="buttonBuy"  (click)="addBasket(userProduct)">Купити</button>
   </div>
 
   <div class="images" *ngIf="userProduct?.image2!==''">
