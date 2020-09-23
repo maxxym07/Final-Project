@@ -11,6 +11,10 @@ import { Category } from '../../shared/models/category.model';
 })
 export class AdminCategoryComponent implements OnInit {
   modalRef: BsModalRef;
+   //for sort
+   order: string = 'id';
+   reverse: boolean = false;
+   //for sort
   adminCategory: Array<ICategory> = [];
   categoryID = 1;
   nameEN: string;
@@ -84,4 +88,12 @@ export class AdminCategoryComponent implements OnInit {
     this.nameEN = '';
     this.nameUA = '';
   }
+
+      //sort pipe
+      setOrder(value: string) {
+        if (this.order === value) {
+          this.reverse = !this.reverse;
+        }
+        this.order = value;
+      }
 }

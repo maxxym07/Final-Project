@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule } from '@angular/forms';
 // import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { OrderModule } from 'ngx-order-pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 // import {NgxPaginationModule} from 'ngx-pagination';
 
@@ -33,6 +34,10 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { UnderCategoriesComponent } from './admin/under-categories/under-categories.component';
 import { AdminCouponComponent } from './admin/admin-coupon/admin-coupon.component';
+import { CategorySearchPipe } from './shared/pipes/category-search.pipe';
+import { ProductSearchPipe } from './shared/pipes/product-search.pipe';
+import { SubcategorySearchPipe } from './shared/pipes/subcategory-search.pipe';
+import { OrderSearchPipe } from './shared/pipes/order-search.pipe';
 
 
 @NgModule({
@@ -56,6 +61,10 @@ import { AdminCouponComponent } from './admin/admin-coupon/admin-coupon.componen
     AdminProductsComponent,
     UnderCategoriesComponent,
     AdminCouponComponent,
+    CategorySearchPipe,
+    ProductSearchPipe,
+    SubcategorySearchPipe,
+    OrderSearchPipe,
   ],
   imports: [
     BrowserModule,
@@ -69,6 +78,7 @@ import { AdminCouponComponent } from './admin/admin-coupon/admin-coupon.componen
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    OrderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

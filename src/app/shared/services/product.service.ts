@@ -26,5 +26,4 @@ export class ProductService {
     return this.firestore.collection('products').doc(product.id.toString()).update(product);
   }
 
-  
 }

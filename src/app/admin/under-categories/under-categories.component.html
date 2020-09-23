@@ -20,7 +20,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let uc of adminUnderCategories; let i=index">
+          <tr *ngFor="let uc of adminUnderCategories|subcategorySearch:inputS; let i=index">
             <td class="font-weight-bold">{{i+1}}</td>
             <td>{{ uc.category}}</td>
             <td>{{ uc.engName }}</td>

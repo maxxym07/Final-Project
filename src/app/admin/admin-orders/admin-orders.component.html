@@ -1,1 +1,106 @@
-<p>admin-orders works!</p>
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+      <p class="pProduct pFirst font-weight-bold">EDIT ORDERS</p>
+    </div>
+    <div class="card-body">
+      <input type="text" class="form-control" [(ngModel)]="inputS" name="inputS" placeholder="Search order...">
+      <hr>
+      <table class="table table-bordered">
+        <thead>
+          <tr class="table-active">
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}">№</th>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}">Ім'я</th>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}">Номер телефону</th>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}">Сума</th>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}">Дата</th>
+            <th scope="col">Статус
+              </th>
+            <th scope="col">Деталі</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of adminOrders|orderSearch:inputS; let i = index">
+            <td class="font-weight-bold">{{i+1 }}</td>
+            <td>{{order.userName }}</td>
+            <td>{{ order.userPhone }}</td>
+            <td>{{ order.totalPayment}} грн</td>
+            <td>{{ order.dateOrder|date:'dd MMMM, EEEE, HH:mm год'}}</td>
+            <td class="font-italic">{{ order.status}}</td>
+            <td class="edit">
+              <input *ngIf="order.status=='В обробці'" type="button" value="Детально" class="btn btn-success" (click)="openDetailsModal(order,modal1)" >
+              <input  *ngIf="order.status=='Прийнято'" type="button" value="Завершити" class="btn btn-success" (click)="completeOrder(order)" >
+              <input  *ngIf="order.status=='Завершено' || order.status=='Відхилено'" type="button" value="Видалити" class="btn btn-danger" (click)="deleteOrder(order)" >
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <ng-template #modal1>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left" >Деталі замовлення</h4>
+      <button type="button" class="btn btn-secondary" aria-label="Close" (click)="modalRef.hide()">X</button>
+    </div>
+    <div class="modal-body">
+      <h4 class="modal-title pull-left" [ngStyle]="{'text-align':'center'}">Данні одержувача</h4>
+        <table class="table table-bordered">
+            <thead>
+              <tr class="table-active">
+                <th colspan="2" [ngStyle]="{'word-spacing': '200px','text-align':'center'}"> Ім'я Прізвище</th>
+                <th [ngStyle]="{'text-align':'center'}">Номер телефону</th>
+                <th [ngStyle]="{'text-align':'center'}">Імейл</th>
+              </tr>
+            </thead>
+          <tbody>
+        <tr>
+            <td><input type="text" [(ngModel)]="orderName" name="orderName" class="form-control"></td>
+            <td><input type="text" [(ngModel)]="orderLastName" name="orderLastName" class="form-control"></td>
+            <td> <input type="text" [(ngModel)]="orderPhone" name="orderPhone" class="form-control"></td>
+            <td> <input type="text" [(ngModel)]="orderEmail" name="orderEmail" class="form-control"></td>
+          </tr>
+        </tbody>
+    </table>
+    <h4 class="modal-title pull-left" [ngStyle]="{'text-align':'center'}">Замовлення</h4>
+    <table class="table table-bordered">
+      <thead>
+        <tr class="table-active">
+          <th [ngStyle]="{'text-align':'center'}">Категорія</th>
+          <th [ngStyle]="{'text-align':'center'}">Підкатегорія</th>
+          <th [ngStyle]="{'text-align':'center'}">Назва</th>
+          <th [ngStyle]="{'text-align':'center'}">Кількість</th>
+          <th [ngStyle]="{'text-align':'center'}">Ціна</th> 
+          <th [ngStyle]="{'text-align':'center'}">Картинка</th> 
+          <th [ngStyle]="{'text-align':'center'}">Видалити</th> 
+        </tr>
+      </thead>
+    <tbody>
+  <tr *ngFor="let orderProd of adminProducts;index as i">
+    <td [ngStyle]="{'text-align':'center'}">{{orderProd?.category|titlecase}}</td>
+    <td [ngStyle]="{'text-align':'center'}">{{orderProd?.subCategory}}</td>
+    <td [ngStyle]="{'text-align':'center'}">{{orderProd?.nameUA}}</td>
+    <td [ngStyle]="{'text-align':'center'}">
+      <div class="productCountWrapper">
+        <div class="productCount lessProduct" [ngStyle]="{'cursor': 'pointer'}" (click)="productCount(orderProd, false)"><i class="fas fa-minus"></i></div>
+        <div type="text" maxlength="3">{{orderProd?.count}}</div>
+        <div class="productCount moreProduct" [ngStyle]="{'cursor': 'pointer'}" (click)="productCount(orderProd, true)"><i class="fas fa-plus"></i></div>
+      </div>
+    </td>
+    <td [ngStyle]="{'text-align':'center'}">{{orderProd?.mainPrice*orderProd?.count}}грн</td>
+    <td class="smallProduct1" [style.backgroundImage]="'url('+ orderProd?.image1 +')'"></td>
+    <td [ngStyle]="{'text-align':'center'}"><input type="button" value="Видалити" class="btn btn-danger" (click)="deleteProduct(orderProd)"></td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<p [ngStyle]="{'text-align':'center'}" class="font-weight-bold">Загалом: {{ orderPrice }} грн</p> 
+<hr>
+    <div class="buttons">
+      <button type="button" [ngStyle]="{'width': '100%'}"  class="btn btn-warning" [textContent]="!editStatus? 'Зберегти зміни замовлення':'Збережено'" (click)="saveOrder()" ></button>
+      <button type="button"[ngStyle]="{'width': '100%'}"    class="btn btn-success mt-2" (click)="changeOrderStatus(ordDetails,true)" [textContent]="!orderStatus1? 'Прийняти':'Прийнято'"></button>
+      <button type="button" [ngStyle]="{'width': '100%'}"   class="btn btn-danger mt-2" (click)="changeOrderStatus(ordDetails,false)" [textContent]="!orderStatus2? 'Відхилити':'Відхилено'"></button>
+     </div>
+    </div>
+  </ng-template>
