@@ -2,11 +2,11 @@
     <div class="container">
        <div class="nameComponent">Ігрові консолі</div>
         <div class="gamesBlock">
-            <div class="card" *ngFor="let console of userConsoles">
-                <div class="imageBlock" [routerLink]="['/device-details/'+console?.subCategory, console?.nameEN]">
+            <div class="card" *ngFor="let console of userConsoles"  [routerLink]="['/device-details/'+console?.subCategory, console?.nameEN]">
+                <div class="imageBlock">
                     <img class="imageGame" [src]='console?.image1'></div>
                 <div class="nameGame">{{console?.nameEN}}</div>
-                <div class="priceGame"[routerLink]="['/device-details/'+console?.subCategory, console?.nameEN]">
+                <div class="priceGame">
                     <p class="oldPrice">{{console?.oldPrice}} UAH</p>
                    <p class="mainPrice">{{console?.mainPrice}} UAH</p>
                 </div>

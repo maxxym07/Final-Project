@@ -2,13 +2,13 @@
     <div class="container">
        <div class="nameComponent">Ігрові гаджети та аксесуари</div>
         <div class="gamesBlock">
-            <div class="card" *ngFor="let gadget of userGadgets">
-                <div class="imageBlock" [routerLink]="['/device-details/'+gadget?.subCategory, gadget?.nameEN]">
+            <div class="card" *ngFor="let gadget of userGadgets"  [routerLink]="['/device-details/'+gadget?.subCategory, gadget?.nameEN]">
+                <div class="imageBlock">
                     <img class="imageGame" [src]='gadget?.image1'></div>
                 <div class="nameGame">{{gadget?.nameEN}}</div>
-                <div class="priceGame" [routerLink]="['/device-details/'+gadget?.subCategory, gadget?.nameEN]">
+                <div class="priceGame">
                     <p class="oldPrice">{{gadget?.oldPrice}} UAH</p>
-                   <p class="mainPrice">{{gadget?.mainprice}} UAH</p>
+                   <p class="mainPrice">{{gadget?.mainPrice}} UAH</p>
                 </div>
             </div>
         </div>

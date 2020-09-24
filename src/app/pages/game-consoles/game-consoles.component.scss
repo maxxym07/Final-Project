@@ -48,6 +48,9 @@
                             background-color: rgb(13, 160, 197);
                         }
                     }
+                    &:focus{
+                        outline: none;
+                    }
     
                     .imageBlock{
                         width: 100%;
@@ -151,6 +154,7 @@
                     &:focus{
                         box-shadow: 1px 1px 20px 5px rgb(0, 110, 173);
                         border-radius: 3px;
+                        outline: none;
                         .priceGame{
                             background-color: rgb(13, 160, 197);
                         }
@@ -280,6 +284,7 @@
                     &:focus{
                         box-shadow: 1px 1px 20px 5px rgb(0, 110, 173);
                         border-radius: 3px;
+                        outline: none;
                         .priceGame{
                             background-color: rgb(13, 160, 197);
                         }

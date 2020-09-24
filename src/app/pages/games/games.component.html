@@ -37,12 +37,12 @@
         </div>
 
         <div class="gamesBlock">
-            <div class="card" *ngFor="let products of userProducts">
-                <div class="imageBlock" [routerLink]="['/games/'+products?.subCategory, products?.nameEN]">
+            <div class="card" *ngFor="let products of userProducts"  [routerLink]="['/games/'+products?.subCategory, products?.nameEN]">
+                <div class="imageBlock">
                     <img class="imageGame" [src]='products?.image1' alt="">
                 </div>
                 <div class="nameGame">{{products?.nameEN}}</div>
-                <div class="priceGame" [routerLink]="['/games/'+products?.subCategory, products?.nameEN]">
+                <div class="priceGame">
                     <p class="oldPrice">{{products?.oldPrice}} UAH</p>
                     <p class="mainPrice">{{products?.mainPrice}} UAH</p>
                 </div>

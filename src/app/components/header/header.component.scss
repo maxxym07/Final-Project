@@ -101,7 +101,9 @@
     //////////те що пропадає//////////
     
     //////////те що постійно//////////
-    
+    .menu-headerMobile{
+        display: none;
+    }
     .menu-header{
         width: 100%;
         height: 50px;
@@ -452,7 +454,9 @@
     //////////те що пропадає//////////
     
     //////////те що постійно//////////
-    
+    .menu-headerMobile{
+        display: none;
+    }
     .menu-header{
         width: 100%;
         height: 50px;
@@ -749,7 +753,7 @@
     .menu-header{
         width: 100%;
         height: 50px;
-        display: flex;
+        display: none;
         background-color: rgb(1, 28, 92);
         z-index: 999;
         flex-direction: row-reverse;
@@ -761,146 +765,53 @@
             justify-content: flex-start;
             display: none;
 
-            &:focus{
-                outline: none;
-                }
-    
-            .logoIMG{
-                width: 100%;
-                height: 50px;
-                background-image: url(/assets/images/logo.png);
-                background-position: center;
-                background-size: 90% 90%;
-                background-repeat: no-repeat;
-                }
+            
         }
     
         .center-menu{
             height: 50px;
-            display: flex;
+            display: none;
             justify-content: space-between;
             align-items: center;
             margin-left: 10px;
             margin-right: 10px;
             display: none;
     
-            .category{
-                width: 140px;
-                height: 43px;
-                font-size: 26px;
-                font-family: "Roboto-Bold",'Courier New', Courier, monospace;
-                color: white;
-                line-height: 43px;
-                display: flex;
-                justify-content: center;
-                transition: all 750ms ease; 
-                
-                &:focus{
-                    outline: none;
-                }
-            
-            }
         }
     
        
         .right-menu{
             width: 110px;
             height: 50px;
-            display: flex;
+            display: none;
             justify-content: center;
             align-items: center;
             margin-left: 10px;
             margin-right: 5px;
             display: none;
-
-                .butLogin{
-                    width: 100px;
-                    height: 38px;
-                    background-color: rgb(40, 135, 212);
-                    border: none;
-                    color: white;
-                    font-family: 'Roboto','Courier New', Courier, monospace;
-                    font-size: 20px;
-                    transition: all 300ms ease; 
-                    
-                    &:focus{
-                        border-radius: 5px;
-                        outline: none;
-                        border: 3px solid rgb(150, 190, 223);
-                        box-shadow: 1px 0px 6px rgb(102, 173, 231) ;
-                    }
-                }
-    
-                .userIcon{
-                    width: 100px;
-                    height: 50px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    font-size: 35px;
-                    cursor: pointer;
-    
-                    .fa-user-circle:focus{
-                        color: rgb(5, 174, 216);
-                    }
-                }
         }
     
         .menu-basket{
             width: 100px;
             height: 50px;
-            display: flex;
-            justify-content: center;
-
-            .basket{
-                width:80px;
-                height: 50px;
-                display: flex;
-                align-items: center;
-            text-decoration: none;
-
-                
-                &:focus{
-                    outline: none;
-                }
-    
-                .fa-shopping-cart{
-                    width: 50px;
-                    height: 50px;
-                    color: white;
-                    font-size: 30px;
-                    transition: all 500ms ease;
-                    line-height: 50px;
-                    text-align: center;
-                    margin-left: 10px;
-    
-                    &:focus{
-                        color: rgb(12, 223, 238);
-                    }
-                }
-                #total{
-                    color: white;
-                    font-size: 12px;
-                    border-radius: 5px;
-                    padding: 4px;
-                    position: relative;
-                    top: 10px;
-                    right: 5px;
-                    background-color: red;
-                    font-family: "Montserrat-nameGame", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-                }
-                   
-                }
-    
-               
+            display: none;
+            justify-content: center;   
             }
             
+        }
+    
+        .menu-headerMobile{
+            width: 100%;
+        height: 50px;
+        display: flex;
+        background-color: rgb(1, 28, 92);
+        z-index: 999;
+        justify-content: space-between;
+        position: fixed;
+
             .hamburger-menu{
                 display: block;
             }
-
-            
 
             #menu__toggle {
                 opacity: 0;
@@ -912,11 +823,11 @@
               #menu__toggle:checked ~ .menu__btn > span::before {
                 top: 0;
                 transform: rotate(0);
-                
               }
               #menu__toggle:checked ~ .menu__btn > span::after {
                 top: 0;
                 transform: rotate(90deg);
+               
               }
               #menu__toggle:checked ~ .menu__box {
                 visibility: visible;
@@ -1021,9 +932,55 @@
                  text-shadow:5px 3px rgb(12, 12, 12);
                  min-width: max-content;
               }
-        }
+              .menu-basket{
+                width: 100px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
     
-
+                .basket{
+                    width:80px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                text-decoration: none;
+    
+                    
+                    &:focus{
+                        outline: none;
+                    }
+        
+                    .fa-shopping-cart{
+                        width: 50px;
+                        height: 50px;
+                        color: white;
+                        font-size: 30px;
+                        transition: all 500ms ease;
+                        line-height: 50px;
+                        text-align: center;
+                        margin-left: 10px;
+        
+                        &:focus{
+                            color: rgb(12, 223, 238);
+                        }
+                    }
+                    #total{
+                        color: white;
+                        font-size: 12px;
+                        border-radius: 5px;
+                        padding: 4px;
+                        position: relative;
+                        top: 10px;
+                        right: 5px;
+                        background-color: red;
+                        font-family: "Montserrat-nameGame", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+                    }
+                       
+                    }
+        
+                   
+                }
+        }
     
     }
 }

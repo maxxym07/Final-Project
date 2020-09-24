@@ -46,6 +46,9 @@
                             background-color: rgb(13, 160, 197);
                         }
                     }
+                    &:focus{
+                        outline: none;
+                    }
     
                     .imageBlock{
                         width: 100%;
@@ -90,7 +93,7 @@
                             text-decoration: line-through;
                             font-family: 'Montserrat-Oldprice','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                             font-size: 15px;
-                            min-width: 75px;
+                            min-width: 85px;
                             line-height: normal;
                         }
     
@@ -148,7 +151,7 @@
                     &:focus{
                         box-shadow: 1px 1px 20px 5px rgb(0, 110, 173);
                         border-radius: 3px;
-    
+                        outline: none;
                         .priceGame{
                             background-color: rgb(13, 160, 197);
                         }
@@ -277,7 +280,7 @@
                     &:focus{
                         box-shadow: 1px 1px 20px 5px rgb(0, 110, 173);
                         border-radius: 3px;
-    
+                        outline: none;
                         .priceGame{
                             background-color: rgb(13, 160, 197);
                         }
@@ -292,7 +295,7 @@
     
                         .imageGame{
                             width: 100%;
-                            height: 295px;
+                            height: 60%;
                             margin-top: 10px;
                             background-repeat: no-repeat;
                             background-position: center;
