@@ -37,7 +37,8 @@
             <div class="imageBlock"><img class="imageGame" [src]='userProduct?.image1' alt=""></div>
            
             <div class="priceGame">
-                <p class="oldPrice">{{userProduct?.oldPrice}} UAH</p>
+                <p class="oldPrice" *ngIf="userProduct?.oldPrice!==null">{{userProduct?.oldPrice}} UAH</p>
+                <p class="oldPrice" *ngIf="userProduct?.oldPrice==null"></p>
                   <p class="mainPrice">{{userProduct?.mainPrice}} UAH</p>
             </div>
 
@@ -95,7 +96,8 @@
       <div class="imageBlockMobile"><img class="imageGameMobile" [src]='userProduct?.image1' alt=""></div>
       
       <div class="priceGameMobile">
-        <p class="oldPriceMobile">{{userProduct?.oldPrice}} UAH</p>
+        <p class="oldPriceMobile" *ngIf="userProduct?.oldPrice!==null">{{userProduct?.oldPrice}} UAH</p>
+        <p class="oldPriceMobile" *ngIf="userProduct?.oldPrice==null"></p>
         <p class="mainPriceMobile">{{userProduct?.mainPrice}} UAH</p>
     </div>
 

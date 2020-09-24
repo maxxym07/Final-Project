@@ -82,8 +82,6 @@ export class AdminProductsComponent implements OnInit {
       }
     )
   }
-  /////////////////////////категорія////////////////////////////
-
 
   ///////////////підкатегорія//////////////
   private adminFirebaseUnderCategories(): void {
@@ -97,8 +95,6 @@ export class AdminProductsComponent implements OnInit {
       }
     )
   }
-  ///////////////підкатегорія//////////////
-
 
   ////////////////////////продукт////////////////////////////////////
   private adminFirebaseProducts(): void {
@@ -112,9 +108,6 @@ export class AdminProductsComponent implements OnInit {
       }
     )
   }
-  ////////////////////////продукт////////////////////////////////////
-
-  
 
   setCategory(): void {
     this.productCategory = this.categories.filter(cat => cat.nameUA === this.categoryName)[0];
@@ -143,7 +136,6 @@ export class AdminProductsComponent implements OnInit {
       this.productSize,
       this.productTop,
       this.productPsPlus,
-      // this.freeProduct,
       this.productImageMain,
       this.productImage2,
       this.productImage3,
@@ -267,18 +259,6 @@ export class AdminProductsComponent implements OnInit {
       : this.productPsPlus = false;
   }
 
-  setAttr2() {
-    let prodFree = <HTMLInputElement>document.getElementById('productFree');
-    if (prodFree.checked) {
-      // this.freeProduct=true
-      this.productMainPrice = 0;
-    }
-    else {
-      // this.freeProduct=false
-      this.productMainPrice = null;
-    }
-  }
-
   editModal(template: TemplateRef<any>, product: IProduct): void {
     this.editModalStatus = true;
     this.modalRef = this.modalService.show(template,{class: 'modal-dialog-centered modal-product'});
@@ -293,7 +273,6 @@ export class AdminProductsComponent implements OnInit {
     this.productSize = product.size;
     this.productTop = product.top;
     this.productPsPlus = product.psPlus;
-    // this.freeProduct = product.freeProd;
     this.productImageMain = product.image1;
     this.productImage2 = product.image2;
     this.productImage3 = product.image3;

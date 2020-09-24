@@ -43,7 +43,8 @@
                 </div>
                 <div class="nameGame">{{products?.nameEN}}</div>
                 <div class="priceGame">
-                    <p class="oldPrice">{{products?.oldPrice}} UAH</p>
+                    <p class="oldPrice" *ngIf="products?.oldPrice!==null">{{products?.oldPrice}} UAH</p>
+                    <p class="oldPrice" *ngIf="products?.oldPrice==null"></p>
                     <p class="mainPrice">{{products?.mainPrice}} UAH</p>
                 </div>
             </div>
