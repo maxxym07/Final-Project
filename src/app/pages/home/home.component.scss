@@ -92,7 +92,7 @@
                 width: 100%;
                 display: flex;
                 flex-flow: row wrap;
-                padding-left: 20px;
+                justify-content: center;
     
                 .card{
                     width: 315px;
@@ -100,8 +100,8 @@
                     background-color: #0a0135;
                     transition: all 500ms ease;
                     cursor: pointer;
-                    margin-left: 50px;
                     margin-bottom: 30px;
+                    margin-right: 30px;
     
                     &:hover{
                         outline: 1px solid whitesmoke;

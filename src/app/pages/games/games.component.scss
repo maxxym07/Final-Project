@@ -407,24 +407,25 @@
             
            
             .gamesBlock{
-                width: 98%;
-                min-height: 440px;
+                width: 100%;
                 display: flex;
-                flex-flow: row wrap;
-                margin: auto;
-                margin-top: 20px;
-                justify-content: space-around;
-                padding-left: 0px;
-    
+               flex-flow: row wrap;
+               padding-left: 0px;
+               justify-content: space-around;
+               margin: 0px;
+               
                 .card{
-                    width: 220px;
-                    height: 400px;
-                    margin: 5px;
-                    background-color: rgb(10, 1, 53);
-                    transition: all 500ms ease; 
+                    width: 47%;
+                    height: 350px;
+                    background-color: #0a0135;
+                    transition: all 500ms ease;
+                    margin-right: 0px;
+                    margin-bottom: 20px;
+                    margin-left: 0px;
+                
     
                     &:focus{
-                        outline: 1px solid whitesmoke;
+                        outline: none;
                         box-shadow: 1px 1px 15px 3px rgb(0, 79, 124);
                         border-radius: 3px;
                         
@@ -435,59 +436,67 @@
     
                     .imageBlock{
                         width: 100%;
-                        height: 295px;
+                        height: 240px;
                         display: flex;
                         justify-content: center;
+                        align-items: center;
     
                         .imageGame{
                             width: 100%;
-                            height: 295px;
-                            margin-top: 10px;
-                            background-repeat: no-repeat;
-                            background-position: center;
-                            background-size: 95% 100%;
+                            height: 240px;
+                          margin-top: 0px;
+                          background-repeat: no-repeat;
+                          background-size: 95% 100%;
+                          background-position: center;
                         }
                     }
                     
                     .nameGame{
                         width: 95%;
                         max-height: 50px;
+                        min-height:40px;
                         color: white;
                         font-size: 17px;
                         margin: 5px auto;
-                        font-family: "Roboto-Bold", "Courier New", Courier, monospace;
-                        margin-top: 5px;
-                        min-height: 40px;
+                        font-family: 'Roboto-Bold','Courier New', Courier, monospace;
                         margin-top: 10px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         overflow: hidden;
+                        margin-top: 5px;
                     }
                 .priceGame{
                     width: 95%;
-                        height:40px;
-                        margin: 6px auto;
-                        text-align: center;
-                        line-height: 40px;
-                        display: flex;
-                        background-color: rgb(52, 129, 148);
-                        border-radius: 2px;
+                    height:50px;
+                    margin: 6px auto;
+                    text-align: center;
+                    line-height: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: rgb(52, 129, 148);
+                    border-radius: 2px;
     
                         .oldPrice{
                             text-decoration: line-through;
                             color: white;
                             font-family: 'Montserrat-Oldprice','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                             font-size: 13px;
-                            min-width: 55px;
-                            line-height: normal;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
                         }
     
                         .mainPrice{
-                            font-family: 'Roboto','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            font-family: "Roboto-Bold", "Courier New", Courier, monospace;
                             font-size: 23px;
-                            color: rgb(231, 231, 231);
-                            min-width: 100px;
+                            color: #e7e7e7;
+                            width: 100%;
+                            justify-content: center;
+                            align-items: center;
+                            line-height: normal;
                         }
                 }
     

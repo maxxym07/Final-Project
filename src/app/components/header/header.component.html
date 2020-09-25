@@ -47,23 +47,21 @@
         </label>
     
         <ul class="menu__box">
-          <li><a class="menu__item" href="#" [routerLink]="[ '/home' ]">Головна</a></li>
-                <li><a class="menu__item" href="#" [routerLink]="[ '/games' ]">Ігри</a></li>
-                <li><a class="menu__item psPlus" href="#" [routerLink]="[ '/ps-plus' ]">PS Plus</a></li>
-                <li><a class="menu__item" href="#" [routerLink]="[ '/game-consoles' ]">Консолі</a></li>
-                <li><a class="menu__item" href="#" [routerLink]="[ '/gadgets' ]">Гаджети</a></li>
+          <li><a class="menu__item" href="#" [routerLink]="[ '/home' ]" (click)="closeBurger()">Головна</a></li>
+                <li><a class="menu__item" href="#" [routerLink]="[ '/games' ]" (click)="closeBurger()">Ігри</a></li>
+                <li><a class="menu__item psPlus" href="#" [routerLink]="[ '/ps-plus' ]" (click)="closeBurger()">PS Plus</a></li>
+                <li><a class="menu__item" href="#" [routerLink]="[ '/game-consoles' ]" (click)="closeBurger()">Консолі</a></li>
+                <li><a class="menu__item" href="#" [routerLink]="[ '/gadgets' ]" (click)="closeBurger()">Гаджети</a></li>
                 
                 <div class="menu__box-bottom">
-                        <div><a class="menu__item" href="#" [routerLink]="[ '/login' ]">Увійти</a></div>
-                        <div><a class="menu__item" href="#" [routerLink]="[ '/profile' ]">Профіль</a></div>
+                        <div><a class="menu__item" href="#" [routerLink]="[ '/login' ]" (click)="closeBurger()">Увійти</a></div>
+                        <div><a class="menu__item" href="#" [routerLink]="[ '/profile' ]" (click)="closeBurger()">Профіль</a></div>
                 </div>
         </ul>
       </div>
   <!-- burger -->
     <p id="mySonyBurger"  [routerLink]="[ '/home' ]">Playstation Store</p>
 
-   
-    
       <div class="menu-basket">
         <a class="basket" [routerLink]="[ '/basket' ]">
             <i class="fas fa-shopping-cart"></i>

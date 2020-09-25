@@ -934,6 +934,7 @@
                  margin-left: 10px;
                  text-shadow:5px 3px rgb(12, 12, 12);
                  min-width: max-content;
+                 user-select: none;
                  &:focus{
                      outline: none;
                  }

@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   private basket: Array<IProduct> = [];
   navbar:boolean;
   totalPrice = 0;
+  burgerCount=0
   
   constructor(private ordService: OrderService) { }
   
@@ -21,8 +22,6 @@ export class HeaderComponent implements OnInit {
     this.getLocalStorage();
   }
   
-
-
   private checkBasket(): void {
     this.ordService.basket.subscribe(
       () => {
@@ -60,6 +59,11 @@ export class HeaderComponent implements OnInit {
         mainMenu[0].style.position = 'relative'
       }
     })
+  }
+
+  closeBurger(): void{
+    let menuSpan = <HTMLInputElement>document.getElementById('menu__toggle');
+    menuSpan.checked=false
   }
 
 }
