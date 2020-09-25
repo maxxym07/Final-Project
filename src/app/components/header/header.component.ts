@@ -44,6 +44,7 @@ export class HeaderComponent implements OnInit {
   }
   
 
+
   scrollHeader() {
     let mainMenu = document.getElementsByClassName('menu-header') as HTMLCollectionOf<HTMLElement>;
 

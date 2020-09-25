@@ -13,7 +13,7 @@ export class GamesComponent implements OnInit {
   countZhanrs = 0
   menuzhanrs = document.getElementsByClassName('menu-zhanrs') as HTMLCollectionOf<HTMLElement>;
   openStatus: boolean;
-
+  p: number = 1;
   userProducts: Array<IProduct> = []
   
   constructor(

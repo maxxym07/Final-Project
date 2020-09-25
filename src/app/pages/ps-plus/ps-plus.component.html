@@ -25,7 +25,7 @@
                 <div class="nameGame">{{prod?.nameEN}}</div>
                 <div class="priceGame" [routerLink]="['/games/'+prod?.subCategory, prod?.nameEN]">
                     <p class="oldPrice">{{prod?.oldPrice}} UAH</p>
-                    <p class="mainPrice">Безкоштовно</p>
+                    <p class="mainPrice">{{prod?.mainPrice}} UAH</p>
                 </div>
             </div>
 

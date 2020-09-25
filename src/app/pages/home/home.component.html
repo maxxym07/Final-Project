@@ -29,7 +29,8 @@
                     </div>
                     <div class="nameGame">{{product?.nameEN}}</div>
                     <div class="priceGame">
-                        <p class="oldPrice">{{product?.oldPrice}} UAH</p>
+                        <p class="oldPrice" *ngIf="product?.oldPrice!==null">{{product?.oldPrice}} UAH</p>
+                        <p class="oldPrice" *ngIf="product?.oldPrice==null"></p>
                             <p class="mainPrice">{{product?.mainPrice}} UAH</p>
                     </div>
                 </div>

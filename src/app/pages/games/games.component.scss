@@ -471,7 +471,7 @@
                         text-align: center;
                         line-height: 40px;
                         display: flex;
-                        background-color: rgb(94, 94, 94);
+                        background-color: rgb(52, 129, 148);
                         border-radius: 2px;
     
                         .oldPrice{
@@ -496,4 +496,51 @@
         }
     
     }
+    
+}
+
+.myPagination::ng-deep{
+    display: block;
+    margin-top:20px;
+    font-size: 23px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    font-family: 'Poppins','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     .current{
+        background: #0084ffc2;
+     }
+    .ngx-pagination{
+    text-align: center;
+    a{
+        color: #00e1ff;
+        width: 50px;
+        height: 50px;
+       
+    }
+            a:hover,  button:hover {
+                background: #005cb3c2;
+                text-decoration: none;
+                cursor: pointer;
+                color: white;
+        }
+        a:focus,  button:focus {
+            outline: none;
+            background: #004381c2;
+            }
+            li{
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                margin-right: 10px;
+            }
+        
+    }
+
+    ul{
+    .pagination-previous,.pagination-next, .disabled{
+        display: none;
+}
+}
 }

@@ -8,7 +8,7 @@ import { IProduct } from '../../shared/interfaces/product.interface';
   styleUrls: ['./game-consoles.component.scss']
 })
 export class GameConsolesComponent implements OnInit {
-
+  p: number = 1;
   userConsoles: Array<IProduct> = [];
 
   constructor( private afStorage: AngularFirestore,) { }

@@ -810,11 +810,15 @@
         position: fixed;
 
             .hamburger-menu{
-                display: block;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 33%;
             }
 
             #menu__toggle {
                 opacity: 0;
+                display: none;
               }
               
               #menu__toggle:checked ~ .menu__btn > span {
@@ -842,12 +846,9 @@
                 display: flex;
                 align-items: center;
                 position: relative;
-                left: 20px;
-                top: -7px;
-                width: 26px;
+                width: 30px;
                 height: 30px;
                 z-index: 999;
-                margin-right: 30px;
               }
               
               .menu__btn > span,
@@ -905,15 +906,17 @@
                 text-decoration: none;
                 transition-duration: 0.25s;
                 margin-bottom: 10px;
-              }
-              .menu__item:focus {
-                background-color: #CFD8DC;
-                color: rgb(1, 28, 92);
+
+                &:focus{
+                    background-color: #CFD8DC;
+                    color: rgb(1, 28, 92);
+                    outline: none;
+                }
               }
     
               .menu__box-bottom{
                 position: absolute;
-                bottom: 140px;
+                bottom: 30px;
                 left: 0;
                 width: 100%;
               }
@@ -931,9 +934,12 @@
                  margin-left: 10px;
                  text-shadow:5px 3px rgb(12, 12, 12);
                  min-width: max-content;
+                 &:focus{
+                     outline: none;
+                 }
               }
               .menu-basket{
-                width: 100px;
+                width: 18%;
                 height: 50px;
                 display: flex;
                 justify-content: center;

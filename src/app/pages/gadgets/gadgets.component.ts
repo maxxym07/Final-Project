@@ -10,6 +10,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class GadgetsComponent implements OnInit {
 
   userGadgets: Array<IProduct> = [];
+  p: number = 1;
 
   constructor(private afStorage: AngularFirestore,) { }
 

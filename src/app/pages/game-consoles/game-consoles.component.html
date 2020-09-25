@@ -2,7 +2,7 @@
     <div class="container">
        <div class="nameComponent">Ігрові консолі</div>
         <div class="gamesBlock">
-            <div class="card" *ngFor="let console of userConsoles"  [routerLink]="['/device-details/'+console?.subCategory, console?.nameEN]">
+            <div class="card" *ngFor="let console of userConsoles| paginate: { itemsPerPage: 12, currentPage: p }"  [routerLink]="['/device-details/'+console?.subCategory, console?.nameEN]">
                 <div class="imageBlock">
                     <img class="imageGame" [src]='console?.image1'></div>
                 <div class="nameGame">{{console?.nameEN}}</div>
@@ -12,7 +12,7 @@
                    <p class="mainPrice">{{console?.mainPrice}} UAH</p>
                 </div>
             </div>
-
+            <pagination-controls class="myPagination" (pageChange)="p = $event"></pagination-controls>
         </div>
 
     </div>

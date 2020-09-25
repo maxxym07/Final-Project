@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 // import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { OrderModule } from 'ngx-order-pipe';
 import { ReactiveFormsModule } from '@angular/forms';
-// import {NgxPaginationModule} from 'ngx-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -39,6 +40,9 @@ import { ProductSearchPipe } from './shared/pipes/product-search.pipe';
 import { SubcategorySearchPipe } from './shared/pipes/subcategory-search.pipe';
 import { OrderSearchPipe } from './shared/pipes/order-search.pipe';
 
+// import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
+// import { loaderConfig } from './preloader-config';
+
 
 @NgModule({
   declarations: [
@@ -70,7 +74,7 @@ import { OrderSearchPipe } from './shared/pipes/order-search.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    // NgxPaginationModule,
+    NgxPaginationModule,
     ReactiveFormsModule,
     // NgxMaskModule.forRoot(),
     ModalModule.forRoot(),
@@ -79,6 +83,8 @@ import { OrderSearchPipe } from './shared/pipes/order-search.pipe';
     AngularFirestoreModule,
     AngularFireStorageModule,
     OrderModule,
+    // NgxUiLoaderModule.forRoot(loaderConfig),
+    // NgxUiLoaderRouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

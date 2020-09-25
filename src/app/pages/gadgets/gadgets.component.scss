@@ -231,34 +231,16 @@
             .nameComponent{
                 width: 100%;
                 text-align: center;
-                font-size: 31px;
+                font-size: 30px;
                 color: #e6e6e6;
                 font-family: "Montserrat", "Courier New", Courier, monospace;
                 margin-top: 10px;
                 letter-spacing: 0px;
                 margin-bottom: 20px;
-                animation: neonGadgets 0.5s ease-in-out infinite alternate;
+                animation: none;
+                text-shadow:0 0 12px rgba(30,132,242,0.52),;
                 }
-                @keyframes neonGadgets {
-                    from {
-                      text-shadow:
-                      0 0 6px rgba(202,228,225,0.92),
-                      0 0 30px rgba(202,228,225,0.34),
-                      0 0 12px rgba(30,132,242,0.52),
-                      0 0 21px rgba(30,132,242,0.92),
-                      0 0 34px rgba(30,132,242,0.78),
-                      0 0 54px rgba(30,132,242,0.92);
-                    }
-                    to {
-                      text-shadow:
-                      0 0 6px rgba(202,228,225,0.98),
-                      0 0 30px rgba(202,228,225,0.42),
-                      0 0 12px rgba(30,132,242,0.58),
-                      0 0 22px rgba(30,132,242,0.84),
-                      0 0 38px rgba(30,132,242,0.88),
-                      0 0 60px rgba(30,132,242,1);
-                    }
-                  }
+
             
             .gamesBlock{
                 width: 98%;
@@ -347,4 +329,50 @@
         }
     
     }
+}
+
+.myPagination::ng-deep{
+    display: block;
+    margin-top:20px;
+    font-size: 23px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    font-family: 'Poppins','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     .current{
+        background: #0084ffc2;
+     }
+    .ngx-pagination{
+    text-align: center;
+    a{
+        color: #00e1ff;
+        width: 50px;
+        height: 50px;
+       
+    }
+            a:hover,  button:hover {
+                background: #005cb3c2;
+                text-decoration: none;
+                cursor: pointer;
+                color: white;
+        }
+        a:focus,  button:focus {
+            outline: none;
+            background: #004381c2;
+            }
+            li{
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                margin-right: 10px;
+            }
+        
+    }
+
+    ul{
+    .pagination-previous,.pagination-next, .disabled{
+        display: none;
+}
+}
 }
