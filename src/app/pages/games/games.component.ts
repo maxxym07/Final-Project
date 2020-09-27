@@ -15,7 +15,8 @@ export class GamesComponent implements OnInit {
   openStatus: boolean;
   p: number = 1;
   userProducts: Array<IProduct> = []
-  userFilterProduct = [];
+  userFilterProduct: Array<IProduct> = []
+
 
   filterBy: string;
   filterByDetails: string;
@@ -52,6 +53,7 @@ getGames() {
         const data=document.data() as IProduct;
         const id = document.id;
         this.userProducts.push({ id, ...data })
+        this.userFilterProduct.push({ id, ...data })
       })
     }
   )
@@ -59,20 +61,16 @@ getGames() {
 }
 
 resetFilter(){
-  // return this.userProducts
+  return this.userProducts
 }
   
 filterZhanr($event) {
   this.userFilterProduct = [];
   this.filterBy = $event.target.name;
   this.filterByDetails = $event.target.id;
-  console.log(this.filterBy, this.filterByDetails)
-  this.userProducts.filter(elem => elem.subCategory.toLowerCase() == this.filterByDetails.toLowerCase()
-    ? this.userFilterProduct.push(elem) : elem )
- 
-  this.userProducts = this.userFilterProduct;
-
-  console.log(this.userProducts)
+  $event.checked = true;
+  this.userProducts.filter(game => game.subCategory.toLowerCase() == this.filterByDetails.toLowerCase()
+    ? this.userFilterProduct.push(game) : game )
 }
 
 }

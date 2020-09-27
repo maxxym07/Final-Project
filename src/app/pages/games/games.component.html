@@ -3,7 +3,7 @@
         <div class="categories">
             <div id="zhanrs">Жанри</div>
             <hr id="zhanrs-hr">
-            <p class="categories-zhanrs" (change)='resetFilter()'>Всі ігри</p>
+            <p class="categories-zhanrs" (click)="resetFilter()">Всі ігри</p>
             <input type="radio" name="subCategory" id="Бойовики" (change)='filterZhanr($event)'>
             <input type="radio" name="subCategory" id="Пригодницький бойовик" (change)='filterZhanr($event)'>
                 <p class="categories-zhanrs">Аркади</p>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="gamesBlock">
-            <div class="card" *ngFor="let products of userProducts| paginate: { itemsPerPage: 12, currentPage: p }"  [routerLink]="['/games/'+products?.subCategory, products?.nameEN]">
+            <div class="card" *ngFor="let products of userFilterProduct| paginate: { itemsPerPage: 12, currentPage: p }"  [routerLink]="['/games/'+products?.subCategory, products?.nameEN]">
                 <div class="imageBlock">
                     <img class="imageGame" [src]='products?.image1' alt="">
                 </div>
