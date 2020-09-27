@@ -66,7 +66,6 @@ filterZhanr($event) {
   this.userFilterProduct = [];
   this.filterBy = $event.target.name;
   this.filterByDetails = $event.target.id;
-  $event.checked = true;
   console.log(this.filterBy, this.filterByDetails)
   this.userProducts.filter(elem => elem.subCategory.toLowerCase() == this.filterByDetails.toLowerCase()
     ? this.userFilterProduct.push(elem) : elem )
