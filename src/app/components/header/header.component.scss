@@ -469,7 +469,7 @@
         }
 
         .left-logo{
-            width: 300px;
+            width: 75px;
             display: flex;
             justify-content: flex-start;
 
@@ -482,8 +482,9 @@
                 height: 50px;
                 background-image: url(/assets/images/logo.png);
                 background-position: center;
-                background-size: 90% 90%;
+                background-size: 50% 50%;
                 background-repeat: no-repeat;
+                display: none;
                 }
         }
     
@@ -813,7 +814,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 33%;
+                width: 18%;
             }
 
             #menu__toggle {
@@ -881,7 +882,7 @@
                 left: -100%;
               
                 width: 250px;
-                height: 100%;
+                height: -webkit-fill-available;
               
                 margin: 0;
                 padding: 80px 0;
@@ -931,7 +932,6 @@
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
-                 margin-left: 10px;
                  text-shadow:5px 3px rgb(12, 12, 12);
                  min-width: max-content;
                  user-select: none;
@@ -973,14 +973,17 @@
                     }
                     #total{
                         color: white;
-                        font-size: 12px;
-                        border-radius: 5px;
+                        font-size: 14px;
+                        border-radius: 50%;
                         padding: 4px;
                         position: relative;
                         top: 10px;
-                        right: 5px;
+                        right: 10px;
                         background-color: red;
                         font-family: "Montserrat-nameGame", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+                        width: 20px;
+                        height: 20px;
+                        text-align: center;
                     }
                        
                     }

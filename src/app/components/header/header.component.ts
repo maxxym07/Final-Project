@@ -9,7 +9,7 @@ import { IProduct } from '../../shared/interfaces/product.interface';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private basket: Array<IProduct> = [];
+   basket: Array<IProduct> = [];
   navbar:boolean;
   totalPrice = 0;
   burgerCount=0

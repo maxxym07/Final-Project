@@ -15,6 +15,10 @@ export class GamesComponent implements OnInit {
   openStatus: boolean;
   p: number = 1;
   userProducts: Array<IProduct> = []
+  userFilterProduct = [];
+
+  filterBy: string;
+  filterByDetails: string;
   
   constructor(
     private actRoute: ActivatedRoute,
@@ -53,7 +57,23 @@ getGames() {
   )
  
 }
+
+resetFilter(){
+  // return this.userProducts
+}
   
-  
+filterZhanr($event) {
+  this.userFilterProduct = [];
+  this.filterBy = $event.target.name;
+  this.filterByDetails = $event.target.id;
+  $event.checked = true;
+  console.log(this.filterBy, this.filterByDetails)
+  this.userProducts.filter(elem => elem.subCategory.toLowerCase() == this.filterByDetails.toLowerCase()
+    ? this.userFilterProduct.push(elem) : elem )
+ 
+  this.userProducts = this.userFilterProduct;
+
+  console.log(this.userProducts)
+}
 
 }

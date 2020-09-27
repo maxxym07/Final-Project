@@ -82,7 +82,7 @@ export class BasketComponent implements OnInit {
 
   checkCoupon(): void{
     if (this.saleCoupon != '') {
-      this.useCoupon = this.adminCoupon.filter(coupon => coupon.code == this.saleCoupon)[0].percent;
+      this.useCoupon = this.adminCoupon.filter(coupon => coupon.code == this.saleCoupon.toLowerCase())[0].percent;
       if (this.useCoupon != undefined) {
         this.getTotal(this.useCoupon)
         this.checkedCoupon = true

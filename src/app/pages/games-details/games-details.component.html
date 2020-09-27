@@ -115,17 +115,17 @@
 </div>
 
 
-<div class="About-gameMobile">
+<div class="About-gameMobile" >
   <div class="forH1Mobile">Опис</div>
   <hr id="hr1Mobile">
  
 
-  <div class="withMobile">
+  <div class="withMobile" *ngIf="userProduct?.category=='ігри'">
     <p id="withPMobile">Сумісний зі системами:</p>
     <p id="ps4Mobile">PS4</p>
   </div>
 
-  <div class="infoMobile">
+  <div class="infoMobile" *ngIf="userProduct?.category=='ігри'">
     <p id="withPlusMobile">Для сетевой многопользовательской игры требуется платная подписка на PlayStation Plus</p>
     <p id="zhanrGameMobile">Жанр: {{userProduct?.subCategory}}</p>
     <p id="weightGameMobile">Розмір файлу: {{userProduct?.size}} GB</p>

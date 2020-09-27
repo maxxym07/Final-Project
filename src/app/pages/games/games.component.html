@@ -3,7 +3,9 @@
         <div class="categories">
             <div id="zhanrs">Жанри</div>
             <hr id="zhanrs-hr">
-            <p class="categories-zhanrs">Всі ігри</p>
+            <p class="categories-zhanrs" (change)='resetFilter()'>Всі ігри</p>
+            <input type="radio" name="subCategory" id="Бойовики" (change)='filterZhanr($event)'>
+            <input type="radio" name="subCategory" id="Пригодницький бойовик" (change)='filterZhanr($event)'>
                 <p class="categories-zhanrs">Аркади</p>
                 <p class="categories-zhanrs">Бойовики</p>
                 <p class="categories-zhanrs">Королівські битви</p>
