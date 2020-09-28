@@ -174,7 +174,7 @@
                             color: white;
                             font-family: 'Montserrat-Oldprice','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                             font-size: 15px;
-                            min-width: 75px;
+                            min-width: 80px;
                             line-height: normal;
                         }
     
@@ -472,6 +472,7 @@
                     margin: 5px;
                     background-color: rgb(10, 1, 53);
                     transition: all 500ms ease; 
+                    margin-bottom: 10px;
     
                     &:focus{
                         box-shadow: 1px 1px 15px 3px rgb(217, 221, 0);
@@ -515,28 +516,35 @@
                     }
                 .priceGame{
                     width: 95%;
-                        height:40px;
-                        margin: 6px auto;
-                        text-align: center;
-                        line-height: 40px;
-                        display: flex;
-                        background-color: rgb(23, 133, 177);
-                        border-radius: 2px;
+                    height:50px;
+                    margin: 6px auto;
+                    text-align: center;
+                    line-height: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: rgb(52, 129, 148);
+                    border-radius: 2px;
     
                         .oldPrice{
                             text-decoration: line-through;
                             color: white;
-                            font-family: "Montserrat-Oldprice", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                            font-size: 13px;
-                            min-width: 45px;
-                            line-height: normal;
+                            font-family: 'Montserrat-Oldprice','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            font-size: 14px;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
                         }
     
                         .mainPrice{
-                            font-family: 'Roboto','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                            font-size: 20px;
                             color: rgb(245, 241, 0);
-                            min-width: 125px;
+                            font-family: "Roboto-Bold", "Courier New", Courier, monospace;
+                            font-size: 24px;
+                            width: 100%;
+                            justify-content: center;
+                            align-items: center;
+                            line-height: normal;
                         }
                 }
     

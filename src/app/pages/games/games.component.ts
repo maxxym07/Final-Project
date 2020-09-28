@@ -61,7 +61,8 @@ getGames() {
 }
 
 resetFilter(){
-  return this.userProducts
+  this.userFilterProduct=this.userProducts
+
 }
   
 filterZhanr($event) {

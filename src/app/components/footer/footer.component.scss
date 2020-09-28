@@ -198,7 +198,7 @@
             margin-left: 10px;
             font-family: 'Montserrat',monospace;
             cursor: pointer;
-            width: 60%;
+            width: 100%;
         
                     &:hover{
                         color: rgb(0, 126, 243);
@@ -461,7 +461,7 @@
                 display: flex;
                 position: relative;
                 top: 20%;
-                left: 41%;
+                left: 39%;
                 transform: translate(-30%, -30%);
                 width: 220px;
             }
@@ -531,7 +531,7 @@
         }
     
         .categories{
-            width: 98%;
+            width: 100%;
             height: 60px;
             display: flex;
             margin-bottom: 20px;
@@ -540,21 +540,27 @@
     
             .left-part{
                 height: 60px;
-                padding: 5px;
+                padding: 0px;
                 display: flex;
                 width: 70%;
+                justify-content: space-around;
+                align-items: center;
             }
             .right-part{
-                width: 50%;
+                width: 30%;
                 height: 60px;
                 display: flex;
                 justify-content: center;
+                align-items: center;
             }
             .categor{
                 color: white;
                 font-size: 18px;
-                font-family: 'Montserrat',monospace;
-                width: 60%;
+                font-family: "Montserrat", monospace;
+                width: 100%;
+                margin: 0px;
+                text-align: center;
+
     
                 &:focus{
                     outline: none;
@@ -621,13 +627,15 @@
     .goHome{
         width: 100%;
         height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
     
         .footHome{
             color: white;
             font-size: 16px;
-            margin-top: 10px;
-            margin-left: 10px;
+            margin: 0;
             font-family: 'Montserrat',monospace;
             width: 60%;
             text-align: center;

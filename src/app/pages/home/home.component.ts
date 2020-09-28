@@ -10,6 +10,7 @@ import { IProduct } from '../../shared/interfaces/product.interface';
 export class HomeComponent implements OnInit {
   myIndex = 0;
   topProducts: Array<IProduct> = []
+  myCarousel;
   
   constructor(private afStorage: AngularFirestore,) { }
 
@@ -29,7 +30,7 @@ export class HomeComponent implements OnInit {
       this.myIndex = 1
     }    
     x[this.myIndex - 1].style.display = 'block'; 
-    setTimeout(()=>{this.carousel()},4000);
+    this.myCarousel = setTimeout(()=>{this.carousel()},4000);
   }
 
 
@@ -45,6 +46,8 @@ export class HomeComponent implements OnInit {
     )
   }
 
-
+  ngOnDestroy(): void {
+    clearTimeout(this.myCarousel);
+  }
 
 }

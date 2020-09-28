@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule } from '@angular/forms';
-// import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { OrderModule } from 'ngx-order-pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -42,7 +42,7 @@ import { OrderSearchPipe } from './shared/pipes/order-search.pipe';
 
 // import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
 // import { loaderConfig } from './preloader-config';
-
+export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
   declarations: [
@@ -76,7 +76,7 @@ import { OrderSearchPipe } from './shared/pipes/order-search.pipe';
     FormsModule,
     NgxPaginationModule,
     ReactiveFormsModule,
-    // NgxMaskModule.forRoot(),
+    NgxMaskModule.forRoot(),
     ModalModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,

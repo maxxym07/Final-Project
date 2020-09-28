@@ -1,62 +1,71 @@
 <div class="home">
     <div class="container">
         
-        <div class="login">
+        <div class="login"*ngIf="!switch">
             <div class="forLoginName">Увійти</div>
+
+            <form (ngSubmit)="loginUser()">
             <div class="inputElementWrapper">
-                <input class="inputElementItem"  type="text" placeholder="email" >
+                <input class="inputElementItem"  type="text" placeholder="email" required [(ngModel)]="email" name="email">
                 <label>Email</label>
                 <span class="focus-border"><i></i></span>
               </div>
 
               <div class="inputElementWrapper">
-                <input class="inputElementItem"  type="password" placeholder="password" >
+                <input class="inputElementItem"  type="password" placeholder="password" required [(ngModel)]="password" name="password">
                 <label>Password</label>
                 <span class="focus-border"><i></i></span>
               </div>
 
-              <div class="without">Не маєте акаунту? Зареєструватися</div>
+              <div class="without" (click)="switchForm()">Не маєте акаунту? Зареєструватися</div>
               
               <div class="butLogin">
-                <button class="buttonLog">Увійти</button>
+                <button class="buttonLog" type="submit">Увійти</button>
               </div>
-              
+            </form>
         </div>
 
-        <!-- <div class="registerBlock">
+        <div class="registerBlock" *ngIf="switch">
             <div class="forRegistrationName">Реєстрація</div>
 
+            <form (ngSubmit)="registerUser()">
             <div class="inputElementWrapper">
-                <input class="inputElementItem"  type="text" placeholder="FName" >
+                <input class="inputElementItem"  type="text" placeholder="FName" required  [(ngModel)]="firstName" name="firstName">
                 <label>Ім'я</label>
                 <span class="focus-border"><i></i></span>
               </div>
 
               <div class="inputElementWrapper">
-                <input class="inputElementItem"  type="text" placeholder="SName" >
+                <input class="inputElementItem"  type="text" placeholder="SName" required [(ngModel)]="secondName" name="secondName">
                 <label>Прізвище</label>
                 <span class="focus-border"><i></i></span>
               </div>
 
+              <div class="inputElementWrapper">
+                <input class="inputElementItem" mask="(000)-000-00-00" prefix="+38"  type="text" placeholder="phone" required [(ngModel)]="phone" name="phone">
+                <label>Телефон</label>
+                <span class="focus-border"><i></i></span>
+              </div>
+
             <div class="inputElementWrapper">
-                <input class="inputElementItem"  type="text" placeholder="email" >
+                <input class="inputElementItem"  type="text" placeholder="email" required [(ngModel)]="email" name="email">
                 <label>Імейл</label>
                 <span class="focus-border"><i></i></span>
               </div>
 
               <div class="inputElementWrapper">
-                <input class="inputElementItem"  type="password" placeholder="password" >
+                <input class="inputElementItem"  type="password" placeholder="password" required [(ngModel)]="password" name="password">
                 <label>Пароль</label>
                 <span class="focus-border"><i></i></span>
               </div>
 
-              <div class="without">Маєте акаунт? Увійти</div>
+              <div class="without" (click)="switchForm()">Маєте акаунт? Увійти</div>
               
               <div class="butLogin">
-                <button class="buttonLog">Зареєструватися</button>
+                <button class="buttonLog" type="submit">Зареєструватися</button>
               </div>
-              
-        </div> -->
+            </form>
+        </div>
 
         
     </div>

@@ -6,7 +6,7 @@
 
     .container{
         width: 98%;
-        min-height: 460px;
+        min-height: 550px;
         margin:10px auto;
         display: flex;
         justify-content: center;
@@ -83,7 +83,7 @@
 
     .container{
         width: 98%;
-        min-height: 460px;
+        min-height: 550px;
         margin:10px auto;
         display: flex;
         justify-content: center;
@@ -160,7 +160,7 @@
 
     .container{
         width: 98%;
-        min-height: 460px;
+        min-height: 550px;
         margin:10px auto;
         display: flex;
         justify-content: center;
@@ -181,7 +181,7 @@
             }
 
             .without{
-                font-size: 17px;
+                font-size: 15px;
                 color: white;
                 cursor: pointer;
                 font-family: 'Montserrat-nameGame','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -424,6 +424,7 @@ label.light textarea:-ms-input-placeholder {
   position: relative;
   margin-bottom: 10px;
   margin-top: 28px;
+  z-index: 1;
 }
 
 .inputElementItem, .textareaElementItem {
@@ -511,7 +512,7 @@ label.light textarea:-ms-input-placeholder {
   transition: 0.3s;
   letter-spacing: 0.5px;
   font-family: 'Montserrat-nameGame','Courier New', Courier, monospace;
-
+z-index: -1;
 }
 
 .inputElementItem::placeholder,

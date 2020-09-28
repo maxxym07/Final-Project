@@ -5,6 +5,9 @@ import { ICoupon } from '../../shared/interfaces/coupon.interface';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NgForm } from '@angular/forms';
 import { Order } from '../../shared/models/order.model';
+import { User } from '../../shared/models/user.model';
+import { IOrder } from 'src/app/shared/interfaces/order.interface';
+import { IUser } from '../../shared/interfaces/user.interface';
 
 @Component({
   selector: 'app-basket',
@@ -24,14 +27,16 @@ export class BasketComponent implements OnInit {
   userLastName: string;
   userPhone: string;
   userEmail: string;
-
+  myUser: any;
+  
   constructor(private orderService: OrderService,
     private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
     this.adminFirebaseCoupons();
     this.getBasket();
-    this.getTotal()
+    this.getTotal();
+    this.getUserData();
   }
 
   private adminFirebaseCoupons(): void {
@@ -118,9 +123,45 @@ export class BasketComponent implements OnInit {
     delete order.id;
     this.orderService.addFirecloudOrder(Object.assign({}, order))
     .then(()=>{
-    this.resetBasket();
+      this.updateUser(this.myUser, order);
+      this.resetBasket();
+      this.updateBasket();
+      this.orderService.basket.next('check');
     })
     
+  }
+
+  private getUserData(): void {
+    if (localStorage.length > 0 && localStorage.getItem('user')) {
+      let user = JSON.parse(localStorage.getItem('user'));
+      
+      this.firestore.collection('users').ref.where('idAuth', '==', user.idAuth).onSnapshot(
+        collection => {
+          collection.forEach(document => {
+            const data = document.data() as IUser;
+            const id = document.id;
+            this.myUser = ({ id, ...data })
+          })
+        }
+      )
+    }
+  }
+
+  updateUser(user: any, order: IOrder) {
+    if (localStorage.length > 0 && localStorage.getItem('user')) {
+      user.orders.push(Object.assign({}, order));
+      const userUpd = new User(
+        user.idAuth,
+        user.firstName,
+        user.secondName,
+        user.orders,
+        user.role,
+        user.email,
+        user.phone
+      )
+      localStorage.setItem('user', JSON.stringify(userUpd))
+      this.firestore.collection('users').doc(user.id).update(Object.assign({}, userUpd));
+    }
   }
 
   private resetBasket(): void {

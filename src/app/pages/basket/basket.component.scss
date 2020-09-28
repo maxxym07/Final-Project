@@ -249,7 +249,7 @@
                 width: 100%;
                 height: 50px;
                 color: white;
-                font-size: 38px;
+                font-size: 34px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -603,6 +603,7 @@ label.light textarea:-ms-input-placeholder {
   width: 100%;
   position: relative;
   margin-bottom: 30px;
+  z-index: 1;
 }
 
 .inputElementItem, .textareaElementItem {
@@ -691,7 +692,7 @@ label.light textarea:-ms-input-placeholder {
   transition: 0.3s;
   letter-spacing: 0.5px;
   font-family: 'Montserrat-nameGame','Courier New', Courier, monospace;
-
+  z-index: -1;
 }
 
 .inputElementItem::placeholder,

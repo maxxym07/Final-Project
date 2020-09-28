@@ -509,6 +509,7 @@
     position: relative;
     margin-bottom: 10px;
     margin-top: 28px;
+    z-index: 1;
   }
   
   .inputElementItem, .textareaElementItem {
@@ -596,7 +597,7 @@
     transition: 0.3s;
     letter-spacing: 0.5px;
     font-family: 'Montserrat-nameGame','Courier New', Courier, monospace;
-  
+  z-index: -1;
   }
   
   .inputElementItem::placeholder,

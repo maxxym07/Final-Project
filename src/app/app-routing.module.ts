@@ -17,6 +17,8 @@ import { UnderCategoriesComponent } from './admin/under-categories/under-categor
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminCouponComponent } from './admin/admin-coupon/admin-coupon.component';
+import { ProfileGuard } from './shared/guards/profile.guard';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 
 
@@ -31,7 +33,8 @@ const routes: Routes = [
   {path:'games/:subcategory/:name',component:GamesDetailsComponent},
   {path:'device-details/:subcategory/:name',component:DeviceDetailsComponent},
   {path:'login',component:LoginComponent},
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [ProfileGuard] },
+  
   {path: 'admin', component: AdminComponent, children: [
       { path: '', redirectTo: 'category', pathMatch: 'full' },
       { path: 'category', component: AdminCategoryComponent },
@@ -48,3 +51,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+// canActivate:[AuthGuard],

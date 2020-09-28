@@ -4,47 +4,40 @@
         <div class="userData">
             <div class="forLoginName">Дані профіля</div>
             <div class="inputElementWrapper">
-                <input class="inputElementItem"  type="text" placeholder="fName" >
+                <input class="inputElementItem"  type="text" placeholder="fName" required [(ngModel)]="userName">
                 <label>Ім'я</label>
                 <span class="focus-border"><i></i></span>
               </div>
 
               <div class="inputElementWrapper">
-                <input class="inputElementItem"  type="text" placeholder="sName" >
+                <input class="inputElementItem"  type="text" placeholder="sName" required [(ngModel)]="userLastName">
                 <label>Прізвище</label>
                 <span class="focus-border"><i></i></span>
               </div>
 
             <div class="inputElementWrapper">
-                <input class="inputElementItem"  type="text" placeholder="email" >
+                <input class="inputElementItem"  type="text" placeholder="email" required [(ngModel)]="userEmail">
                 <label>Email</label>
                 <span class="focus-border"><i></i></span>
               </div>
 
-              <!-- <div class="inputElementWrapper">
-                <input class="inputElementItem"  type="password" placeholder="password" >
-                <label>password</label>
-                <span class="focus-border"><i></i></span>
-              </div> -->
-              
               <div class="for-buttons">
-                <button class="buttonChange">Зберегти зміни</button>
-                <button class="buttonLogOut">Вийти</button>
+                <button class="buttonChange" (click)="updateUser()">Зберегти зміни</button>
+                <button class="buttonLogOut" (click)="signOut()">Вийти</button>
               </div>
               
         </div>
 
 
         <div class="myOrders">
-            <div class="order">
-                <div class="order-number">1</div>
-                <div class="order-price">1500 UAH</div>
-                <div class="order-data">ORder date</div>
-                <div class="order-details"><button class="buttonInfo">Детальніше</button></div>
+            <div class="order" *ngFor="let order of userOrder; let i=index">
+                <div class="order-number">{{i+1}}</div>
+                <div class="order-price">{{order.totalPayment}} UAH</div>
+                <div class="order-data">{{order.dateOrder|date:'dd MMMM, HH:mm год'}}</div>
+                <div class="order-details"><button class="buttonInfo" (click)="viewDetailsOrder(order)">Детальніше</button></div>
             </div>
-            
-            <div class="order"></div>
         </div>
+
 
     </div>
 </div>
