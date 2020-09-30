@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
           const id = document.id;
           this.topProducts.push({id, ...data})
         })
+        setTimeout(() => { window.scroll(0,1)},200)
       }
     )
   }
