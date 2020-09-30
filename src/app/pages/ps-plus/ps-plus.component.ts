@@ -26,6 +26,7 @@ export class PsPlusComponent implements OnInit {
           const id = document.id;
           this.psPlusProducts.push({id, ...data})
         })
+        setTimeout(() => { window.scroll(0,1)},500)
       }
     )
   }

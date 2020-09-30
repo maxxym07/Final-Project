@@ -26,7 +26,7 @@ export class GameConsolesComponent implements OnInit {
           const id = document.id;
           this.userConsoles.push({ id, ...data })
         })
-        setTimeout(() => { window.scroll(0, 1)},200)
+        setTimeout(() => { window.scroll(0, 1)},300)
       }
     )
   }
