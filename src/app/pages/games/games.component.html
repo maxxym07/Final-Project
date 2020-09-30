@@ -7,7 +7,7 @@
             
             <ul class="categories-filters">
                 <li [ngStyle]="{'margin-top':'10px'}">
-                    <input type="radio" name="subCategory" id="Бойовики" (change)='filterZhanr($event)'>
+                    <input type="radio" class="max" name="subCategory" id="Бойовики" (change)='filterZhanr($event)'>
                     <label for="Бойовики">Бойовики</label>
                 </li>
                 <li [ngStyle]="{'margin-top':'10px'}">
@@ -19,8 +19,8 @@
                     <label for="Королівські битви">Королівські битви</label>
                 </li>
                 <li [ngStyle]="{'margin-top':'10px'}">
-                    <input type="radio" name="subCategory" id="Вождіння і гонки" (change)='filterZhanr($event)'>
-                    <label for="Вождіння і гонки">Вождіння і гонки</label>
+                    <input type="radio" name="subCategory" id="Гонки" (change)='filterZhanr($event)'>
+                    <label for="Гонки">Вождіння і гонки</label>
                 </li>
                 <li [ngStyle]="{'margin-top':'10px'}">
                     <input type="radio" name="subCategory" id="Спорт" (change)='filterZhanr($event)'>

@@ -58,7 +58,11 @@ getGames() {
 
 resetFilter(){
   this.userFilterProduct=this.userProducts
-  
+  let radioButs = document.querySelectorAll("input[type=radio]:checked") as any;
+
+        for (let i = 0; i < radioButs.length; i++) { 
+          radioButs[i].checked=false
+        }
 }
   
 filterZhanr($event) {
