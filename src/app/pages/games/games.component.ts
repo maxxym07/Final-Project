@@ -44,13 +44,14 @@ getGames() {
   this.afStorage.collection('products').ref.where('category','==','ігри').onSnapshot(
     collection => {
       this.userProducts = [];
+      this.userFilterProduct=[]
       collection.forEach(document => {
         const data=document.data() as IProduct;
         const id = document.id;
         this.userProducts.push({ id, ...data })
         this.userFilterProduct.push({ id, ...data })
       })
-      setTimeout(() => { window.scroll(0,1)},200)
+      setTimeout(() => { window.scroll(0,1)},400)
     }
   )
 }

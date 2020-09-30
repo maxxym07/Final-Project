@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
   getTopProducts(){
     this.afStorage.collection('products').ref.where('top', '==', true).onSnapshot(
       collection => {
+        this.topProducts=[]
         collection.forEach(document => {
           const data = document.data() as IProduct;
           const id = document.id;

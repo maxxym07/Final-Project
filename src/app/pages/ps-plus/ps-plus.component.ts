@@ -21,6 +21,7 @@ export class PsPlusComponent implements OnInit {
   getPsPlusProducts(){
     this.afStorage.collection('products').ref.where('psPlus', '==', true).onSnapshot(
       collection => {
+        this.psPlusProducts=[]
         collection.forEach(document => {
           const data = document.data() as IProduct;
           const id = document.id;

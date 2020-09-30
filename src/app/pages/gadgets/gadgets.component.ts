@@ -28,7 +28,7 @@ export class GadgetsComponent implements OnInit {
           this.userGadgets.push({ id, ...data })
          
         })
-        setTimeout(() => { window.scroll(0, 1)},200)
+        setTimeout(() => { window.scroll(0, 1)},400)
       }
     )
   }
