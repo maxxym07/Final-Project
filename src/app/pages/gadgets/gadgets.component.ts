@@ -26,7 +26,9 @@ export class GadgetsComponent implements OnInit {
           const data=document.data() as IProduct;
           const id = document.id;
           this.userGadgets.push({ id, ...data })
+         
         })
+        setTimeout(() => { window.scroll(0, 1)},200)
       }
     )
   }

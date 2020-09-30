@@ -35,7 +35,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   { path: 'profile', component: ProfileComponent, canActivate: [ProfileGuard] },
   
-  {path: 'admin', component: AdminComponent, children: [
+  {path: 'admin', component: AdminComponent,canActivate:[AuthGuard],children: [
       { path: '', redirectTo: 'category', pathMatch: 'full' },
       { path: 'category', component: AdminCategoryComponent },
       { path: 'subcategory', component: UnderCategoriesComponent },
@@ -51,4 +51,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-// canActivate:[AuthGuard],

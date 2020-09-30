@@ -37,3 +37,14 @@ tr:hover{
     background-color: rgb(230, 230, 230);
     cursor: pointer;
 }
+span {
+    visibility: hidden;
+  }
+
+  .active {
+    color: #000;
+
+    span {
+      visibility: visible;
+    }
+  }

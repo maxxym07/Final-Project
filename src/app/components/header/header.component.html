@@ -24,7 +24,6 @@
 
         <div class="right-menu">
         <button class="butLogin" [routerLink]="['/' + urlName]">{{menuName | titlecase}}</button>
-        <!-- <div class="userIcon"><i class="fas fa-user-circle"></i></div> -->
         </div>
 
        
@@ -55,7 +54,7 @@
                 
                 <div class="menu__box-bottom">
                         <div><a class="menu__item" href="#" [routerLink]="[ '/login' ]" (click)="closeBurger()">Увійти</a></div>
-                        <div><a class="menu__item" href="#" [routerLink]="[ '/profile' ]" (click)="closeBurger()">Профіль</a></div>
+                        <div><a class="menu__item" href="#" [routerLink]="[ '/profile' ]" *ngIf="toProfileMobile" (click)="closeBurger()">Профіль</a></div>
                 </div>
         </ul>
       </div>

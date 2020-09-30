@@ -56,6 +56,11 @@ export class AdminProductsComponent implements OnInit {
 
   inputS: string//for search in table
 
+    //for sort
+    order: string = 'id';
+    reverse: boolean = false;
+    //for sort
+
   constructor(
     private modalService: BsModalService,
     private catService: CategoryService,
@@ -69,8 +74,6 @@ export class AdminProductsComponent implements OnInit {
     this.adminFirebaseUnderCategories();
   }
 
-
-  /////////////////////////категорія////////////////////////////
   private adminFirebaseCategories(): void {
     this.catService.getFireCloudCategory().subscribe(
       collection => {
@@ -83,7 +86,6 @@ export class AdminProductsComponent implements OnInit {
     )
   }
 
-  ///////////////підкатегорія//////////////
   private adminFirebaseUnderCategories(): void {
     this.underCatService.getFirecloudUnderCategory().subscribe(
       collection => {
@@ -96,7 +98,7 @@ export class AdminProductsComponent implements OnInit {
     )
   }
 
-  ////////////////////////продукт////////////////////////////////////
+
   private adminFirebaseProducts(): void {
     this.prodService.getFirecloudProduct().subscribe(
       collection => {
@@ -296,10 +298,10 @@ export class AdminProductsComponent implements OnInit {
 
   //sort pipe
   setOrder(value: string) {
-    // if (this.order === value) {
-    //   this.reverse = !this.reverse;
-    // }
-    // this.order = value;
+    if (this.order === value) {
+      this.reverse = !this.reverse;
+    }
+    this.order = value;
   }
   //sort pipe
 

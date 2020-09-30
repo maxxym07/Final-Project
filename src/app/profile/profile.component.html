@@ -28,16 +28,34 @@
               
         </div>
 
-
         <div class="myOrders">
-            <div class="order" *ngFor="let order of userOrder; let i=index">
-                <div class="order-number">{{i+1}}</div>
-                <div class="order-price">{{order.totalPayment}} UAH</div>
+            <div class="nameBlock" *ngIf="userOrder.length==0" [ngStyle]="{'margin': 'auto'}">Зараз тут порожньо :(
+                <p class="pEmpty" [routerLink]="['/games']">За покупками </p>
+            </div>
+          <div class="order" *ngFor="let order of userOrder" >
+            <div class="mainInfo">
                 <div class="order-data">{{order.dateOrder|date:'dd MMMM, HH:mm год'}}</div>
-                <div class="order-details"><button class="buttonInfo" (click)="viewDetailsOrder(order)">Детальніше</button></div>
+                <div class="order-status">{{order.status}}</div>
+            </div>
+            <div class="moreInfo" > 
+                <div class="orderDetails">
+                    <div class="moreInfoBlock-render" *ngFor="let product of order.ordersDetails">
+                <div class="orderDetails-img">
+                    <img class="gameImage" [src]='product?.image1' alt="">
+                </div>
+                <div class="productName">{{product?.nameUA}}</div>
+                <div class="productPrice">{{product?.mainPrice}} UAH</div>
+                <div class="productCount">{{product?.count}} шт.</div>
+                <div class="productPriceCount">{{product?.mainPrice*product?.count}} UAH
+                </div>
+            </div>
+                </div>
+        <div class="totalPrice">
+            <div> Сума замовлення: {{order?.totalPayment}} UAH</div>
+        </div>
             </div>
         </div>
-
-
+        <div class="nameBlock" *ngIf="userOrder.length>0">Мої замовлення</div>
+    </div>
     </div>
 </div>

@@ -13,7 +13,6 @@ export class Product implements IProduct{
       public size: string,
       public top: boolean,
       public psPlus: boolean,
-      // public freeProd: boolean,
       public image1: string,
       public image2: string,
       public image3: string,

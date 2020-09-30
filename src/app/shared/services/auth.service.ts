@@ -23,6 +23,8 @@ export class AuthService {
                 if (userRef.data().role === 'admin' && userRef.data().access) {
                   this.router.navigateByUrl('admin');
                   this.userStatus.next('')
+                  console.log('good')
+    
                 }
                 else {
                   this.router.navigateByUrl('profile');
@@ -38,7 +40,8 @@ export class AuthService {
     signOut(): void {
       this.afAuth.signOut()
         .then(() => {
-          localStorage.clear();
+          // localStorage.clear();
+          localStorage.removeItem('user')
           this.router.navigateByUrl('/home');
           this.userStatus.next('')
     

@@ -21,12 +21,7 @@ export class GamesComponent implements OnInit {
   filterBy: string;
   filterByDetails: string;
   
-  constructor(
-    private actRoute: ActivatedRoute,
-    private router: Router,
-    private afStorage: AngularFirestore,
-    private productService:ProductService,
-  ) { }
+  constructor(private afStorage: AngularFirestore) { }
 
   ngOnInit(): void {
     this.getGames() 
@@ -55,14 +50,14 @@ getGames() {
         this.userProducts.push({ id, ...data })
         this.userFilterProduct.push({ id, ...data })
       })
+      setTimeout(() => { window.scroll(0,1)},200)
     }
   )
- 
 }
 
 resetFilter(){
   this.userFilterProduct=this.userProducts
-
+  
 }
   
 filterZhanr($event) {

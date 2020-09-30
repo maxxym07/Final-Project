@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../shared/interfaces/product.interface';
-import { ProductService } from '../shared/services/product.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from '../shared/services/auth.service';
 import { IUser } from '../shared/interfaces/user.interface';
 import { User } from '../shared/models/user.model';
+import { IOrder } from '../shared/interfaces/order.interface';
 
 @Component({
   selector: 'app-profile',
@@ -18,33 +18,47 @@ export class ProfileComponent implements OnInit {
   userLastName:string;
   userPhone: string;
   userOrder: any;
+  userOrderArray: Array<IOrder> = [];
   userId: any;
   userRole:string;
   findUserID: any;
-  checkOrderStatus: Array<IProduct> = [];
+  orderStatus: Array<IProduct> = [];
 
   constructor(private authService:AuthService,
     private firestore: AngularFirestore,) { }
 
   ngOnInit(): void {
-    this.getUserData()
+    this.getUserData();
+    this.updateOrderStatus()
   }
 
 
   private getUserData(): void {
     const user = JSON.parse(localStorage.getItem('user'))
+    this.userId=user.idAuth
     this.userEmail = user.email;
     this.userName = user.firstName;
     this.userLastName = user.secondName;
     this.userPhone = user.phone;
-    this.userId=user.idAuth
     this.userRole=user.role
     this.userOrder = user.orders;
   }
 
-  signOut(): void{
-    this.authService.signOut();
+    
+  updateOrderStatus(): void {
+    for (let i = 0; i < this.userOrder.length; i++) {
+      this.firestore.collection('orders').ref.where('dateOrder', '==', this.userOrder[i].dateOrder).onSnapshot(
+        collection => {
+          collection.forEach(document => {
+            const data = document.data() as IProduct;
+            const id = document.id;
+            this.orderStatus.push({ id, ...data })
+          });
+        })
+    }
+    this.userOrder = this.orderStatus;
   }
+
 
   async updateUser() {
     localStorage.removeItem('user');
@@ -72,7 +86,9 @@ export class ProfileComponent implements OnInit {
        }
  }
 
- viewDetailsOrder() {
-  // this.viewDetails=!this.viewDetails
+ signOut(): void{
+  this.authService.signOut();
 }
+
+  
 }

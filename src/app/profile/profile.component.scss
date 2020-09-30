@@ -10,7 +10,6 @@
             margin:10px auto;
             display: flex;
             justify-content: space-around;
-            align-items: center;
 
             .userData{
                 width: 30%;
@@ -84,61 +83,117 @@
 
             .myOrders{
                 width: 60%;
-                border: 2px solid rgb(13, 145, 185);
+                display: flex;
+                flex-direction: column-reverse;
 
-                .order{
-                    width: 98%;
-                    height: 100px;
-                    border:  2px solid rgb(12, 70, 179);
-                    margin: 20px auto;
+                .nameBlock{
+                    width: 100%;
+                    font-size: 28px;
+                    text-align: center;
+                    color: rgb(255, 87, 20);
+                    font-family: "Montserrat", "Courier New", Courier, monospace;
+                    text-shadow:  0 0 12px rgb(252, 112, 57);
+
+                    .pEmpty{
+                        cursor: pointer;
+                        text-decoration: underline;
+                        color: yellow;
+                        margin-top: 10px;
+                        :focus{
+                            outline: none;
+                        }
+                    }
+                }
+
+                .order {
+                width: 98%;
+                min-height: 80px;
+                border:  2px solid rgb(12, 70, 179);
+                margin: 20px auto;
+                background-color: rgb(9, 9, 78);
+
+                .mainInfo {
                     display: flex;
-                    
-                    .order-number,.order-price,.order-data,.order-details{
-                        width: 30%;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    line-height: 26px;
+                    padding: 10px;
+                    .order-status,.order-data{
+                        width: 38%;
+                        height: 50px;
                         border: none;
-                        color: white;
+                        color: gold;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        font-size: 25px;
+                        font-size: 18px;
                         font-family: 'Montserrat','Courier New', Courier, monospace;
-
+        
                         &:hover{
-                            border:  2px solid rgb(0, 89, 255);
+                            outline:  2px solid rgb(0, 89, 255);
                         }
-                    }
-                    .order-number{
-                        width: 10%;
                         
-                    }
+                            }    
+                            .order-status{
+                                font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                            }               
+                }
 
-                    .order-details{
-                        .buttonInfo{
-                            width: 80%;
-                            height: 50px;
-                            background-color: gold;
-                            border: none;
-                            color: black;
-                            font-family: 'Roboto','Courier New', Courier, monospace;
-                            font-size: 20px;
-                            transition: all 300ms ease; 
-                            margin-bottom:10px;
-                            
-                            &:focus{
-                                border-radius: 5px;
-                                outline: none;
-                                border: 3px solid rgb(243, 227, 1);
-                            box-shadow: 1px 0px 6px rgb(247, 170, 4) ;
-                            }
-                            &:hover{
-                                cursor: pointer;
-                                background-color: rgb(255, 153, 0);
-                                border-radius: 5px;
+                .moreInfo{
+                    width: 100%;
+                    display: flex;
+                    flex-flow: row wrap;
+                    transition: all 300ms ease;
+                    
+                    .orderDetails{
+                        width: 100%;
+                        margin-top: 15px;
+                        .moreInfoBlock-render {
+                            width: 100%;
+                            height: 130px;
+                            margin-bottom: 12px;
+                            margin-top: 10px;
+                            display: flex;
+                            flex-flow: row wrap;
+                        transition: all 300ms ease;
+
+                        }
+                        .orderDetails-img {
+                            width: 20%;
+                            text-align: center;
+                            height: 100%;
+                            .gameImage{
+                             width: 65%;
+                             height: 100%;
                             }
                         }
+                        .productName{
+                            width: 35%;
+                            line-height: 19px;
+                           color: white;
+                           margin: auto;
+                           font-family: "Montserrat-nameGame", "Courier New", Courier, monospace;
+                        }
+                        .productPrice,.productCount,.productPriceCount{
+                           width: 15%;
+                           color: white;
+                            margin: auto;
+                            font-size: 18px;
+                            text-align: center;
+                            font-family: "Roboto", "Courier New", Courier, monospace;
+                        }
                     }
-                   
+                    .totalPrice{
+                        width: 100%;
+                        padding: 7px;
+                        text-align: center;
+                        font-size: 20px;
+                        color: cyan;
+                        font-family: "Roboto", "Courier New", Courier, monospace;
+                    }
                 }
+            }
             }
         }
     }    
@@ -147,16 +202,15 @@
 @media screen and (max-width: 969px){ 
     .home{
         width: 100%;
-        min-height: 478px;
+        min-height: 498px;
         
     
         .container{
             width: 98%;
-            min-height: 460px;
+            min-height: 470px;
             margin:10px auto;
             display: flex;
             justify-content: space-around;
-            align-items: center;
 
             .userData{
                 width: 30%;
@@ -230,56 +284,109 @@
 
             .myOrders{
                 width: 60%;
-                border: 2px solid rgb(13, 145, 185);
+                display: flex;
+                flex-direction: column-reverse;
 
-                .order{
-                    width: 98%;
-                    height: 100px;
-                    border:  2px solid rgb(12, 70, 179);
-                    margin: 20px auto;
-                    display: flex;
-                    
-                    .order-number,.order-price,.order-data,.order-details{
-                        width: 30%;
-                        border:  none;
-                        color: white;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        font-size: 25px;
-                        font-family: 'Montserrat','Courier New', Courier, monospace;
-                    }
-                    .order-number{
-                        width: 10%;
-                        
-                    }
-
-                    .order-details{
-                        .buttonInfo{
-                            width: 80%;
-                            height: 50px;
-                            background-color: gold;
-                            border: none;
-                            color: black;
-                            font-family: 'Roboto','Courier New', Courier, monospace;
-                            font-size: 17px;
-                            transition: all 300ms ease; 
-                            margin-bottom:10px;
-                            
-                            &:focus{
-                                border-radius: 5px;
-                                outline: none;
-                                border: 3px solid rgb(243, 227, 1);
-                            box-shadow: 1px 0px 6px rgb(247, 170, 4) ;
-                            }
-                            &:hover{
-                                cursor: pointer;
-                                background-color: rgb(255, 153, 0);
-                                border-radius: 5px;
-                            }
+                .nameBlock{
+                    width: 100%;
+                    font-size: 25px;
+                    text-align: center;
+                    color: rgb(255, 87, 20);
+                    font-family: "Roboto", "Courier New", Courier, monospace;
+                    text-shadow:  0 0 12px rgb(252, 112, 57);
+                    .pEmpty{
+                        cursor: pointer;
+                        text-decoration: underline;
+                        color: yellow;
+                        margin-top: 10px;
+                        :focus{
+                            outline: none;
                         }
                     }
-                   
+                }
+                .order {
+                    width: 98%;
+                    min-height: 80px;
+                    border:  2px solid rgb(12, 70, 179);
+                    margin: 20px auto;
+                    background-color: rgb(9, 9, 78);
+    
+                    .mainInfo {
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        width: 100%;
+                        line-height: 26px;
+                        padding: 10px;
+                        outline:  2px solid rgb(0, 89, 255);
+                        .order-status,.order-data{
+                            width: 38%;
+                            height: 50px;
+                            border: none;
+                            color:  gold;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 15px;
+                            font-family: 'Montserrat','Courier New', Courier, monospace;
+                                }
+                                .order-status{
+                                    font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                                }
+                    }
+    
+                    .moreInfo{
+                        width: 100%;
+                        display: flex;
+                        flex-flow: row wrap;
+                        transition: all 300ms ease;
+                        
+                        .orderDetails{
+                            width: 100%;
+                            margin-top: 15px;
+                            .moreInfoBlock-render {
+                                width: 100%;
+                                height: 130px;
+                                margin-bottom: 12px;
+                                margin-top: 10px;
+                                display: flex;
+                                flex-flow: row wrap;
+                            transition: all 300ms ease;
+    
+                            }
+                            .orderDetails-img {
+                                width: 20%;
+                                text-align: center;
+                                height: 100%;
+                                .gameImage{
+                                 width: 75%;
+                                 height: 100%;
+                                }
+                            }
+                            .productName{
+                                width: 35%;
+                                line-height: 19px;
+                               color: white;
+                               margin: auto;
+                               font-family: "Montserrat-nameGame", "Courier New", Courier, monospace;
+                            }
+                            .productPrice,.productCount,.productPriceCount{
+                               width: 15%;
+                               color: white;
+                                margin: auto;
+                                font-size: 18px;
+                                text-align: center;
+                                font-family: "Roboto", "Courier New", Courier, monospace;
+                            }
+                        }
+                        .totalPrice{
+                            width: 100%;
+                            padding: 7px;
+                            text-align: center;
+                            color: cyan;
+                            font-family: "Roboto", "Courier New", Courier, monospace;
+                        }
+                    }
                 }
             }
         }
@@ -376,52 +483,110 @@
 
             .myOrders{
                 width: 100%;
-                border: 2px solid rgb(13, 145, 185);
+                display: flex;
+                flex-direction: column-reverse;
 
-                .order{
-                    width: 98%;
-                    height: 100px;
-                    border:  2px solid rgb(12, 70, 179);;
-                    margin: 20px auto;
-                    display: flex;
-                   
-                    
-                    .order-number,.order-price,.order-data,.order-details{
-                        width: 30%;
-                        color: white;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        font-size: 20px;
-                        font-family: 'Montserrat','Courier New', Courier, monospace;
-                        border: none;
-                    }
-                    .order-number{
-                        width: 10%;
-                        
-                    }
-
-                    .order-details{
-                        .buttonInfo{
-                            width: 80%;
-                            height: 40px;
-                            background-color: gold;
-                            border: none;
-                            color: black;
-                            font-family: 'Roboto','Courier New', Courier, monospace;
-                            font-size: 17px;
-                            transition: all 300ms ease; 
-                            margin-bottom:10px;
-                            
-                            &:focus{
-                                border-radius: 5px;
-                                outline: none;
-                                border: 3px solid rgb(243, 227, 1);
-                            box-shadow: 1px 0px 6px rgb(247, 170, 4) ;
-                            }
+                .nameBlock{
+                    width: 100%;
+                    font-size: 25px;
+                    text-align: center;
+                    color: rgb(255, 87, 20);
+                    font-family: "Roboto", "Courier New", Courier, monospace;
+                    text-shadow:  0 0 12px rgb(252, 112, 57);
+                    .pEmpty{
+                        cursor: pointer;
+                        text-decoration: underline;
+                        color: yellow;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        :focus{
+                            outline: none;
                         }
                     }
-                   
+                }
+
+                .order {
+                    width: 98%;
+                    min-height: 80px;
+                    border:  2px solid rgb(12, 70, 179);
+                    margin: 20px auto;
+                    background-color: rgb(9, 9, 78);
+    
+                    .mainInfo {
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        width: 100%;
+                        line-height: 26px;
+                        padding: 10px;
+                        .order-status,.order-data{
+                            width: 38%;
+                            height: 50px;
+                            border: none;
+                            color:  gold;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 15px;
+                            font-family: 'Montserrat','Courier New', Courier, monospace;
+                                }
+                                .order-status{
+                                    font-family: 'Roboto-Bold','Courier New', Courier, monospace;
+                                }
+                       
+                    }
+    
+                    .moreInfo{
+                        width: 100%;
+                        display: flex;
+                        flex-flow: row wrap;
+                        transition: all 300ms ease;
+                        
+                        .orderDetails{
+                            width: 100%;
+                            margin-top: 15px;
+                            .moreInfoBlock-render {
+                                width: 100%;
+                                height: 90px;
+                                margin-bottom: 12px;
+                                margin-top: 10px;
+                                display: flex;
+                                flex-flow: row wrap;
+                            transition: all 300ms ease;
+    
+                            }
+                            .orderDetails-img {
+                                width: 20%;
+                                text-align: center;
+                                .gameImage{
+                                 width: 75%;
+                                }
+                            }
+                            .productName{
+                                width: 34%;
+                                line-height: 19px;
+                               color: white;
+                               margin: auto;
+                               font-family: "Montserrat-nameGame", "Courier New", Courier, monospace;
+                               font-size: 15px;
+                            }
+                            .productPrice,.productCount,.productPriceCount{
+                               width: 15%;
+                               color: white;
+                                margin: auto;
+                                font-size: 16px;
+                                text-align: center;
+                                font-family: "Roboto", "Courier New", Courier, monospace;
+                            }
+                        }
+                        .totalPrice{
+                            width: 100%;
+                            padding: 7px;
+                            text-align: center;
+                            color: cyan;
+                            font-family: "OpenSans-SemiBold", "Courier New", Courier, monospace;
+                        }
+                    }
                 }
             }
         }

@@ -18,7 +18,6 @@ export class BasketComponent implements OnInit {
   orders: Array<IProduct> = [];
   adminCoupon: Array<ICoupon> = [];
   totalPrice=0;
-  checkedCoupon = false;
   saleCoupon='';
   useCoupon = undefined;
   orderID: number = 1;
@@ -28,6 +27,8 @@ export class BasketComponent implements OnInit {
   userPhone: string;
   userEmail: string;
   myUser: any;
+
+  allIsGodd: boolean;
   
   constructor(private orderService: OrderService,
     private firestore: AngularFirestore) { }
@@ -90,7 +91,6 @@ export class BasketComponent implements OnInit {
       this.useCoupon = this.adminCoupon.filter(coupon => coupon.code == this.saleCoupon.toLowerCase())[0].percent;
       if (this.useCoupon != undefined) {
         this.getTotal(this.useCoupon)
-        this.checkedCoupon = true
       }
     }
   }
@@ -127,6 +127,7 @@ export class BasketComponent implements OnInit {
       this.resetBasket();
       this.updateBasket();
       this.orderService.basket.next('check');
+      this.allIsGodd = true;
     })
     
   }

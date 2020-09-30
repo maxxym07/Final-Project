@@ -14,7 +14,7 @@ export class GameConsolesComponent implements OnInit {
   constructor( private afStorage: AngularFirestore,) { }
 
   ngOnInit(): void {
-    this.getMyConsoles()
+    this.getMyConsoles()    
   }
 
   getMyConsoles(): void{
@@ -26,6 +26,7 @@ export class GameConsolesComponent implements OnInit {
           const id = document.id;
           this.userConsoles.push({ id, ...data })
         })
+        setTimeout(() => { window.scroll(0, 1)},200)
       }
     )
   }

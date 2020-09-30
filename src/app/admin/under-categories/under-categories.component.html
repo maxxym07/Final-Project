@@ -10,17 +10,23 @@
       <table class="table">
         <thead class="table-active">
           <tr>
-            <th scope="col" [ngStyle]="{'cursor': 'pointer'}" [ngStyle]="{'width': '60px'}">№</th>
-            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}">Category
-            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}">Name EN
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}" [ngStyle]="{'width': '60px'}" [class.active]="order === 'id'" (click)="setOrder('id')">№
+              <span [hidden]="reverse">▼</span> <span [hidden]="!reverse">▲</span>
             </th>
-            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}">Name UA
+            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}" [class.active]="order === 'category'" (click)="setOrder('category')">Category
+              <span [hidden]="reverse">▼</span> <span [hidden]="!reverse">▲</span>
+            </th>
+            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}" [class.active]="order === 'engName'" (click)="setOrder('engName')">Name EN
+              <span [hidden]="reverse">▼</span> <span [hidden]="!reverse">▲</span>
+            </th>
+            <th scope="col" class="text-secondary" [ngStyle]="{'cursor': 'pointer'}" [class.active]="order === 'ukrName'" (click)="setOrder('ukrName')">Name UA
+              <span [hidden]="reverse">▼</span> <span [hidden]="!reverse">▲</span>
             </th>
             <th scope="col" class="text-secondary" [ngStyle]="{'width': '25px'}">Delete</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let uc of adminUnderCategories|subcategorySearch:inputS; let i=index">
+          <tr *ngFor="let uc of adminUnderCategories|subcategorySearch:inputS|orderBy: order:reverse:'case-insensitive'; let i=index">
             <td class="font-weight-bold">{{i+1}}</td>
             <td>{{ uc.category}}</td>
             <td>{{ uc.engName }}</td>

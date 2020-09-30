@@ -27,13 +27,16 @@ export class UnderCategoriesComponent implements OnInit {
   underCategoryName:string; //for select
   category: ICategory;
   underCategoryCategory='ігри';
-  // underCategory: ICategory;
   categoryStatus = false;//for butDisable
 
   delete_id: any;
 
   inputS:string//for search in table
 
+  //for sort
+  order: string = 'id';
+  reverse: boolean = false;
+  //for sort
   constructor(private catService: CategoryService,
     private modalService: BsModalService,
     private UnderCatService: UnderCategoryService,
@@ -89,20 +92,10 @@ export class UnderCategoriesComponent implements OnInit {
     delete newUc.id;
     
     this.UnderCatService.postFirecloudUnderCategory(Object.assign({}, newUc))
-    // .then(()=>{
-    //   this.updateCategory(newUc)
-    // })
       this.resetForm()
       this.modalService.hide(1);
 
   }
-
-  // updateCategory(newUnderCategory:IUndercategory): void{
-  //   this.category = this.adminCategory.filter(cat => cat.nameUA === this.underCategoryName)[0];
-  //   this.category.underCategory.push(Object.assign({}, newUnderCategory))
-  //   console.log(this.category)
-  //   this.firestore.collection('categories').doc(this.category.id.toString()).update(Object.assign({}, this.category));
-  // }
 
   deleteModal(template: TemplateRef<any>,underCategory:IUndercategory): void {
     this.modalRef = this.modalService.show(template, { class: 'modal-dialog-centered' });
@@ -135,4 +128,12 @@ export class UnderCategoriesComponent implements OnInit {
     this.modalService.hide(1);
   }
 
+
+  //sort pipe
+  setOrder(value: string) {
+    if (this.order === value) {
+      this.reverse = !this.reverse;
+    }
+    this.order = value;
+  }
 }

@@ -52,17 +52,49 @@
         <div class="categoriesMenu">
             <button id="zhanrs" (click)="openZhanrs()" [textContent]="!openStatus? 'Жанри':'Cховати жанри'">Жанри</button>
             <div class="menu-zhanrs">
-                <p class="categories-zhanrs">Всі ігри</p>
-                <p class="categories-zhanrs">Аркади</p>
-                <p class="categories-zhanrs">Бойовики</p>
-                <p class="categories-zhanrs">Королівські битви</p>
-                <p class="categories-zhanrs">Вождіння і гонки</p>
-                <p class="categories-zhanrs">Пригодницькі бойовики</p>
-                <p class="categories-zhanrs">Спорт</p>
-                <p class="categories-zhanrs">Симулятори</p>
-                <p class="categories-zhanrs">Стратегії</p>
-                <p class="categories-zhanrs">Жахи</p>
-                <p class="categories-zhanrs">Сімейні</p>
+                <p class="categories-zhanrs" (click)="resetFilter()">Всі ігри</p>
+                <ul class="categories-filters">
+                    <li>
+                        <input type="radio" name="subCategory" id="Бойовики" (change)='filterZhanr($event)'>
+                        <label for="Бойовики">Бойовики</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="subCategory" id="Аркади" (change)='filterZhanr($event)'>
+                        <label for="Аркади">Аркади</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="subCategory" id="Королівські битви" (change)='filterZhanr($event)'>
+                        <label for="Королівські битви">Королівські битви</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="subCategory" id="Вождіння і гонки" (change)='filterZhanr($event)'>
+                        <label for="Вождіння і гонки">Вождіння і гонки</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="subCategory" id="Спорт" (change)='filterZhanr($event)'>
+                        <label for="Спорт">Спорт</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="subCategory" id="Пригодницький бойовик" (change)='filterZhanr($event)'>
+                        <label for="Пригодницький бойовик">Пригодницький бойовик</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="subCategory" id="Жахи" (change)='filterZhanr($event)'>
+                        <label for="Жахи">Жахи</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="subCategory" id="Симулятори" (change)='filterZhanr($event)'>
+                        <label for="Симулятори">Симулятори</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="subCategory" id="Стратегії" (change)='filterZhanr($event)'>
+                        <label for="Стратегії">Стратегії</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="subCategory" id="Сімейні" (change)='filterZhanr($event)'>
+                        <label for="Сімейні" >Сімейні</label>
+                    </li>
+                </ul>
             </div>
             
         </div>

@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   burgerCount=0
   urlName: string;
   menuName: string;
+  toProfileMobile: boolean;
   
   constructor(private ordService: OrderService,
     private authService: AuthService,) { }
@@ -89,11 +90,13 @@ export class HeaderComponent implements OnInit {
       else if (user.role === 'user') {
         this.urlName = 'profile';
         this.menuName = 'Кабінет'
+        this.toProfileMobile = true;
       }
     }
     else {
       this.urlName = 'login';
-      this.menuName ='Увійти'
+      this.menuName = 'Увійти'
+      this.toProfileMobile=false
     }
   }
 }

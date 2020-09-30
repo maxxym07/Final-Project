@@ -1,7 +1,8 @@
 <div class="home">
     <div class="emptyBasket" *ngIf="!orders.length">
         <div class="backToHome">
-            <p class="emptyBasket-text">Корзина порожня</p>
+            <p class="emptyBasket-text" *ngIf="!allIsGodd">Корзина порожня</p>
+            <p class="emptyBasket-text" *ngIf="!orders.length && allIsGodd">Все пройшло успішно!</p>
             <button type="button" class="butCoupon" [routerLink]="[ '/home']">На головну</button>
         </div>
     </div>
@@ -73,11 +74,11 @@
 
             <div class="cuopon">
                 <input type="text" placeholder="Маєш купон на знижку?" class="forCoupon" [(ngModel)]="saleCoupon" name="saleCoupon">
-                <button type="button" class="butCoupon" [disabled]="checkedCoupon" (click)="checkCoupon()" >Використати</button>
+                <button type="button" class="butCoupon" (click)="checkCoupon()" >Використати</button>
             </div>
 
             <div class="for-butBuy">
-               <p class="total">{{totalPrice}} UAH</p>
+               <p class="total">{{totalPrice.toFixed(2)}} UAH</p>
                 <button type="submit" class="butBuy effect01" [disabled]="orderForm.invalid">Купити</button>
             </div>
         </form>

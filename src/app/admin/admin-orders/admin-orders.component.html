@@ -8,18 +8,29 @@
       <table class="table table-bordered">
         <thead>
           <tr class="table-active">
-            <th scope="col" [ngStyle]="{'cursor': 'pointer'}">№</th>
-            <th scope="col" [ngStyle]="{'cursor': 'pointer'}">Ім'я</th>
-            <th scope="col" [ngStyle]="{'cursor': 'pointer'}">Номер телефону</th>
-            <th scope="col" [ngStyle]="{'cursor': 'pointer'}">Сума</th>
-            <th scope="col" [ngStyle]="{'cursor': 'pointer'}">Дата</th>
-            <th scope="col">Статус
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}" [class.active]="order === 'id'" (click)="setOrder('id')">№
+              <span [hidden]="reverse">▼</span> <span [hidden]="!reverse">▲</span>
+            </th>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}" [class.active]="order === 'userName'" (click)="setOrder('userName')">Ім'я
+              <span [hidden]="reverse">▼</span> <span [hidden]="!reverse">▲</span>
+            </th>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}" [class.active]="order === 'userPhone'" (click)="setOrder('userPhone')">Номер телефону
+              <span [hidden]="reverse">▼</span> <span [hidden]="!reverse">▲</span>
+            </th>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}" [class.active]="order === 'totalPayment'" (click)="setOrder('totalPayment')">Сума
+              <span [hidden]="reverse">▼</span> <span [hidden]="!reverse">▲</span>
+            </th>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}" [class.active]="order === 'dateOrder'" (click)="setOrder('dateOrder')">Дата
+              <span [hidden]="reverse">▼</span> <span [hidden]="!reverse">▲</span>
+            </th>
+            <th scope="col" [ngStyle]="{'cursor': 'pointer'}" [class.active]="order === 'status'" (click)="setOrder('status')">Статус
+              <span [hidden]="reverse">▼</span> <span [hidden]="!reverse">▲</span>
               </th>
             <th scope="col">Деталі</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let order of adminOrders|orderSearch:inputS; let i = index">
+          <tr *ngFor="let order of adminOrders|orderSearch:inputS|orderBy: order:reverse:'case-insensitive'; let i = index">
             <td class="font-weight-bold">{{i+1 }}</td>
             <td>{{order.userName }}</td>
             <td>{{ order.userPhone }}</td>

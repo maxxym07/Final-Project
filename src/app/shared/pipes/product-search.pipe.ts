@@ -19,7 +19,7 @@ export class ProductSearchPipe implements PipeTransform {
       || elem.nameUA.toLowerCase().includes(searchString.toLowerCase())
       || elem.category.toLowerCase().includes(searchString.toLowerCase())
       || elem.subCategory.toLowerCase().includes(searchString.toLowerCase())
-      || elem.oldPrice.toString().includes(searchString.toLowerCase())
+      || elem.oldPrice?.toString().includes(searchString.toLowerCase())
       || elem.mainPrice.toString().includes(searchString.toLowerCase())
     )
   }
