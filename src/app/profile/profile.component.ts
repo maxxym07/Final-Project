@@ -12,30 +12,29 @@ import { IOrder } from '../shared/interfaces/order.interface';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  viewDetails: boolean;
+  userOrderArray: Array<IOrder> = [];
+  orderStatus: Array<IProduct> = [];
   userEmail:string;
   userName:string;
   userLastName:string;
   userPhone: string;
   userOrder: any;
-  userOrderArray: Array<IOrder> = [];
-  userId: any;
+  userID: any;
   userRole:string;
-  findUserID: any;
-  orderStatus: Array<IProduct> = [];
+  finduser: any;
 
   constructor(private authService:AuthService,
     private firestore: AngularFirestore,) { }
 
   ngOnInit(): void {
-    this.getUserData();
+    this.getUser();
     this.updateOrderStatus()
   }
 
 
-  private getUserData(): void {
+  private getUser(): void {
     const user = JSON.parse(localStorage.getItem('user'))
-    this.userId=user.idAuth
+    this.userID=user.idAuth
     this.userEmail = user.email;
     this.userName = user.firstName;
     this.userLastName = user.secondName;
@@ -64,25 +63,25 @@ export class ProfileComponent implements OnInit {
     localStorage.removeItem('user');
     let user: IUser;
     user = new User(
-      this.userId,
-       this.userName,
-       this.userLastName,
-     this.userOrder,
+      this.userID,
+      this.userName,
+      this.userLastName,
+      this.userOrder,
       this.userRole,
-       this.userEmail,
-       this.userPhone);
+      this.userEmail,
+      this.userPhone);
     localStorage.setItem('user', JSON.stringify(user));
-    this.firestore.collection('users').ref.where('idAuth', '==',  this.userId).onSnapshot(
+    this.firestore.collection('users').ref.where('idAuth', '==',  this.userID).onSnapshot(
       collection => {
         collection.forEach(document => {
           const data=document.data() as IUser;
           const id = document.id;
-          this.findUserID=({ id, ...data })
+          this.finduser=({ id, ...data })
         })
       },
        )
-      if (await this.findUserID) {
-   this.firestore.collection('users').doc(this.findUserID.id).update(Object.assign({}, user));              
+      if (await this.finduser) {
+   this.firestore.collection('users').doc(this.finduser.id).update(Object.assign({}, user));              
        }
  }
 

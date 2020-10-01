@@ -40,8 +40,6 @@ import { ProductSearchPipe } from './shared/pipes/product-search.pipe';
 import { SubcategorySearchPipe } from './shared/pipes/subcategory-search.pipe';
 import { OrderSearchPipe } from './shared/pipes/order-search.pipe';
 
-// import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
-// import { loaderConfig } from './preloader-config';
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
@@ -83,8 +81,6 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     AngularFirestoreModule,
     AngularFireStorageModule,
     OrderModule,
-    // NgxUiLoaderModule.forRoot(loaderConfig),
-    // NgxUiLoaderRouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

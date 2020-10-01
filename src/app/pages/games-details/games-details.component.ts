@@ -16,9 +16,8 @@ export class GamesDetailsComponent implements OnInit {
   userProduct: IProduct
 
   constructor(private afStorage: AngularFirestore,
-    private productService: ProductService,
     private actRoute: ActivatedRoute,
-    private orderService: OrderService,) { }
+    private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.getMyProduct();

@@ -17,7 +17,7 @@ import { IUser } from '../../shared/interfaces/user.interface';
 export class BasketComponent implements OnInit {
   orders: Array<IProduct> = [];
   adminCoupon: Array<ICoupon> = [];
-  totalPrice=0;
+  totalPrice = 0;
   saleCoupon='';
   useCoupon = undefined;
   orderID: number = 1;

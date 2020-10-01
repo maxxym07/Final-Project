@@ -16,7 +16,6 @@ export class DeviceDetailsComponent implements OnInit {
   slideIndex = 0;
 
   constructor(private afStorage: AngularFirestore,
-    private productService: ProductService,
     private actRoute: ActivatedRoute,
     private orderService: OrderService,) { }
 
