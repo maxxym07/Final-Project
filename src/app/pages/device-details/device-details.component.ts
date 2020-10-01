@@ -48,6 +48,7 @@ export class DeviceDetailsComponent implements OnInit {
           const id = document.id;
           this.userProduct=({ id, ...data })
         })
+        setTimeout(() => { window.scroll(0,1)},400)
       }
     )
    

@@ -32,6 +32,7 @@
             <a class="basket" [routerLink]="[ '/basket' ]">
                 <i class="fas fa-shopping-cart"></i>
                 <div id="total" *ngIf="totalPrice!==0">{{totalPrice}} UAH</div>
+                <div id="total2"  *ngIf="basket?.length > 0">{{basket?.length}}</div>
             </a>
         </div>
 
