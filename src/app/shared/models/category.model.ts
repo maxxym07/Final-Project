@@ -5,6 +5,5 @@ export class Category implements ICategory{
         public id:number,
         public nameEN: string,
         public nameUA: string,
-        // public underCategory:any= [],
     ){}
 }
