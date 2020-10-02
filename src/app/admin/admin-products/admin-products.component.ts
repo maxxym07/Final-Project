@@ -284,6 +284,18 @@ export class AdminProductsComponent implements OnInit {
     this.forThirdImages = true;
     this.forFourthImages = true;
     this.forFithImages = true;
+    this.checkTrueInputs();
+  }
+
+  checkTrueInputs(): void{
+    let top = <HTMLInputElement>document.getElementById('productTop');
+    if (this.productTop == true) {
+      top.checked=true
+    }
+    let psPlus = <HTMLInputElement>document.getElementById('productPsPlus');
+    if (this.productPsPlus == true) {
+      psPlus.checked=true
+    }
   }
 
   deleteModal(template: TemplateRef<any>,  product: IProduct): void {
@@ -309,7 +321,6 @@ export class AdminProductsComponent implements OnInit {
     this.modalService.hide(1);
   }
 
-  //clear form
   private resetModal(): void {
     this.productNameEN = '';
     this.productNameUA = '';

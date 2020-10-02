@@ -73,7 +73,7 @@
       <h4 class="modal-title pull-left">Product modal</h4>
       <button type="button" class="close pull-right" aria-label="Close"(click)="modalRef.hide()" (click)="resetModal()">
         <span aria-hidden="true">&times;</span>
-      </button>
+      X</button>
     </div>
     <div class="modal-body">
         <form>
@@ -186,7 +186,6 @@
                 <label class="custom-file-label" for="productImage2">Виберіть зображення...</label>
               </div>
               </div>
->
 
               <div class="firstSel1" [ngStyle]="{'width': '20%','border':'1px solid grey'}" *ngIf="forThirdImages">
                 <p [ngStyle]="{'text-align': 'center'}">Картинка 3</p>
