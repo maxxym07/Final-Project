@@ -53,6 +53,7 @@ export class ProfileComponent implements OnInit {
             const id = document.id;
             this.orderStatus.push({ id, ...data })
           });
+          setTimeout(() => { window.scroll(0,1)},400)
         })
     }
     this.userOrder = this.orderStatus;

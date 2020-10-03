@@ -6,45 +6,9 @@
             <p class="categories-zhanrs" (click)="resetFilter()">Всі ігри</p>
             
             <ul class="categories-filters">
-                <li [ngStyle]="{'margin-top':'10px'}">
-                    <input type="radio" class="max" name="subCategory" id="Бойовики" (change)='filterZhanr($event)'>
-                    <label for="Бойовики">Бойовики</label>
-                </li>
-                <li [ngStyle]="{'margin-top':'10px'}">
-                    <input type="radio" name="subCategory" id="Аркади" (change)='filterZhanr($event)'>
-                    <label for="Аркади">Аркади</label>
-                </li>
-                <li [ngStyle]="{'margin-top':'10px'}">
-                    <input type="radio" name="subCategory" id="Королівські битви" (change)='filterZhanr($event)'>
-                    <label for="Королівські битви">Королівські битви</label>
-                </li>
-                <li [ngStyle]="{'margin-top':'10px'}">
-                    <input type="radio" name="subCategory" id="Гонки" (change)='filterZhanr($event)'>
-                    <label for="Гонки">Вождіння і гонки</label>
-                </li>
-                <li [ngStyle]="{'margin-top':'10px'}">
-                    <input type="radio" name="subCategory" id="Спорт" (change)='filterZhanr($event)'>
-                    <label for="Спорт">Спорт</label>
-                </li>
-                <li [ngStyle]="{'margin-top':'10px'}">
-                    <input type="radio" name="subCategory" id="Пригодницький бойовик" (change)='filterZhanr($event)'>
-                    <label for="Пригодницький бойовик">Пригодницький бойовик</label>
-                </li>
-                <li [ngStyle]="{'margin-top':'10px'}">
-                    <input type="radio" name="subCategory" id="Жахи" (change)='filterZhanr($event)'>
-                    <label for="Жахи">Жахи</label>
-                </li>
-                <li [ngStyle]="{'margin-top':'10px'}">
-                    <input type="radio" name="subCategory" id="Симулятори" (change)='filterZhanr($event)'>
-                    <label for="Симулятори">Симулятори</label>
-                </li>
-                <li [ngStyle]="{'margin-top':'10px'}">
-                    <input type="radio" name="subCategory" id="Стратегії" (change)='filterZhanr($event)'>
-                    <label for="Стратегії">Стратегії</label>
-                </li>
-                <li [ngStyle]="{'margin-top':'10px'}">
-                    <input type="radio" name="subCategory" id="Сімейні" (change)='filterZhanr($event)'>
-                    <label for="Сімейні">Сімейні</label>
+                <li [ngStyle]="{'margin-top':'10px'}" *ngFor="let subcat of underCategories">
+                    <input type="radio" class="max" name="subCategory" id="{{subcat.ukrName}}" (change)='filterZhanr($event)'>
+                    <label for="{{subcat.ukrName}}">{{subcat.ukrName}}</label>
                 </li>
             </ul>
         </div>
@@ -54,45 +18,9 @@
             <div class="menu-zhanrs">
                 <p class="categories-zhanrs" (click)="resetFilter()">Всі ігри</p>
                 <ul class="categories-filters">
-                    <li>
-                        <input type="radio" name="subCategory" id="Бойовики" (change)='filterZhanr($event)'>
-                        <label for="Бойовики">Бойовики</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="subCategory" id="Аркади" (change)='filterZhanr($event)'>
-                        <label for="Аркади">Аркади</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="subCategory" id="Королівські битви" (change)='filterZhanr($event)'>
-                        <label for="Королівські битви">Королівські битви</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="subCategory" id="Вождіння і гонки" (change)='filterZhanr($event)'>
-                        <label for="Вождіння і гонки">Вождіння і гонки</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="subCategory" id="Спорт" (change)='filterZhanr($event)'>
-                        <label for="Спорт">Спорт</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="subCategory" id="Пригодницький бойовик" (change)='filterZhanr($event)'>
-                        <label for="Пригодницький бойовик">Пригодницький бойовик</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="subCategory" id="Жахи" (change)='filterZhanr($event)'>
-                        <label for="Жахи">Жахи</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="subCategory" id="Симулятори" (change)='filterZhanr($event)'>
-                        <label for="Симулятори">Симулятори</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="subCategory" id="Стратегії" (change)='filterZhanr($event)'>
-                        <label for="Стратегії">Стратегії</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="subCategory" id="Сімейні" (change)='filterZhanr($event)'>
-                        <label for="Сімейні" >Сімейні</label>
+                    <li *ngFor="let subcat of underCategories">
+                        <input type="radio" class="max" name="subCategory" id="{{subcat.ukrName}}" (change)='filterZhanr($event)'>
+                        <label for="{{subcat.ukrName}}">{{subcat.ukrName}}</label>
                     </li>
                 </ul>
             </div>

@@ -8,6 +8,7 @@ import { Order } from '../../shared/models/order.model';
 import { User } from '../../shared/models/user.model';
 import { IOrder } from 'src/app/shared/interfaces/order.interface';
 import { IUser } from '../../shared/interfaces/user.interface';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-basket',

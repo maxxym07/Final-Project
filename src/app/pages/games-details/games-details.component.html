@@ -43,7 +43,7 @@
             </div>
 
             <div class="buyGame">
-                <button type="button" class="buttonBuy" [routerLink]="[ '/basket']" (click)="addBasket(userProduct)">Купити</button>
+                <button type="button" class="buttonBuy" (click)="addBasket(userProduct)">Купити</button>
             </div>
             
             <div class="with"  *ngIf="userProduct?.category=='ігри'">
@@ -90,7 +90,6 @@
         </div>
     </div>
 
-<!-- for mobile --><!-- for mobile --><!-- for mobile --><!-- for mobile --><!-- for mobile --><!-- for mobile --><!-- for mobile -->
     <div class="containerMobile">
       <div class="nameGameMobile">{{userProduct?.nameUA}}</div>
       <div class="imageBlockMobile"><img class="imageGameMobile" [src]='userProduct?.image1' alt=""></div>
@@ -102,7 +101,7 @@
     </div>
 
     <div class="buyGameMobile">
-      <button type="button" class="buttonBuy"[routerLink]="[ '/basket']"  (click)="addBasket(userProduct)">Купити</button>
+      <button type="button" class="buttonBuy" (click)="addBasket(userProduct)">Купити</button>
   </div>
 
   <div class="images" *ngIf="userProduct?.image2!==''">
@@ -138,6 +137,5 @@
 </div>
 
   </div>
-<!-- for mobile --><!-- for mobile --><!-- for mobile --><!-- for mobile --><!-- for mobile --><!-- for mobile --><!-- for mobile -->
 
 </div>

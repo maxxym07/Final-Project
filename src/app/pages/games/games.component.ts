@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../shared/interfaces/product.interface';
-import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { ProductService } from 'src/app/shared/services/product.service';
+import { UnderCategoryService } from '../../shared/services/under-category.service';
+import { IUndercategory } from '../../shared/interfaces/underCategory.interface';
 
 @Component({
   selector: 'app-games',
@@ -16,15 +16,17 @@ export class GamesComponent implements OnInit {
   p: number = 1;
   userProducts: Array<IProduct> = []
   userFilterProduct: Array<IProduct> = []
-
+  underCategories: Array<IUndercategory> = [];
 
   filterBy: string;
   filterByDetails: string;
   
-  constructor(private afStorage: AngularFirestore) { }
+  constructor(private afStorage: AngularFirestore,
+    private underCatService: UnderCategoryService) { }
 
   ngOnInit(): void {
-    this.getGames() 
+    this.getGames();
+    this.getUnderCategories()
   }
 
   openZhanrs(): void{
@@ -38,6 +40,20 @@ export class GamesComponent implements OnInit {
       this.openStatus=false
       
     }
+  }
+
+  private getUnderCategories(): void {
+    this.afStorage.collection('underCategories').ref.where('category','==','ігри').onSnapshot(
+      collection => {
+        this.underCategories = [];
+        collection.forEach(document => {
+          const data=document.data() as IUndercategory;
+          const id = document.id;
+          this.underCategories.push({ id, ...data })
+        })
+        setTimeout(() => { window.scroll(0,1)},400)
+      }
+    )
   }
 
 getGames() {
@@ -71,7 +87,7 @@ filterZhanr($event) {
   this.filterByDetails = $event.target.id;
   $event.checked = true;
   this.userProducts.filter(game => game.subCategory.toLowerCase() == this.filterByDetails.toLowerCase()
-    ? this.userFilterProduct.push(game) : game )
+    ? this.userFilterProduct.push(game) : game)
 }
 
 }
