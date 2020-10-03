@@ -32,6 +32,8 @@ export class GadgetsComponent implements OnInit {
       }
     )
   }
-
+  scrollUp(target:HTMLElement): void{
+    target.scrollIntoView()
+}
   
 }

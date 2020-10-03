@@ -30,4 +30,8 @@ export class GameConsolesComponent implements OnInit {
       }
     )
   }
+
+  scrollUp(target:HTMLElement): void{
+    target.scrollIntoView()
+}
 }

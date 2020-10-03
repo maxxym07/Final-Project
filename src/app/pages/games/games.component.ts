@@ -21,8 +21,7 @@ export class GamesComponent implements OnInit {
   filterBy: string;
   filterByDetails: string;
   
-  constructor(private afStorage: AngularFirestore,
-    private underCatService: UnderCategoryService) { }
+  constructor(private afStorage: AngularFirestore,) { }
 
   ngOnInit(): void {
     this.getGames();
@@ -88,6 +87,10 @@ filterZhanr($event) {
   $event.checked = true;
   this.userProducts.filter(game => game.subCategory.toLowerCase() == this.filterByDetails.toLowerCase()
     ? this.userFilterProduct.push(game) : game)
+}
+
+scrollUp(target:HTMLElement): void{
+    target.scrollIntoView()
 }
 
 }

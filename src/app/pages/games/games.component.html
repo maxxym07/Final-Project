@@ -27,7 +27,7 @@
             
         </div>
 
-        <div class="gamesBlock">
+        <div class="gamesBlock" #target>
             <div class="card" *ngFor="let products of userFilterProduct| paginate: { itemsPerPage: 12, currentPage: p }"  [routerLink]="['/games/'+products?.subCategory, products?.nameEN]">
                 <div class="imageBlock">
                     <img class="imageGame" [src]='products?.image1' alt="">
@@ -39,7 +39,7 @@
                     <p class="mainPrice">{{products?.mainPrice}} UAH</p>
                 </div>
             </div>
-              <pagination-controls class="myPagination" (pageChange)="p = $event"></pagination-controls>
+              <pagination-controls class="myPagination" (click)="scrollUp(target)" (pageChange)="p = $event"></pagination-controls>
         </div>
       
     </div>
