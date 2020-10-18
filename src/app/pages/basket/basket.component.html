@@ -2,7 +2,7 @@
     <div class="emptyBasket" *ngIf="!orders.length">
         <div class="backToHome">
             <p class="emptyBasket-text" *ngIf="!allIsGodd">Корзина порожня</p>
-            <p class="emptyBasket-text" *ngIf="!orders.length && allIsGodd">Все пройшло успішно!</p>
+            <p class="emptyBasket-text" *ngIf="!orders.length && allIsGood">Все пройшло успішно!</p>
             <button type="button" class="butCoupon" [routerLink]="[ '/home']">На головну</button>
         </div>
     </div>
@@ -44,29 +44,29 @@
         
         <div class="right-block">
             <p id="datah">Дані одержувача</p>
-            <form  id="orderFormCheck" #orderForm="ngForm" novalidate (submit)="addOrder(orderForm)">
+            <form  id="orderFormCheck">
             <div class="inputs">
               
                 <div class="inputElementWrapper">
-                    <input class="inputElementItem"  type="text" placeholder="Їм'я" ngModel name="userName" required #name="ngModel">
+                    <input class="inputElementItem"  type="text" placeholder="Їм'я" [(ngModel)]="userName" name="userName" >
                     <label>Їм'я*</label>
                     <span class="focus-border"><i></i></span>
                   </div>
 
                   <div class="inputElementWrapper">
-                    <input class="inputElementItem"  type="text" placeholder="Прізвище" ngModel name="userLastName" required #name="ngModel">
+                    <input class="inputElementItem"  type="text" placeholder="Прізвище"  [(ngModel)]="userLastName" name="userLastName" >
                     <label>Прізвище*</label>
                     <span class="focus-border"><i></i></span>
                   </div>
 
                   <div class="inputElementWrapper">
-                    <input class="inputElementItem"  type="text" mask="(000)-000-00-00" prefix="+38" placeholder="телефон" ngModel name="userPhone" required #name="ngModel">
+                    <input class="inputElementItem"  type="text" mask="(000)-000-00-00" prefix="+38" placeholder="телефон" [(ngModel)]="userPhone" name="userPhone" >
                     <label>Номер телефону*</label>
                     <span class="focus-border"><i></i></span>
                   </div>
 
                   <div class="inputElementWrapper">
-                    <input class="inputElementItem"  type="text" placeholder="Електронна пошта" ngModel name="userEmail" required #name="ngModel">
+                    <input class="inputElementItem"  type="text" placeholder="Електронна пошта" [(ngModel)]="userEmail" name="userEmail" >
                     <label>Електронна пошта*</label>
                     <span class="focus-border"><i></i></span>
                   </div>
@@ -79,7 +79,7 @@
 
             <div class="for-butBuy">
                <p class="total">{{totalPrice.toFixed(2)}} UAH</p>
-                <button type="submit" class="butBuy effect01" [disabled]="orderForm.invalid">Купити</button>
+                <button type="button" (click)="checkInputsBeforeOrder()" class="butBuy effect01">Купити</button>
             </div>
         </form>
         </div>

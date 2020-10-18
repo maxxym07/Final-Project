@@ -29,7 +29,12 @@ export class BasketComponent implements OnInit {
   userEmail: string;
   myUser: any;
 
-  allIsGodd: boolean;
+  allIsGood: boolean;
+
+  checkName = /[A-Za-z]{2,20}/;
+  checkSName = /[A-Za-z]{2,20}/;
+  checkEmail = /^[\w\.\-]{1,}@\w{1,}\.\w{2,7}$/;
+  checkPhone = /^\d{10}$/;
   
   constructor(private orderService: OrderService,
     private firestore: AngularFirestore) { }
@@ -110,13 +115,13 @@ export class BasketComponent implements OnInit {
     }
   }
 
-  addOrder(form: NgForm): void{
+  addOrder(): void{
     const order = new Order(
       this.orderID,
-      form.controls.userName.value,
-      form.controls.userLastName.value,
-      form.controls.userPhone.value,
-      form.controls.userEmail.value,
+      this.userName,
+      this.userLastName,
+      this.userPhone,
+      this.userEmail,
       this.orders,
       this.totalPrice,
       new Date().toString()
@@ -128,22 +133,51 @@ export class BasketComponent implements OnInit {
       this.resetBasket();
       this.updateBasket();
       this.orderService.basket.next('check');
-      this.allIsGodd = true;
+      this.allIsGood = true;
     })
     
   }
 
-  private getUserData(): void {
+  checkInputsBeforeOrder() {
+    if (this.checkName.test(this.userName)) {
+      if (this.checkSName.test(this.userLastName)){
+        if (this.checkPhone.test(this.userPhone)) {
+          if (this.checkEmail.test(this.userEmail)) {
+            this.addOrder()
+          }
+          else {
+            alert('Заповніть коректно поле "Електронна пошта"')
+          }
+        }
+        else {
+          alert('Заповніть коректно поле "Номер телефону"')
+        }
+      }
+      else {
+        alert('Заповніть коректно поле "Прізвище"')
+      }
+    }
+    else {
+      alert('Заповніть коректно поле "Імя"')
+    }
+  }
+  
+
+  getUserData(): void {
     if (localStorage.length > 0 && localStorage.getItem('user')) {
       let user = JSON.parse(localStorage.getItem('user'));
-      
       this.firestore.collection('users').ref.where('idAuth', '==', user.idAuth).onSnapshot(
         collection => {
           collection.forEach(document => {
             const data = document.data() as IUser;
             const id = document.id;
             this.myUser = ({ id, ...data })
+
           })
+          this.userName= this.myUser.firstName;
+          this.userLastName= this.myUser.secondName;
+          this.userEmail = this.myUser.email;
+          this.userPhone = this.myUser.phone;
         }
       )
     }

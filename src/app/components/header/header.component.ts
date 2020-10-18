@@ -25,8 +25,8 @@ export class HeaderComponent implements OnInit {
     this.scrollHeader();
     this.checkBasket();
     this.getLocalStorage();
-    this.checkUser()
-    this.updateCheckUser()
+    this.checkUser();
+    this.updateCheckUser();
   }
   
    checkBasket(): void {
@@ -66,6 +66,7 @@ export class HeaderComponent implements OnInit {
       }
     })
   }
+
 
   closeBurger(): void{
     let menuSpan = <HTMLInputElement>document.getElementById('menu__toggle');
