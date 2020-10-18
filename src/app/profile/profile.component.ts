@@ -59,35 +59,6 @@ export class ProfileComponent implements OnInit {
     this.userOrder = this.orderStatus;
   }
 
-
-//    updateUser() {
-//     localStorage.removeItem('user');
-//     let user: IUser;
-//     user = new User(
-//       this.userID,
-//       this.userName,
-//       this.userLastName,
-//       this.userOrder,
-//       this.userRole,
-//       this.userEmail,
-//       this.userPhone);
-//     localStorage.setItem('user', JSON.stringify(user));
-//     this.firestore.collection('users').ref.where('idAuth', '==',  this.userID).onSnapshot(
-//       collection => {
-//         collection.forEach(document => {
-//           const data=document.data() as IUser;
-//           const id = document.id;
-//           this.finduser=({ id, ...data })
-//         })
-//       },
-//        )
-//       if (this.finduser) { 
-//         this.firestore.collection('users').doc(this.finduser.id).update(Object.assign({}, user));     
-  
-//        }
-       
-//  }
-
   updateUser() {
     let userPromise=new Promise((resolve, reject)=> {
         localStorage.removeItem('user');
