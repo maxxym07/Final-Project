@@ -909,7 +909,7 @@
                 left: -100%;
               
                 width: 250px;
-                height: -webkit-fill-available;
+                height: 100vh;
               
                 margin: 0;
                 padding: 80px 0;
@@ -944,7 +944,7 @@
     
               .menu__box-bottom{
                 position: absolute;
-                bottom: 30px;
+                bottom: 100px;
                 left: 0;
                 width: 100%;
               }

@@ -78,6 +78,9 @@ resetFilter(){
         for (let i = 0; i < radioButs.length; i++) { 
           radioButs[i].checked=false
         }
+  this.menuzhanrs[0].style.display = 'none'
+  this.countZhanrs = 0
+  this.openStatus=false
 }
   
 filterZhanr($event) {
@@ -87,6 +90,10 @@ filterZhanr($event) {
   $event.checked = true;
   this.userProducts.filter(game => game.subCategory.toLowerCase() == this.filterByDetails.toLowerCase()
     ? this.userFilterProduct.push(game) : game)
+  this.menuzhanrs[0].style.display = 'none'
+  this.countZhanrs = 0
+  this.openStatus=false
+
 }
 
 scrollUp(target:HTMLElement): void{
