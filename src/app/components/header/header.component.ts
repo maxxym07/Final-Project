@@ -54,7 +54,7 @@ export class HeaderComponent implements OnInit {
     let mainMenu = document.getElementsByClassName('menu-header') as HTMLCollectionOf<HTMLElement>;
 
     fromEvent(window, 'scroll').subscribe(() => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 250) {
         this.navbar = true;
         
         mainMenu[0].style.top = '0px'
